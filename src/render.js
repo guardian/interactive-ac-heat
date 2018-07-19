@@ -7,7 +7,7 @@ const csv = fs.readFileSync('src/assets/us-climate.csv', 'utf8')
 
 const parsed = csvParse(csv, { columns: true })
 
-
+// fs.writeFileSync('src/assets/us-climate.json', JSON.stringify(parsed));
 
 export async function render() {
     // this function just has to return a string of HTML
