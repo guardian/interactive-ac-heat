@@ -1,9 +1,12 @@
 import * as d3 from 'd3';
 import * as topojson from 'topojson'
+import * as d3Beeswarm from 'd3-beeswarm'
 // import us from '../assets/us-map.json'
 import us from '../assets/us-geo.json'
 import temps from '../assets/us-climate.json'
 
+
+/* Map */
 const mapWidth = 1200;
 const mapHeight = 600;
 
@@ -60,3 +63,75 @@ const path = d3.geoPath()
   //   .attr("d", path(topojson.feature(us, us.objects.nation)))
   //   .attr('fill', 'none')
   //   .attr('stroke', 'black')
+
+/* Beeswarm */
+const plotWidth = 1000;
+const plotHeight = 600;
+const mobile = window.matchMedia('(max-width: 739px)').matches
+const padding = mobile ?
+  {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  }
+
+  : {
+    top: 100,
+    right: 0,
+    bottom: 40,
+    left: 20
+  }
+
+const totalCities = 50;
+const totalDays = 150;
+
+const xAxisPadding = 150;
+
+const bSvg = d3.select('.beeswarm').append('svg')
+  .attr('width', plotWidth)
+  .attr('height', plotHeight)
+
+const xScale = d3.scaleLinear()
+  .domain([0, totalDays])
+  .range([padding.left, plotWidth - padding.right])
+
+const yScale = d3.scaleLinear()
+  .domain([0, totalCities])
+  .range([padding.top, plotHeight - padding.bottom])
+
+const swarm = d3Beeswarm.beeswarm()
+  .data(temps)
+  .distributeOn(d => xScale(Math.round(Number(d['1981-2010']))))
+  .radius(3)
+  .orientation('horizontal')
+  .side('negative')
+  .arrange()
+
+
+// var cell = bSvg.append("g")
+//   .attr("class", "cells")
+//   .selectAll("g").data(d3.voronoi()
+//     .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+//     .x(function (d) { return d.x; })
+//     .y(function (d) { return d.y; })
+//     .polygons(swarm)).enter().append("g");
+
+
+
+bSvg.selectAll('circle')
+  .data(swarm)
+  .enter()
+
+  .append('circle')
+  .attr('id', b => b.datum['State'])
+  .attr('cx', b => b.x)
+  .attr('cy', b => b.y + xAxisPadding)
+  .attr('r', 2.5)
+  .style('fill', function (bee) {
+    // return fillScale(bee.datum.bar);
+    return 'blue'
+  })
+  .style('stroke', 'white')
+  .style('stroke-width', 0.5)
+

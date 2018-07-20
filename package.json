@@ -49,6 +49,7 @@
     "dependencies": {
         "csv-parse": "^2.5.0",
         "d3": "^5.5.0",
+        "d3-beeswarm": "0.0.5",
         "gulp-rename": "^1.2.2",
         "gulp-replace": "^0.6.1",
         "mustache": "^2.3.0",
