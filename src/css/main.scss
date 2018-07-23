@@ -7,5 +7,28 @@
 //@import "fullscreen";
 .element-atom,
 .interactive-atom {
-    margin: 0 !important;
+  margin: 0 !important;
+}
+
+
+.cells circle {
+  fill: blue;
+  stroke: white;
+  stroke-width: 0.5
+}
+
+.cells :hover circle {
+  fill: red;
+}
+
+.cells path {
+  fill: none;
+  pointer-events: all;
+}
+
+.xAxis path,
+.xAxis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
 }

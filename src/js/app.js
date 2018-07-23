@@ -109,29 +109,30 @@ const swarm = d3Beeswarm.beeswarm()
   .arrange()
 
 
-// var cell = bSvg.append("g")
-//   .attr("class", "cells")
-//   .selectAll("g").data(d3.voronoi()
-//     .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
-//     .x(function (d) { return d.x; })
-//     .y(function (d) { return d.y; })
-//     .polygons(swarm)).enter().append("g");
+const axisLayer = bSvg.append('g')
+  .attr('transform', `translate(0, ${plotHeight / 3})`)
+  .attr('class', 'xAxis')
+  .call(d3.axisBottom(xScale))
 
+// axisLayer.call(d3.axisBottom(xScale).ticks(20))
 
+const cell = bSvg.append("g")
+  .attr("class", "cells")
+  .selectAll("g").data(d3.voronoi()
+  .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+  .x(function (d) { return d.x; })
+  .y(function (d) { return d.y; })
+  .polygons(swarm)).enter().append("g");
 
-bSvg.selectAll('circle')
-  .data(swarm)
-  .enter()
-
-  .append('circle')
-  .attr('id', b => b.datum['State'])
-  .attr('cx', b => b.x)
-  .attr('cy', b => b.y + xAxisPadding)
+cell.append('circle')
+  .attr('cx', b => b.data.x)
+  .attr('cy', b => b.data.y + xAxisPadding)
   .attr('r', 2.5)
-  .style('fill', function (bee) {
-    // return fillScale(bee.datum.bar);
-    return 'blue'
-  })
-  .style('stroke', 'white')
-  .style('stroke-width', 0.5)
+
+cell.append("path")
+  .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
+
+
+
+
 
