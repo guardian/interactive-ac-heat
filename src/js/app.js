@@ -5,10 +5,11 @@ import * as d3Beeswarm from 'd3-beeswarm'
 import us from '../assets/us-geo.json'
 import temps from '../assets/us-climate.json'
 
-
 /* Map */
 const mapWidth = 1200;
 const mapHeight = 600;
+
+let period = '1981-2010';
 
 const svg = d3.select('.us-map').append('svg')
   .attr('width', mapWidth)
@@ -42,7 +43,7 @@ const path = d3.geoPath()
     // .style('fill', d => d.id === '06' ? 'yellow' : 'lightgrey')
     .style('fill', d => {
       const state = temps.find(s => d.properties.name === s['State'])
-      const historical = Number(state['1981-2010'])
+      const historical = Number(state[period])
       if (historical > 70) {
         return '#ff0000'
       } else if (historical > 50) {
@@ -66,7 +67,7 @@ const path = d3.geoPath()
 
 /* Beeswarm */
 const plotWidth = 1000;
-const plotHeight = 600;
+const plotHeight = 300;
 const mobile = window.matchMedia('(max-width: 739px)').matches
 const padding = mobile ?
   {
@@ -84,13 +85,28 @@ const padding = mobile ?
   }
 
 const totalCities = 50;
+
+//needs to be the highest value for the selected time period
 const totalDays = 150;
+
+const buildSwarm = yearRange =>
+  d3Beeswarm.beeswarm()
+    .data(temps)
+    .distributeOn(d => xScale(Math.round(Number(d[yearRange]))))
+    .radius(3)
+    .orientation('horizontal')
+    .side('negative')
+    .arrange()
+
 
 const xAxisPadding = 150;
 
 const bSvg = d3.select('.beeswarm').append('svg')
   .attr('width', plotWidth)
   .attr('height', plotHeight)
+
+const containerG = bSvg.append('g').attr('class', 'containerG')
+  .attr('transform', `translate(${padding.left}, ${xAxisPadding})`)
 
 const xScale = d3.scaleLinear()
   .domain([0, totalDays])
@@ -100,39 +116,87 @@ const yScale = d3.scaleLinear()
   .domain([0, totalCities])
   .range([padding.top, plotHeight - padding.bottom])
 
-const swarm = d3Beeswarm.beeswarm()
-  .data(temps)
-  .distributeOn(d => xScale(Math.round(Number(d['1981-2010']))))
-  .radius(3)
-  .orientation('horizontal')
-  .side('negative')
-  .arrange()
+const swarm = buildSwarm(period)
 
 
-const axisLayer = bSvg.append('g')
-  .attr('transform', `translate(0, ${plotHeight / 3})`)
+const axisLayer = containerG.append('g')
+  .attr('transform', `translate(${0}, ${5})`)
   .attr('class', 'xAxis')
-  .call(d3.axisBottom(xScale))
 
-// axisLayer.call(d3.axisBottom(xScale).ticks(20))
+axisLayer.call(d3.axisBottom(xScale))
 
-const cell = bSvg.append("g")
+
+// xstops
+axisLayer.append('line')
+  .attr('x1', xScale(20))
+  .attr('x2', xScale(20))
+  .attr('y1', yScale(- totalDays))
+  .attr('class', 'xStop')
+
+axisLayer.append('line')
+  .attr('x1', xScale(40))
+  .attr('x2', xScale(40))
+  .attr('y1', yScale(- totalDays))
+  .attr('class', 'xStop')
+
+const cells = containerG.append("g")
   .attr("class", "cells")
-  .selectAll("g").data(d3.voronoi()
-  .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
-  .x(function (d) { return d.x; })
-  .y(function (d) { return d.y; })
-  .polygons(swarm)).enter().append("g");
+  .selectAll("g")
+  .data(
+    d3.voronoi()
+    .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+    .x(function (d) { return d.x; })
+    .y(function (d) { return d.y; })
+    .polygons(swarm)
+  )
 
-cell.append('circle')
+const circles = cells.enter().append('circle')
   .attr('cx', b => b.data.x)
-  .attr('cy', b => b.data.y + xAxisPadding)
+  .attr('cy', b => b.data.y)
   .attr('r', 2.5)
+  .attr("id", d => `circle-${d.data.datum['State']}`)
 
-cell.append("path")
+const paths = cells.enter().append("path")
   .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
+  .attr("id", d => d.data.datum['State'])
+  .attr("class", 'voronoi')
+  .on('mouseover', d =>
+    d3.select(`#circle-${d.data.datum['State']}`)
+      .classed('highlight', true)
+  )
+  .on('mouseout', d =>
+    d3.select(`#circle-${d.data.datum['State']}`)
+      .classed('highlight', false)
+  )
 
 
+// transitions
 
+const transitionSwarm = (period) => {
+  const newSwarm = buildSwarm(period)
+  
+  const newSwarmData = d3.voronoi()
+    .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+    .x(function (d) { return d.x; })
+    .y(function (d) { return d.y; })
+    .polygons(newSwarm);
 
+  circles.data(newSwarmData)
+  paths.data(newSwarmData)
 
+  circles
+    .transition()
+    .duration(2000)
+    .attr('cx', b => b.data.x)
+    .attr('cy', b => b.data.y)
+    .attr('r', 2.5)
+
+  paths
+    .transition()
+    .duration(2000)
+    .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
+}
+
+document.getElementById("future-one").addEventListener("click", () => transitionSwarm('2020-2039'));
+document.getElementById("future-two").addEventListener("click", () => transitionSwarm('2040-2059'));
+document.getElementById("historical").addEventListener("click", () => transitionSwarm('1981-2010'));

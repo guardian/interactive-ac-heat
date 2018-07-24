@@ -17,13 +17,21 @@
   stroke-width: 0.5
 }
 
-.cells :hover circle {
-  fill: red;
+.cells circle {
+  &:hover {
+    fill: red;
+  }
 }
 
 .cells path {
   fill: none;
+  // stroke: black;
   pointer-events: all;
+
+  &:hover{
+    // fill: #f6f6f6;
+    // stroke: red;
+  }
 }
 
 .xAxis path,
@@ -31,4 +39,14 @@
   fill: none;
   stroke: #000;
   shape-rendering: crispEdges;
+}
+
+.xStop {
+  shape-rendering: crispEdges;
+}
+
+.highlight {
+  fill: red !important;
+  r: 5;
+  stroke-width: 1
 }
