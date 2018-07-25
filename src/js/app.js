@@ -123,8 +123,14 @@ const axisLayer = containerG.append('g')
   .attr('transform', `translate(${0}, ${5})`)
   .attr('class', 'xAxis')
 
-axisLayer.call(d3.axisBottom(xScale))
+axisLayer.append('rect')
+  .attr('x', xScale(20))
+  .attr('y', yScale(- totalDays))
+  .attr('width', xScale(40) - xScale(20))
+  .attr('height', - yScale(- totalDays))
+  .attr('class', 'temp-area')
 
+axisLayer.call(d3.axisBottom(xScale))
 
 // xstops
 axisLayer.append('line')
@@ -150,20 +156,30 @@ const cells = containerG.append("g")
     .polygons(swarm)
   )
 
-const circles = cells.enter().append('circle')
-  .attr('cx', b => b.data.x)
-  .attr('cy', b => b.data.y)
-  .attr('r', 2.5)
-  .attr("id", d => `circle-${d.data.datum['State']}`)
+const circles = cells.enter()
+  .append('g')
+    .attr('id', d => `circle-${d.data.datum['State']}`)
+    .attr('class', 'circle-group')
+    .append('circle')
+      .attr('cx', b => b.data.x)
+      .attr('cy', b => b.data.y)
+      .attr('r', 2.5)
 
 const paths = cells.enter().append("path")
   .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
   .attr("id", d => d.data.datum['State'])
   .attr("class", 'voronoi')
-  .on('mouseover', d =>
-    d3.select(`#circle-${d.data.datum['State']}`)
+  .on('mouseover', d => {
+    const circleGroup = d3.select(`#circle-${d.data.datum['State']}`)
       .classed('highlight', true)
-  )
+
+    circleGroup
+      .append('text')
+      .text('frango')
+      .attr('class', 'circle-label')
+      .attr('dx', 0)
+      .attr('dy', 0)
+  })
   .on('mouseout', d =>
     d3.select(`#circle-${d.data.datum['State']}`)
       .classed('highlight', false)
