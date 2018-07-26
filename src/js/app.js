@@ -169,21 +169,25 @@ const paths = cells.enter().append("path")
   .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
   .attr("id", d => d.data.datum['State'])
   .attr("class", 'voronoi')
-  .on('mouseover', d => {
+  .on('mouseover', function(d) {
+
     const circleGroup = d3.select(`#circle-${d.data.datum['State']}`)
       .classed('highlight', true)
 
     circleGroup
       .append('text')
-      .text('frango')
+      .text(d => d.data.datum['State'])
       .attr('class', 'circle-label')
-      .attr('dx', 0)
-      .attr('dy', 0)
+      .attr('x', () => circleGroup.select('circle').attr('cx'))
+      .attr('y', () => circleGroup.select('circle').attr('cy'))
+      .attr('dy', -10)
   })
-  .on('mouseout', d =>
-    d3.select(`#circle-${d.data.datum['State']}`)
+  .on('mouseout', d => {
+    const circle = d3.select(`#circle-${d.data.datum['State']}`)
       .classed('highlight', false)
-  )
+    
+    circle.select('text').remove()
+  })
 
 
 // transitions
