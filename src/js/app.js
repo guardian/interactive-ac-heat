@@ -66,7 +66,7 @@ const path = d3.geoPath()
   //   .attr('stroke', 'black')
 
 /* Beeswarm */
-const plotWidth = 1000;
+const plotWidth = 600;
 const plotHeight = 300;
 const mobile = window.matchMedia('(max-width: 739px)').matches
 const padding = mobile ?
@@ -79,7 +79,7 @@ const padding = mobile ?
 
   : {
     top: 100,
-    right: 0,
+    right: 20,
     bottom: 40,
     left: 20
   }
@@ -110,7 +110,7 @@ const containerG = bSvg.append('g').attr('class', 'containerG')
 
 const xScale = d3.scaleLinear()
   .domain([0, totalDays])
-  .range([padding.left, plotWidth - padding.right])
+  .range([padding.left, plotWidth - padding.right -padding.left])
 
 const yScale = d3.scaleLinear()
   .domain([0, totalCities])
@@ -130,6 +130,22 @@ axisLayer.append('rect')
   .attr('height', - yScale(- totalDays))
   .attr('class', 'temp-area')
 
+axisLayer.append('text')
+  .text('Days per year above 25°C ')
+  .attr('x', plotWidth - padding.right -100)
+  .attr('dy', 40)
+
+axisLayer.append('text')
+  .text(period)
+  .attr('class', 'period')
+  .attr('x', plotWidth / 2)
+  .attr('dy', 60)
+
+axisLayer.append('text')
+  .text('Warmer cities →')
+  .attr('x', plotWidth - padding.right - 100)
+  .attr('dy', -totalDays+ 20)
+
 axisLayer.call(d3.axisBottom(xScale))
 
 // xstops
@@ -145,48 +161,48 @@ axisLayer.append('line')
   .attr('y1', yScale(- totalDays))
   .attr('class', 'xStop')
 
+const voronoi = d3.voronoi()
+  .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+  .x(function (d) { return d.x; })
+  .y(function (d) { return d.y; })
+  .polygons(swarm)
+
 const cells = containerG.append("g")
   .attr("class", "cells")
   .selectAll("g")
   .data(
-    d3.voronoi()
-    .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
-    .x(function (d) { return d.x; })
-    .y(function (d) { return d.y; })
-    .polygons(swarm)
+  voronoi
   )
 
 const circles = cells.enter()
-  .append('g')
-    .attr('id', d => `circle-${d.data.datum['State']}`)
-    .attr('class', 'circle-group')
-    .append('circle')
+  // .append('g')
+  .append('circle')
+  .attr('id', d => `circle-${d.data.datum['State']}`)
+  .attr('class', 'circle')
       .attr('cx', b => b.data.x)
       .attr('cy', b => b.data.y)
-      .attr('r', 2.5)
+  .attr('r', d => Math.floor(d.data.datum['State'].length/2))
 
 const paths = cells.enter().append("path")
   .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
   .attr("id", d => d.data.datum['State'])
   .attr("class", 'voronoi')
-  .on('mouseover', function(d) {
+  .on('mouseover', d => {
 
-    const circleGroup = d3.select(`#circle-${d.data.datum['State']}`)
-      .classed('highlight', true)
+    const circle = d3.select(`#circle-${d.data.datum['State']}`)
 
-    circleGroup
-      .append('text')
-      .text(d => d.data.datum['State'])
-      .attr('class', 'circle-label')
-      .attr('x', () => circleGroup.select('circle').attr('cx'))
-      .attr('y', () => circleGroup.select('circle').attr('cy'))
-      .attr('dy', -10)
+    circle.classed('highlight', true)
+    containerG.append('text')
+      .text(() => d.data.datum['State'])
+        .attr('class', 'circle-label')
+        .attr('x', () => circle.attr('cx'))
+        .attr('y', () => circle.attr('cy'))
+        .attr('dy', -10)
   })
   .on('mouseout', d => {
-    const circle = d3.select(`#circle-${d.data.datum['State']}`)
+    d3.select(`#circle-${d.data.datum['State']}`)
       .classed('highlight', false)
-    
-    circle.select('text').remove()
+    containerG.select('.circle-label').remove()
   })
 
 
@@ -194,7 +210,7 @@ const paths = cells.enter().append("path")
 
 const transitionSwarm = (period) => {
   const newSwarm = buildSwarm(period)
-  
+
   const newSwarmData = d3.voronoi()
     .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
     .x(function (d) { return d.x; })
@@ -209,7 +225,7 @@ const transitionSwarm = (period) => {
     .duration(2000)
     .attr('cx', b => b.data.x)
     .attr('cy', b => b.data.y)
-    .attr('r', 2.5)
+    // .attr('r', 2.5)
 
   paths
     .transition()
@@ -217,6 +233,15 @@ const transitionSwarm = (period) => {
     .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
 }
 
-document.getElementById("future-one").addEventListener("click", () => transitionSwarm('2020-2039'));
-document.getElementById("future-two").addEventListener("click", () => transitionSwarm('2040-2059'));
-document.getElementById("historical").addEventListener("click", () => transitionSwarm('1981-2010'));
+document.getElementById("future-one").addEventListener("click", () => { 
+  transitionSwarm('2020-2039')
+  d3.select('.period').text('2020-2039')
+});
+document.getElementById("future-two").addEventListener("click", () => {
+  transitionSwarm('2040-2059')
+  d3.select('.period').text('2040-2059')
+});
+document.getElementById("historical").addEventListener("click", () => {
+  transitionSwarm('1981-2010')
+  d3.select('.period').text('1981-2010')
+});

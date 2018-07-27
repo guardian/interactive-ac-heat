@@ -52,7 +52,7 @@
   shape-rendering: crispEdges;
 }
 
-.highlight circle {
+.highlight {
   fill: #ff7f0f !important;
   r: 5;
   stroke-width: 1
@@ -66,4 +66,9 @@
 .circle-label {
   fill: #333333;
   text-anchor: middle;
+}
+
+.period {
+  font-size: 18px;
+  font-weight: 600;
 }
