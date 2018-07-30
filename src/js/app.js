@@ -67,7 +67,7 @@ const path = d3.geoPath()
 
 /* Beeswarm */
 const plotWidth = 600;
-const plotHeight = 300;
+const plotHeight = 400;
 const mobile = window.matchMedia('(max-width: 739px)').matches
 const padding = mobile ?
   {
@@ -93,13 +93,13 @@ const buildSwarm = yearRange =>
   d3Beeswarm.beeswarm()
     .data(temps)
     .distributeOn(d => xScale(Math.round(Number(d[yearRange]))))
-    .radius(3)
+    .radius(4)
     .orientation('horizontal')
     .side('negative')
     .arrange()
 
 
-const xAxisPadding = 150;
+const xAxisPadding = 200;
 
 const bSvg = d3.select('.beeswarm').append('svg')
   .attr('width', plotWidth)
@@ -117,7 +117,6 @@ const yScale = d3.scaleLinear()
   .range([padding.top, plotHeight - padding.bottom])
 
 const swarm = buildSwarm(period)
-
 
 const axisLayer = containerG.append('g')
   .attr('transform', `translate(${0}, ${5})`)
@@ -144,7 +143,8 @@ axisLayer.append('text')
 axisLayer.append('text')
   .text('Warmer cities →')
   .attr('x', plotWidth - padding.right - 100)
-  .attr('dy', -totalDays+ 20)
+  // .attr('dy', -totalDays+ 20)
+  .attr('dy', -xAxisPadding + 20)
 
 axisLayer.call(d3.axisBottom(xScale))
 
@@ -170,18 +170,16 @@ const voronoi = d3.voronoi()
 const cells = containerG.append("g")
   .attr("class", "cells")
   .selectAll("g")
-  .data(
-  voronoi
-  )
+  .data(voronoi)
 
 const circles = cells.enter()
   // .append('g')
   .append('circle')
   .attr('id', d => `circle-${d.data.datum['State']}`)
   .attr('class', 'circle')
-      .attr('cx', b => b.data.x)
-      .attr('cy', b => b.data.y)
-  .attr('r', d => Math.floor(d.data.datum['State'].length/2))
+  .attr('cx', b => b.data.x)
+  .attr('cy', b => b.data.y)
+  .attr('r', d => Math.floor(d.data.datum['State'].length/3))
 
 const paths = cells.enter().append("path")
   .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
@@ -222,6 +220,7 @@ const transitionSwarm = (period) => {
 
   circles
     .transition()
+    .ease(d3.easeCubicOut)
     .duration(2000)
     .attr('cx', b => b.data.x)
     .attr('cy', b => b.data.y)
