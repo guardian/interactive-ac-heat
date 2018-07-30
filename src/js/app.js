@@ -93,7 +93,7 @@ const buildSwarm = yearRange =>
   d3Beeswarm.beeswarm()
     .data(temps)
     .distributeOn(d => xScale(Math.round(Number(d[yearRange]))))
-    .radius(4)
+    .radius(5)
     .orientation('horizontal')
     .side('negative')
     .arrange()
@@ -118,6 +118,7 @@ const yScale = d3.scaleLinear()
 
 const swarm = buildSwarm(period)
 
+
 const axisLayer = containerG.append('g')
   .attr('transform', `translate(${0}, ${5})`)
   .attr('class', 'xAxis')
@@ -132,7 +133,7 @@ axisLayer.append('rect')
 axisLayer.append('rect')
   .attr('x', xScale(40))
   .attr('y', yScale(- totalDays))
-  .attr('width', xScale(totalDays) - xScale(20))
+  .attr('width', xScale(totalDays) - xScale(40))
   .attr('height', - yScale(- totalDays))
   .attr('class', 'temp-area-hot')
 
@@ -176,7 +177,8 @@ axisLayer.append('line')
   .attr('class', 'xStop')
 
 const voronoi = d3.voronoi()
-  .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+  // .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+  .extent([[-padding.left, -padding.top - xAxisPadding], [plotWidth + padding.right, plotHeight + padding.top]])
   .x(function (d) { return d.x; })
   .y(function (d) { return d.y; })
   .polygons(swarm)
@@ -224,7 +226,7 @@ const transitionSwarm = (period) => {
   const newSwarm = buildSwarm(period)
 
   const newSwarmData = d3.voronoi()
-    .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
+    .extent([[-padding.left, -padding.top - xAxisPadding], [plotWidth + padding.right, plotHeight + padding.top]])
     .x(function (d) { return d.x; })
     .y(function (d) { return d.y; })
     .polygons(newSwarm);
