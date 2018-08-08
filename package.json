@@ -47,6 +47,7 @@
         "webpack-stream": "^3.2.0"
     },
     "dependencies": {
+        "axios": "^0.18.0",
         "csv-parse": "^2.5.0",
         "d3": "^5.5.0",
         "d3-beeswarm": "0.0.5",
