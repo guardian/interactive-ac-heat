@@ -7,6 +7,21 @@ import cities from '../assets/cleanCitySubset.json'
 // import us from '../assets/us-map.json'
 // import us from '../assets/us-geo.json'
 import temps from '../assets/us-climate.json'
+import mustache from 'mustache'
+import cities from '../data/cleanCitySubset.json'
+import tabletemplate from '!raw-loader!./../templates/table.html'
+
+var searchEl = document.getElementById("gv-search-field");
+var tablediv = document.querySelector(".gv-table")
+searchEl.addEventListener("keyup", function() {
+  var criterion = searchEl.value;
+  console.log(criterion);
+  var tablehtml = mustache.render(tabletemplate,cities.filter(c => c.cityName.indexOf(criterion) > 0));  
+  tablediv.innerHTML = tablehtml;
+})
+
+
+
 
 const d3 = Object.assign({}, d3base, d3gp);
 
@@ -268,3 +283,6 @@ document.getElementById("historical").addEventListener("click", () => {
   transitionSwarm('1981-2010')
   d3.select('.period').text('1981-2010')
 });
+
+
+
