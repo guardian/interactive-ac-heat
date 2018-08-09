@@ -3,10 +3,9 @@ import * as d3gp from 'd3-geo-projection';
 import * as topojson from 'topojson'
 import world from 'world-atlas/world/110m.json'
 import * as d3Beeswarm from 'd3-beeswarm'
-import cities from '../assets/cleanCitySubset.json'
+// import cities from '../assets/cleanCitySubset.json'
 // import us from '../assets/us-map.json'
 // import us from '../assets/us-geo.json'
-import temps from '../assets/us-climate.json'
 import mustache from 'mustache'
 import cities from '../data/cleanCitySubset.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
@@ -31,11 +30,15 @@ console.log(cities);
 var searchEl = document.getElementById("gv-search-field");
 var tablediv = document.querySelector(".gv-table");
 
-searchEl.addEventListener("focus", function() {
-  searchEl.value = "";
-})
+// searchEl.addEventListener("focus", function() {
+//   searchEl.value = "";
+// })
 
 searchEl.addEventListener("keyup", function() {
+// var tablediv = document.querySelector(".gv-table")
+const mapSvgEl = document.querySelector(".world-map")
+
+searchEl && searchEl.addEventListener("keyup", function() {
   var criterion = searchEl.value;
   if (criterion.length > 2 && criterion != "Find your city"){
     var tablehtml = mustache.render(tabletemplate,cities.filter(c => c.cityName.toLowerCase().indexOf(criterion.toLowerCase()) > -1));  
@@ -52,19 +55,20 @@ searchEl.addEventListener("keyup", function() {
 const d3 = Object.assign({}, d3base, d3gp);
 
 /* Map */
-const mapWidth = 1200;
-const mapHeight = 600;
+const mapWidth = mapSvgEl.getBoundingClientRect().width
+const mapHeight = 0.5 * mapWidth
 
 let period = '1981-2010';
 
-const svg = d3.select('.us-map').append('svg')
+const svg = d3.select(mapSvgEl).append('svg')
   .attr('width', mapWidth)
   .attr('height', mapHeight)
 
 const fc = topojson.feature(world, world.objects.countries)
 
-const proj = d3.geoNaturalEarth2()
+const proj = d3.geoRobinson()
   .fitSize([mapWidth, mapHeight], fc)
+  .rotate([-18, 0, 0])
 
 const path = d3.geoPath()
   .projection(proj)
@@ -95,8 +99,11 @@ const cityCircles = svg
   .attr('cy', d => proj([d.lon, d.lat])[1])
   .attr('r', '2px')
   .attr('class', d => {
-    const needAC = d.tavg > 26.5;
-    const noNeedAC = d.tavg <= 26.5 && d.tmax <= 28;
+    // const needAC = d.tAvgHot > 26.5;
+    // const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
+    // const needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
+    // const noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+
     // const needHeat = d.tavg coldest < 13 // || d.tmin < 7;
     // const noNeedHeat = d.tavg coldest >= 13 // && d.tmin >= 7;
     if (needAC) {
@@ -113,78 +120,6 @@ const cityCircles = svg
 
 // tavg in coldest > 13 && tmin in coldest > 7  => NO NEED HEAT
 
-
-/* Beeswarm */
-const plotWidth = 600;
-const plotHeight = 400;
-const mobile = window.matchMedia('(max-width: 739px)').matches
-const padding = mobile ?
-  {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0
-  }
-
-// /* Map */
-// const mapWidth = 1200;
-// const mapHeight = 600;
-
-// let period = '1981-2010';
-
-// const svg = d3.select('.us-map').append('svg')
-//   .attr('width', mapWidth)
-//   .attr('height', mapHeight)
-
-// const proj = d3.geoAlbers()
-//   .fitSize([mapWidth, mapHeight], us)
-
-// const path = d3.geoPath()
-//   .projection(proj)
-
-//   // svg.append("path")
-//   //   .attr("stroke", "#aaa")
-//   //   .attr("stroke-width", 0.5)
-//   //   .attr('fill', 'none')
-//   //   .attr("d", path(topojson.mesh(us, us.objects.counties, function (a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); })));
-
-//   // svg.append("path")
-//   //   .attr("stroke-width", 0.5)
-//   //   .attr('stroke', 'black')
-//   //   // .attr("d", path(topojson.mesh(us, us.objects.states, (a, b) => a !== b)))
-//   //   .attr("d", path(topojson.mesh(us, us.objects.states, (a, b) => a !== b)))
-//   //   .style('fill', 'yellow')
-
-//   svg.selectAll('state')
-//     // .data(topojson.feature(us, us.objects.states).features)
-//     .data(us.features)
-//     .enter()
-//     .append('path')
-//     .attr('d', path)
-//     // .style('fill', d => d.id === '06' ? 'yellow' : 'lightgrey')
-//     .style('fill', d => {
-//       const state = temps.find(s => d.properties.name === s['State'])
-//       const historical = Number(state[period])
-//       if (historical > 70) {
-//         return '#ff0000'
-//       } else if (historical > 50) {
-//         return '#ff6d00'
-//       } else if (historical > 30) {
-//         return '#ffa200'
-//       } else if (historical > 10) {
-//         return '#fed033'
-//       }
-//       else {
-//         return '#fafa6e'
-//       }
-//     })
-//     .style('stroke', 'black')
-//     .attr("stroke-width", 0.5)
-
-//   // svg.append("path")
-//   //   .attr("d", path(topojson.feature(us, us.objects.nation)))
-//   //   .attr('fill', 'none')
-//   //   .attr('stroke', 'black')
 
 // /* Beeswarm */
 // const plotWidth = 600;

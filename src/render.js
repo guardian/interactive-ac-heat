@@ -1,5 +1,6 @@
 import templateHTML from "./src/templates/main.html!text"
 import headerHTML from "./src/templates/header.html!text"
+import keyHTML from "./src/templates/key.html!text"
 import fs from 'fs'
 import csvParse from 'csv-parse/lib/sync';
 import tablerender from './tablerender'
@@ -7,9 +8,9 @@ import tablerender from './tablerender'
 // import usData from '../assets/us-climate.csv';
 import axios from 'axios'
 
-const csv = fs.readFileSync('src/assets/us-climate.csv', 'utf8')
+// const csv = fs.readFileSync('src/assets/us-climate.csv', 'utf8')
 
-const parsed = csvParse(csv, { columns: true })
+// const parsed = csvParse(csv, { columns: true })
 
 
 
@@ -18,5 +19,5 @@ const parsed = csvParse(csv, { columns: true })
 export async function render() {
     // var tablehtml = await tablerender('rra');
     // console.log(tablehtml);
-    return (headerHTML + templateHTML);
+    return (headerHTML + keyHTML + '<div class="world-map"></div>' + templateHTML);
 }
