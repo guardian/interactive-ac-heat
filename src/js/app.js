@@ -1,9 +1,14 @@
-import * as d3 from 'd3';
+import * as d3base from 'd3';
+import * as d3gp from 'd3-geo-projection';
 import * as topojson from 'topojson'
+import world from 'world-atlas/world/110m.json'
 import * as d3Beeswarm from 'd3-beeswarm'
+import cities from '../assets/cleanCitySubset.json'
 // import us from '../assets/us-map.json'
-import us from '../assets/us-geo.json'
+// import us from '../assets/us-geo.json'
 import temps from '../assets/us-climate.json'
+
+const d3 = Object.assign({}, d3base, d3gp);
 
 /* Map */
 const mapWidth = 1200;
@@ -15,55 +20,58 @@ const svg = d3.select('.us-map').append('svg')
   .attr('width', mapWidth)
   .attr('height', mapHeight)
 
-const proj = d3.geoAlbers()
-  .fitSize([mapWidth, mapHeight], us)
+const fc = topojson.feature(world, world.objects.countries)
+
+const proj = d3.geoNaturalEarth2()
+  .fitSize([mapWidth, mapHeight], fc)
 
 const path = d3.geoPath()
   .projection(proj)
 
-  // svg.append("path")
-  //   .attr("stroke", "#aaa")
-  //   .attr("stroke-width", 0.5)
-  //   .attr('fill', 'none')
-  //   .attr("d", path(topojson.mesh(us, us.objects.counties, function (a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); })));
 
-  // svg.append("path")
-  //   .attr("stroke-width", 0.5)
-  //   .attr('stroke', 'black')
-  //   // .attr("d", path(topojson.mesh(us, us.objects.states, (a, b) => a !== b)))
-  //   .attr("d", path(topojson.mesh(us, us.objects.states, (a, b) => a !== b)))
-  //   .style('fill', 'yellow')
-
-  svg.selectAll('state')
-    // .data(topojson.feature(us, us.objects.states).features)
-    .data(us.features)
+  svg.append("path")
+    .attr("stroke", "#b3b3b4")
+    .attr("stroke-width", 0.5)
+    .attr('fill', 'none')
+    // .attr("d", path(topojson.mesh(us, us.objects.counties, function (a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); })));
+    
+  svg.selectAll('countries')
+    .data(fc.features)
     .enter()
     .append('path')
     .attr('d', path)
-    // .style('fill', d => d.id === '06' ? 'yellow' : 'lightgrey')
-    .style('fill', d => {
-      const state = temps.find(s => d.properties.name === s['State'])
-      const historical = Number(state[period])
-      if (historical > 70) {
-        return '#ff0000'
-      } else if (historical > 50) {
-        return '#ff6d00'
-      } else if (historical > 30) {
-        return '#ffa200'
-      } else if (historical > 10) {
-        return '#fed033'
-      }
-      else {
-        return '#fafa6e'
-      }
-    })
-    .style('stroke', 'black')
+    .style('fill', '#dcdcdc')
+    .style('opacity', 0.4)
+    .style('stroke', '#b3b3b4')
     .attr("stroke-width", 0.5)
 
-  // svg.append("path")
-  //   .attr("d", path(topojson.feature(us, us.objects.nation)))
-  //   .attr('fill', 'none')
-  //   .attr('stroke', 'black')
+const cityCircles = svg
+  .selectAll('circle')
+  .data(cities)
+  .enter()
+  .append('circle')
+  .attr('cx', d => proj([d.lon, d.lat])[0])
+  .attr('cy', d => proj([d.lon, d.lat])[1])
+  .attr('r', '2px')
+  .attr('class', d => {
+    const needAC = d.tavg > 26.5;
+    const noNeedAC = d.tavg <= 26.5 && d.tmax <= 28;
+    // const needHeat = d.tavg coldest < 13 // || d.tmin < 7;
+    // const noNeedHeat = d.tavg coldest >= 13 // && d.tmin >= 7;
+    if (needAC) {
+      return 'need-2'
+    } else {
+      return 'noneed'
+    }
+  })
+// tavg in hottest > 26.5 => NEED AC
+
+// tavg in hott < 26.5 && tmax hott < 28 => NO NEED AC
+
+// tavg in coldest < 13 || tmin in coldest < 7 => NEED HEAT
+
+// tavg in coldest > 13 && tmin in coldest > 7  => NO NEED HEAT
+
 
 /* Beeswarm */
 const plotWidth = 600;

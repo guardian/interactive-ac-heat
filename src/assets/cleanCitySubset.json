@@ -1,0 +1,2824 @@
+[
+  {
+    "cityName": "Dubai, AE",
+    "stationId": "GHCND:AE000041196",
+    "lat": 25.333,
+    "lon": 55.517,
+    "tmax": 42.67014115092294,
+    "tavg": 34.95170556552969
+  },
+  {
+    "cityName": "Ajman, AE",
+    "stationId": "GHCND:AE000041196",
+    "lat": 25.333,
+    "lon": 55.517,
+    "tmax": 42.67014115092294,
+    "tavg": 34.95170556552969
+  },
+  {
+    "cityName": "Sharjah, AE",
+    "stationId": "GHCND:AE000041196",
+    "lat": 25.333,
+    "lon": 55.517,
+    "tmax": 42.67014115092294,
+    "tavg": 34.95170556552969
+  },
+  {
+    "cityName": "Kabul, AF",
+    "stationId": "GHCND:AFM00040948",
+    "lat": 34.566,
+    "lon": 69.212,
+    "tmax": 33.30115606936414,
+    "tavg": 26.77724252491693
+  },
+  {
+    "cityName": "Kandahar, AF",
+    "stationId": "GHCND:AFM00040990",
+    "lat": 31.5,
+    "lon": 65.85,
+    "tmax": 40.813333333333325,
+    "tavg": 33.14982078853046
+  },
+  {
+    "cityName": "Algiers, AG",
+    "stationId": "GHCND:AGM00060369",
+    "lat": 36.767,
+    "lon": 3.1,
+    "tmax": 29.99072164948453,
+    "tavg": 26.83379629629631
+  },
+  {
+    "cityName": "Batna, AG",
+    "stationId": "GHCND:AGM00060468",
+    "lat": 35.55,
+    "lon": 6.183,
+    "tmax": 35.110999999999976,
+    "tavg": 26.90067178502878
+  },
+  {
+    "cityName": "Annaba, AG",
+    "stationId": "GHCND:AGM00060360",
+    "lat": 36.822,
+    "lon": 7.809,
+    "tmax": 31.426315789473684,
+    "tavg": 25.879874213836494
+  },
+  {
+    "cityName": "Bejaia, AG",
+    "stationId": "GHCND:AGE00147710",
+    "lat": 36.75,
+    "lon": 5.1,
+    "tmax": 31.839805825242706,
+    "tavg": 28.737735849056588
+  },
+  {
+    "cityName": "Bechar, AG",
+    "stationId": "GHCND:AGM00060571",
+    "lat": 31.646,
+    "lon": -2.27,
+    "tmax": 40.43085339168492,
+    "tavg": 34.387195671776354
+  },
+  {
+    "cityName": "Constantine, AG",
+    "stationId": "GHCND:AGM00060419",
+    "lat": 36.276,
+    "lon": 6.62,
+    "tmax": 34.42132505175986,
+    "tavg": 26.00259856630824
+  },
+  {
+    "cityName": "Laghouat, AG",
+    "stationId": "GHCND:AGE00147719",
+    "lat": 33.7997,
+    "lon": 2.89,
+    "tmax": 38.52336956521738,
+    "tavg": 32.09821428571425
+  },
+  {
+    "cityName": "Mostaganem, AG",
+    "stationId": "GHCND:AGM00060457",
+    "lat": 35.883,
+    "lon": 0.117,
+    "tmax": 31.828990228013055,
+    "tavg": 26.075993883792055
+  },
+  {
+    "cityName": "Oran, AG",
+    "stationId": "GHCND:AGM00060452",
+    "lat": 35.817,
+    "lon": -0.267,
+    "tmax": 29.97233429394812,
+    "tavg": 26.409333333333304
+  },
+  {
+    "cityName": "Skikda, AG",
+    "stationId": "GHCND:AGM00060355",
+    "lat": 36.933,
+    "lon": 6.95,
+    "tmax": 29.19619852164732,
+    "tavg": 26.134865900383154
+  },
+  {
+    "cityName": "Tirana, AL",
+    "stationId": "GHCND:ALM00013615",
+    "lat": 41.415,
+    "lon": 19.721,
+    "tmax": 32.09664948453607,
+    "tavg": 25.259766081871327
+  },
+  {
+    "cityName": "Luanda, AO",
+    "stationId": "GHCND:AO000066160",
+    "lat": -8.85,
+    "lon": 13.233,
+    "tmax": 31.72641509433962,
+    "tavg": 27.741033434650447
+  },
+  {
+    "cityName": "Lubango, AO",
+    "stationId": "GHCND:AO000066390",
+    "lat": -14.933,
+    "lon": 13.567,
+    "tmax": 30.925,
+    "tavg": 25.31578947368422
+  },
+  {
+    "cityName": "Bahia Blanca, AR",
+    "stationId": "GHCND:AR000877500",
+    "lat": -38.733,
+    "lon": -62.167,
+    "tmax": 31.39457964601771,
+    "tavg": 23.72459016393443
+  },
+  {
+    "cityName": "Buenos Aires, AR",
+    "stationId": "GHCND:ARM00087576",
+    "lat": -34.822,
+    "lon": -58.536,
+    "tmax": 31.57660044150109,
+    "tavg": 24.044843049327383
+  },
+  {
+    "cityName": "Catamarca, AR",
+    "stationId": "GHCND:ARM00087222",
+    "lat": -28.596,
+    "lon": -65.752,
+    "tmax": 35.509567198177685,
+    "tavg": 28.019051959890568
+  },
+  {
+    "cityName": "Comodoro Rivadavia, AR",
+    "stationId": "GHCND:AR000087860",
+    "lat": -45.783,
+    "lon": -67.5,
+    "tmax": 26.424315789473724,
+    "tavg": 19.675022461814905
+  },
+  {
+    "cityName": "Formosa, AR",
+    "stationId": "GHCND:ARM00087162",
+    "lat": -26.213,
+    "lon": -58.228,
+    "tmax": 35.21357758620688,
+    "tavg": 27.772612612612594
+  },
+  {
+    "cityName": "Corrientes, AR",
+    "stationId": "GHCND:AR000087155",
+    "lat": -27.45,
+    "lon": -59.05,
+    "tmax": 33.61808158765157,
+    "tavg": 26.834023402340208
+  },
+  {
+    "cityName": "La Plata, AR",
+    "stationId": "GHCND:ARM00087593",
+    "lat": -34.972,
+    "lon": -57.895,
+    "tmax": 30.236549707602332,
+    "tavg": 24.32425421530481
+  },
+  {
+    "cityName": "La Rioja, AR",
+    "stationId": "GHCND:AR000087217",
+    "lat": -29.383,
+    "lon": -66.817,
+    "tmax": 34.99879518072288,
+    "tavg": 27.961801801801798
+  },
+  {
+    "cityName": "Neuquen, AR",
+    "stationId": "GHCND:AR000087715",
+    "lat": -38.95,
+    "lon": -68.133,
+    "tmax": 32.1910901467505,
+    "tavg": 24.017647058823496
+  },
+  {
+    "cityName": "Parana, AR",
+    "stationId": "GHCND:AR000087374",
+    "lat": -31.783,
+    "lon": -60.483,
+    "tmax": 31.43333333333332,
+    "tavg": 25.1460885956645
+  },
+  {
+    "cityName": "Posadas, AR",
+    "stationId": "GHCND:PA000086297",
+    "lat": -27.3,
+    "lon": -55.9,
+    "tmax": 33.76338582677169,
+    "tavg": 27.075873731679803
+  },
+  {
+    "cityName": "Rio Gallegos, AR",
+    "stationId": "GHCND:AR000087925",
+    "lat": -51.617,
+    "lon": -69.283,
+    "tmax": 20.20585774058576,
+    "tavg": 13.722723174030657
+  },
+  {
+    "cityName": "Resistencia, AR",
+    "stationId": "GHCND:AR000087155",
+    "lat": -27.45,
+    "lon": -59.05,
+    "tmax": 33.61808158765155,
+    "tavg": 26.834023402340208
+  },
+  {
+    "cityName": "Salta, AR",
+    "stationId": "GHCND:AR000870470",
+    "lat": -24.85,
+    "lon": -65.483,
+    "tmax": 28.407938257993372,
+    "tavg": 21.28383287920075
+  },
+  {
+    "cityName": "Rosario, AR",
+    "stationId": "GHCND:ARM00087480",
+    "lat": -32.904,
+    "lon": -60.785,
+    "tmax": 32.188275862068984,
+    "tavg": 24.737269372693707
+  },
+  {
+    "cityName": "San Luis, AR",
+    "stationId": "GHCND:ARM00087436",
+    "lat": -33.273,
+    "lon": -66.356,
+    "tmax": 32.582532751091705,
+    "tavg": 24.87629427792915
+  },
+  {
+    "cityName": "San Juan, AR",
+    "stationId": "GHCND:ARM00087311",
+    "lat": -31.571,
+    "lon": -68.418,
+    "tmax": 36.15567010309279,
+    "tavg": 27.194770063119975
+  },
+  {
+    "cityName": "Santa Rosa, AR",
+    "stationId": "GHCND:AR000087623",
+    "lat": -36.567,
+    "lon": -64.266,
+    "tmax": 31.418776371308017,
+    "tavg": 23.904524469067404
+  },
+  {
+    "cityName": "Santiago Del Estero, AR",
+    "stationId": "GHCND:AR000087129",
+    "lat": -27.767,
+    "lon": -64.3,
+    "tmax": 34.10960264900662,
+    "tavg": 27.37255434782607
+  },
+  {
+    "cityName": "Ushuaia, AR",
+    "stationId": "GHCND:ARM00087938",
+    "lat": -54.843,
+    "lon": -68.296,
+    "tmax": 14.86741293532339,
+    "tavg": 10.0508398656215
+  },
+  {
+    "cityName": "Innsbruck, AU",
+    "stationId": "GHCND:AU000011801",
+    "lat": 47.2667,
+    "lon": 11.4,
+    "tmax": 25.645463049579046,
+    "tavg": 18.55654121863798
+  },
+  {
+    "cityName": "Klagenfurt, AU",
+    "stationId": "GHCND:AUM00011231",
+    "lat": 46.65,
+    "lon": 14.333,
+    "tmax": 26.372127417519916,
+    "tavg": 19.507706093189963
+  },
+  {
+    "cityName": "Vienna, AU",
+    "stationId": "GHCND:AU000005901",
+    "lat": 48.2331,
+    "lon": 16.35,
+    "tmax": 26.568850987432665,
+    "tavg": 20.86485013623978
+  },
+  {
+    "cityName": "Al-Muharraq, BA",
+    "stationId": "GHCND:BA000041150",
+    "lat": 26.267,
+    "lon": 50.65,
+    "tmax": 39.169059405940665,
+    "tavg": 34.7264907135875
+  },
+  {
+    "cityName": "Manama, BA",
+    "stationId": "GHCND:BA000041150",
+    "lat": 26.267,
+    "lon": 50.65,
+    "tmax": 39.16905940594066,
+    "tavg": 34.7264907135875
+  },
+  {
+    "cityName": "Bridgetown, BB",
+    "stationId": "GHCND:BB000078954",
+    "lat": 13.067,
+    "lon": -59.483,
+    "tmax": 30.95979381443297,
+    "tavg": 27.863153070577507
+  },
+  {
+    "cityName": "Francistown, BC",
+    "stationId": "GHCND:BC008948490",
+    "lat": -21.217,
+    "lon": 27.5,
+    "tmax": 32.91483180428135,
+    "tavg": 25.805626850937827
+  },
+  {
+    "cityName": "Gaborone, BC",
+    "stationId": "GHCND:BC005847300",
+    "lat": -24.667,
+    "lon": 25.917,
+    "tmax": 32.92913907284768,
+    "tavg": 27.254014598540113
+  },
+  {
+    "cityName": "Nassau, BF",
+    "stationId": "GHCND:BF000078073",
+    "lat": 25.05,
+    "lon": -77.467,
+    "tmax": 32.57796976241904,
+    "tavg": 28.886396396396393
+  },
+  {
+    "cityName": "Barisal, BG",
+    "stationId": "GHCND:BGM00041950",
+    "lat": 22.75,
+    "lon": 90.367,
+    "tmax": 33.790728476821194,
+    "tavg": 29.035692307692305
+  },
+  {
+    "cityName": "Dhaka, BG",
+    "stationId": "GHCND:BGM00041923",
+    "lat": 23.779,
+    "lon": 90.383,
+    "tmax": 32.71374764595105,
+    "tavg": 29.070202020202046
+  },
+  {
+    "cityName": "Rajshahi, BG",
+    "stationId": "GHCND:BGM00041907",
+    "lat": 24.153,
+    "lon": 89.049,
+    "tmax": 33.70975609756097,
+    "tavg": 29.24729981378028
+  },
+  {
+    "cityName": "Belize, BH",
+    "stationId": "GHCND:BHM00078583",
+    "lat": 17.539,
+    "lon": -88.308,
+    "tmax": 31.915734989648033,
+    "tavg": 28.88635875402794
+  },
+  {
+    "cityName": "Sarajevo, BK",
+    "stationId": "GHCND:BKM00014652",
+    "lat": 44.0667,
+    "lon": 18.2667,
+    "tmax": 13.428094059405968,
+    "tavg": 11.645030425963496
+  },
+  {
+    "cityName": "Cochabamba, BL",
+    "stationId": "GHCND:BL000085223",
+    "lat": -17.42,
+    "lon": -66.18,
+    "tmax": 29.57855477855482,
+    "tavg": 19.816465116279065
+  },
+  {
+    "cityName": "Oruro, BL",
+    "stationId": "GHCND:BLM00085242",
+    "lat": -17.963,
+    "lon": -67.076,
+    "tmax": 20.908054711246187,
+    "tavg": 14.611642411642409
+  },
+  {
+    "cityName": "La Paz, BL",
+    "stationId": "GHCND:BLM00085201",
+    "lat": -16.513,
+    "lon": -68.192,
+    "tmax": 16.935328638497683,
+    "tavg": 8.924372093023257
+  },
+  {
+    "cityName": "Potosi, BL",
+    "stationId": "GHCND:BLM00085293",
+    "lat": -19.543,
+    "lon": -65.724,
+    "tmax": 18.62589073634206,
+    "tavg": 12.632695139911647
+  },
+  {
+    "cityName": "Santa Cruz de La Sierra, BL",
+    "stationId": "GHCND:BLM00085245",
+    "lat": -17.812,
+    "lon": -63.171,
+    "tmax": 31.477216916780385,
+    "tavg": 26.961372549019625
+  },
+  {
+    "cityName": "Sucre, BL",
+    "stationId": "GHCND:BLM00085283",
+    "lat": -19.007,
+    "lon": -65.289,
+    "tmax": 22.496393897364765,
+    "tavg": 17.258098223615452
+  },
+  {
+    "cityName": "Tarija, BL",
+    "stationId": "GHCND:BL000085364",
+    "lat": -21.55,
+    "lon": -64.7,
+    "tmax": 28.074217585693027,
+    "tavg": 22.10376782077392
+  },
+  {
+    "cityName": "Mandalay, BM",
+    "stationId": "GHCND:BMM00048042",
+    "lat": 21.983,
+    "lon": 96.1,
+    "tmax": 38.79183673469391,
+    "tavg": 31.997021276595728
+  },
+  {
+    "cityName": "Trinidad, BL",
+    "stationId": "GHCND:BLM00085154",
+    "lat": -14.819,
+    "lon": -64.918,
+    "tmax": 33.36860986547081,
+    "tavg": 27.496584440227732
+  },
+  {
+    "cityName": "Myitkyina, BM",
+    "stationId": "GHCND:BMM00048008",
+    "lat": 25.367,
+    "lon": 97.4,
+    "tmax": 33.26286353467561,
+    "tavg": 28.22640144665463
+  },
+  {
+    "cityName": "Rangoon, BM",
+    "stationId": "GHCND:BMM00048097",
+    "lat": 16.907,
+    "lon": 96.133,
+    "tmax": 37.71325051759834,
+    "tavg": 30.81220850480105
+  },
+  {
+    "cityName": "Cotonou, BN",
+    "stationId": "GHCND:BN000005344",
+    "lat": 6.35,
+    "lon": 2.38,
+    "tmax": 32.17152777777779,
+    "tavg": 29.089545454545448
+  },
+  {
+    "cityName": "Abomey, BN",
+    "stationId": "GHCND:BNM00065338",
+    "lat": 7.167,
+    "lon": 2.067,
+    "tmax": 36.22663605051667,
+    "tavg": 28.978969957081553
+  },
+  {
+    "cityName": "Sagaing, BM",
+    "stationId": "GHCND:BMM00048042",
+    "lat": 21.983,
+    "lon": 96.1,
+    "tmax": 38.79183673469391,
+    "tavg": 31.997021276595728
+  },
+  {
+    "cityName": "Sittwe, BM",
+    "stationId": "GHCND:BMM00048062",
+    "lat": 20.133,
+    "lon": 92.873,
+    "tmax": 32.56088154269975,
+    "tavg": 29.601310043668114
+  },
+  {
+    "cityName": "Natitingou, BN",
+    "stationId": "GHCND:BN000005319",
+    "lat": 10.32,
+    "lon": 1.48,
+    "tmax": 37.81545945945947,
+    "tavg": 30.104531722054357
+  },
+  {
+    "cityName": "Parakou, BN",
+    "stationId": "GHCND:BNM00065330",
+    "lat": 9.35,
+    "lon": 2.617,
+    "tmax": 37.10054112554113,
+    "tavg": 29.91503006012026
+  },
+  {
+    "cityName": "Minsk, BO",
+    "stationId": "GHCND:BOM00026749",
+    "lat": 54.15,
+    "lon": 27.233,
+    "tmax": 22.225806451612904,
+    "tavg": 17.076271186440675
+  },
+  {
+    "cityName": "Homyel', BO",
+    "stationId": "GHCND:BOM00033041",
+    "lat": 52.4,
+    "lon": 30.95,
+    "tmax": 25.029468085106387,
+    "tavg": 19.916756272401454
+  },
+  {
+    "cityName": "Vitsyebsk, BO",
+    "stationId": "GHCND:BOM00026666",
+    "lat": 55.167,
+    "lon": 30.217,
+    "tmax": 23.711483253588536,
+    "tavg": 18.71093189964158
+  },
+  {
+    "cityName": "Honiara, BP",
+    "stationId": "GHCND:BP000091517",
+    "lat": -9.417,
+    "lon": 159.967,
+    "tmax": 31.91181102362206,
+    "tavg": 27.78621495327105
+  },
+  {
+    "cityName": "Joao Pessoa, BR",
+    "stationId": "GHCND:BR039402250",
+    "lat": -7.1,
+    "lon": -34.867,
+    "tmax": 31.07075471698113,
+    "tavg": 27.2880303030303
+  },
+  {
+    "cityName": "Macapa, BR",
+    "stationId": "GHCND:BRM00082098",
+    "lat": 0.051,
+    "lon": -51.072,
+    "tmax": 33.30729166666666,
+    "tavg": 28.864360587002107
+  },
+  {
+    "cityName": "Maceio, BR",
+    "stationId": "GHCND:BR038983570",
+    "lat": -9.517,
+    "lon": -35.783,
+    "tmax": 31.568192219679627,
+    "tavg": 26.668647166361968
+  },
+  {
+    "cityName": "Porto Alegre, BR",
+    "stationId": "GHCND:BRM00083967",
+    "lat": -29.946,
+    "lon": -51.144,
+    "tmax": 32.48805970149253,
+    "tavg": 26.180808080808077
+  },
+  {
+    "cityName": "Rio de Janeiro, BR",
+    "stationId": "GHCND:BR000083743",
+    "lat": -22.917,
+    "lon": -43.167,
+    "tmax": 30.98219178082193,
+    "tavg": 26.486458333333328
+  },
+  {
+    "cityName": "Santarem, BR",
+    "stationId": "GHCND:BR000254000",
+    "lat": -2.433,
+    "lon": -54.717,
+    "tmax": 33.2860294117647,
+    "tavg": 28.93390134529144
+  },
+  {
+    "cityName": "Sofia, BU",
+    "stationId": "GHCND:BUM00015614",
+    "lat": 42.695,
+    "lon": 23.406,
+    "tmax": 26.879037800687286,
+    "tavg": 21.174838709677438
+  },
+  {
+    "cityName": "Varna, BU",
+    "stationId": "GHCND:BUM00015552",
+    "lat": 43.232,
+    "lon": 27.825,
+    "tmax": 28.092627345844576,
+    "tavg": 22.743594470046087
+  },
+  {
+    "cityName": "Phnom Penh, CB",
+    "stationId": "GHCND:CBM00048991",
+    "lat": 11.547,
+    "lon": 104.844,
+    "tmax": 34.8,
+    "tavg": 31.00881355932202
+  },
+  {
+    "cityName": "Moundou, CD",
+    "stationId": "GHCND:CD000064706",
+    "lat": 8.567,
+    "lon": 16.067,
+    "tmax": 38.9258064516129,
+    "tavg": 33.370249520153564
+  },
+  {
+    "cityName": "Abeche, CD",
+    "stationId": "GHCND:CD000004756",
+    "lat": 13.85,
+    "lon": 20.85,
+    "tmax": 40.769999999999996,
+    "tavg": 36.576582278481
+  },
+  {
+    "cityName": "Sarh, CD",
+    "stationId": "GHCND:CD000004750",
+    "lat": 9.15,
+    "lon": 18.38,
+    "tmax": 39.50000000000001,
+    "tavg": 32.61063174114021
+  },
+  {
+    "cityName": "Ndjamena, CD",
+    "stationId": "GHCND:CD000004700",
+    "lat": 12.13,
+    "lon": 15.03,
+    "tmax": 42.016730769230776,
+    "tavg": 34.02802395209581
+  },
+  {
+    "cityName": "Colombo, CE",
+    "stationId": "GHCND:CEM00043466",
+    "lat": 6.9,
+    "lon": 79.867,
+    "tmax": 31.501574803149627,
+    "tavg": 28.733112582781438
+  },
+  {
+    "cityName": "Loubomo, CF",
+    "stationId": "GHCND:CF000004401",
+    "lat": -4.18,
+    "lon": 12.67,
+    "tmax": 31.96113861386142,
+    "tavg": 26.56454033771108
+  },
+  {
+    "cityName": "Pointe Noire, CF",
+    "stationId": "GHCND:CF000004400",
+    "lat": -4.82,
+    "lon": 11.9,
+    "tmax": 31.25486443381179,
+    "tavg": 27.55687499999998
+  },
+  {
+    "cityName": "Changchun, CH",
+    "stationId": "GHCND:CHM00054161",
+    "lat": 43.9,
+    "lon": 125.217,
+    "tmax": 27.508587786259568,
+    "tavg": 23.189247311827963
+  },
+  {
+    "cityName": "Chongqing, CH",
+    "stationId": "GHCND:CHM00057516",
+    "lat": 29.583,
+    "lon": 106.467,
+    "tmax": 33.033650190114095,
+    "tavg": 28.406541218637983
+  },
+  {
+    "cityName": "Fushun, CH",
+    "stationId": "GHCND:CHM00054342",
+    "lat": 41.733,
+    "lon": 123.517,
+    "tmax": 29.0545539906103,
+    "tavg": 24.611210762331826
+  },
+  {
+    "cityName": "Dalian, CH",
+    "stationId": "GHCND:CHM00054662",
+    "lat": 38.9,
+    "lon": 121.633,
+    "tmax": 27.462851600387996,
+    "tavg": 24.463440860215066
+  },
+  {
+    "cityName": "Fuzhou, CH",
+    "stationId": "GHCND:CHM00058847",
+    "lat": 26.083,
+    "lon": 119.283,
+    "tmax": 34.51452991452996,
+    "tavg": 29.202867383512533
+  },
+  {
+    "cityName": "Guiyang, CH",
+    "stationId": "GHCND:CHM00057816",
+    "lat": 26.583,
+    "lon": 106.733,
+    "tmax": 27.91485436893199,
+    "tavg": 23.532347670250896
+  },
+  {
+    "cityName": "Hangzhou, CH",
+    "stationId": "GHCND:CHM00058457",
+    "lat": 30.233,
+    "lon": 120.167,
+    "tmax": 33.63681687440076,
+    "tavg": 28.986648745519695
+  },
+  {
+    "cityName": "Hefei, CH",
+    "stationId": "GHCND:CHM00058321",
+    "lat": 31.867,
+    "lon": 117.233,
+    "tmax": 32.20612991765783,
+    "tavg": 28.30277777777781
+  },
+  {
+    "cityName": "Harbin, CH",
+    "stationId": "GHCND:CHM00050953",
+    "lat": 45.75,
+    "lon": 126.767,
+    "tmax": 27.83580827067667,
+    "tavg": 23.18968609865471
+  },
+  {
+    "cityName": "Jinan, CH",
+    "stationId": "GHCND:CHM00054823",
+    "lat": 36.6,
+    "lon": 117.05,
+    "tmax": 32.014766355140154,
+    "tavg": 27.53806104129258
+  },
+  {
+    "cityName": "Kashi, CH",
+    "stationId": "GHCND:CHM00051709",
+    "lat": 39.467,
+    "lon": 75.983,
+    "tmax": 32.01980582524271,
+    "tavg": 25.841129032258042
+  },
+  {
+    "cityName": "Kunming, CH",
+    "stationId": "GHCND:CHM00056778",
+    "lat": 25.017,
+    "lon": 102.683,
+    "tmax": 24.7121568627451,
+    "tavg": 20.27861111111115
+  },
+  {
+    "cityName": "Lhasa, CH",
+    "stationId": "GHCND:CHM00055591",
+    "lat": 29.667,
+    "lon": 91.133,
+    "tmax": 23.780449657869017,
+    "tavg": 16.565740740740743
+  },
+  {
+    "cityName": "Nanchang, CH",
+    "stationId": "GHCND:CHM00058606",
+    "lat": 28.6,
+    "lon": 115.917,
+    "tmax": 33.688151658767744,
+    "tavg": 29.510044843049325
+  },
+  {
+    "cityName": "Nanjing, CH",
+    "stationId": "GHCND:CHM00058238",
+    "lat": 31.933,
+    "lon": 118.9,
+    "tmax": 32.11714836223509,
+    "tavg": 28.117652329749067
+  },
+  {
+    "cityName": "Nanning, CH",
+    "stationId": "GHCND:CHM00059431",
+    "lat": 22.633,
+    "lon": 108.217,
+    "tmax": 32.856083650190094,
+    "tavg": 28.349103942652363
+  },
+  {
+    "cityName": "Qingdao, CH",
+    "stationId": "GHCND:CHM00054857",
+    "lat": 36.067,
+    "lon": 120.333,
+    "tmax": 28.46897404202723,
+    "tavg": 25.699103942652332
+  },
+  {
+    "cityName": "Shanghai, CH",
+    "stationId": "GHCND:CHM00058362",
+    "lat": 31.4,
+    "lon": 121.467,
+    "tmax": 32.28307692307695,
+    "tavg": 28.75090439276485
+  },
+  {
+    "cityName": "Qiqihar, CH",
+    "stationId": "GHCND:CHM00050745",
+    "lat": 47.383,
+    "lon": 123.917,
+    "tmax": 27.917075471698137,
+    "tavg": 23.294080717488807
+  },
+  {
+    "cityName": "Shenyang, CH",
+    "stationId": "GHCND:CHM00054342",
+    "lat": 41.733,
+    "lon": 123.517,
+    "tmax": 29.054553990610305,
+    "tavg": 24.611210762331826
+  },
+  {
+    "cityName": "Shijiazhuang, CH",
+    "stationId": "GHCND:CHM00053698",
+    "lat": 38.033,
+    "lon": 114.417,
+    "tmax": 32.277607913669065,
+    "tavg": 27.376591928251127
+  },
+  {
+    "cityName": "Taiyuan, CH",
+    "stationId": "GHCND:CHM00053772",
+    "lat": 37.783,
+    "lon": 112.55,
+    "tmax": 29.947519083969443,
+    "tavg": 23.996684587813622
+  },
+  {
+    "cityName": "Tianjin, CH",
+    "stationId": "GHCND:CHM00054527",
+    "lat": 39.1,
+    "lon": 117.167,
+    "tmax": 31.375673249551205,
+    "tavg": 26.904215246636713
+  },
+  {
+    "cityName": "Wuhan, CH",
+    "stationId": "GHCND:CHM00057494",
+    "lat": 30.6,
+    "lon": 114.05,
+    "tmax": 32.90852490421456,
+    "tavg": 29.07195340501791
+  },
+  {
+    "cityName": "Urumqi, CH",
+    "stationId": "GHCND:CHM00051463",
+    "lat": 43.8,
+    "lon": 87.65,
+    "tmax": 29.92462121212119,
+    "tavg": 23.96852017937218
+  },
+  {
+    "cityName": "Xi'an, CH",
+    "stationId": "GHCND:CHM00057131",
+    "lat": 34.433,
+    "lon": 108.967,
+    "tmax": 32.36692913385826,
+    "tavg": 27.287055016181245
+  },
+  {
+    "cityName": "Xining, CH",
+    "stationId": "GHCND:CHM00052866",
+    "lat": 36.617,
+    "lon": 101.767,
+    "tmax": 24.831425891181972,
+    "tavg": 17.314798206277995
+  },
+  {
+    "cityName": "Antofagasta, CI",
+    "stationId": "GHCND:CI000085442",
+    "lat": -23.433,
+    "lon": -70.45,
+    "tmax": 23.724937655860387,
+    "tavg": 20.220807174887863
+  },
+  {
+    "cityName": "Temuco, CI",
+    "stationId": "GHCND:CI000085743",
+    "lat": -38.75,
+    "lon": -72.633,
+    "tmax": 25.497190082644593,
+    "tavg": 16.441527001862223
+  },
+  {
+    "cityName": "Maroua, CM",
+    "stationId": "GHCND:CMM00064851",
+    "lat": 10.451,
+    "lon": 14.257,
+    "tmax": 40.10389610389611,
+    "tavg": 33.340264026402636
+  },
+  {
+    "cityName": "Arauca, CO",
+    "stationId": "GHCND:COM00080099",
+    "lat": 7.069,
+    "lon": -70.737,
+    "tmax": 34.95272727272727,
+    "tavg": 29.507462686567177
+  },
+  {
+    "cityName": "Armenia, CO",
+    "stationId": "GHCND:COM00080211",
+    "lat": 4.453,
+    "lon": -75.766,
+    "tmax": 29.929032258064517,
+    "tavg": 23.6295532646048
+  },
+  {
+    "cityName": "Bogota, CO",
+    "stationId": "GHCND:CO000080222",
+    "lat": 4.701,
+    "lon": -74.15,
+    "tmax": 19.413825983313462,
+    "tavg": 13.878456014362657
+  },
+  {
+    "cityName": "Barranquilla, CO",
+    "stationId": "GHCND:COM00080028",
+    "lat": 10.89,
+    "lon": -74.781,
+    "tmax": 33.878177458033576,
+    "tavg": 28.292803738317733
+  },
+  {
+    "cityName": "Cali, CO",
+    "stationId": "GHCND:CO000080259",
+    "lat": 3.55,
+    "lon": -76.383,
+    "tmax": 29.55964912280705,
+    "tavg": 24.106474820143905
+  },
+  {
+    "cityName": "Bucaramanga, CO",
+    "stationId": "GHCND:COM00080094",
+    "lat": 7.127,
+    "lon": -73.185,
+    "tmax": 25.879345603271993,
+    "tavg": 22.284773218142522
+  },
+  {
+    "cityName": "Cartagena, CO",
+    "stationId": "GHCND:COM00080022",
+    "lat": 10.442,
+    "lon": -75.513,
+    "tmax": 32.40365853658541,
+    "tavg": 28.57511825922418
+  },
+  {
+    "cityName": "Cucuta, CO",
+    "stationId": "GHCND:COM00080097",
+    "lat": 7.928,
+    "lon": -72.512,
+    "tmax": 34.92633451957294,
+    "tavg": 29.655460992907777
+  },
+  {
+    "cityName": "Ibague, CO",
+    "stationId": "GHCND:COM00080214",
+    "lat": 4.422,
+    "lon": -75.133,
+    "tmax": 32.2862385321101,
+    "tavg": 26.531
+  },
+  {
+    "cityName": "Medellin, CO",
+    "stationId": "GHCND:COM00080110",
+    "lat": 6.22,
+    "lon": -75.591,
+    "tmax": 28.73411764705883,
+    "tavg": 23.617710196779942
+  },
+  {
+    "cityName": "Monteria, CO",
+    "stationId": "GHCND:COM00080063",
+    "lat": 8.824,
+    "lon": -75.826,
+    "tmax": 34.91829268292682,
+    "tavg": 29.615525114155258
+  },
+  {
+    "cityName": "Neiva, CO",
+    "stationId": "GHCND:COM00080315",
+    "lat": 2.95,
+    "lon": -75.294,
+    "tmax": 35.319533527696784,
+    "tavg": 29.67652582159628
+  },
+  {
+    "cityName": "Pasto, CO",
+    "stationId": "GHCND:CO000080342",
+    "lat": 1.417,
+    "lon": -77.267,
+    "tmax": 24.21831775700935,
+    "tavg": 21.44711779448623
+  },
+  {
+    "cityName": "Pereira, CO",
+    "stationId": "GHCND:COM00080210",
+    "lat": 4.813,
+    "lon": -75.74,
+    "tmax": 27.786292834890965,
+    "tavg": 22.38315688161694
+  },
+  {
+    "cityName": "Riohacha, CO",
+    "stationId": "GHCND:COM00080035",
+    "lat": 11.526,
+    "lon": -72.926,
+    "tmax": 36.055681818181824,
+    "tavg": 31.166798418972324
+  },
+  {
+    "cityName": "Quibdo, CO",
+    "stationId": "GHCND:COM00080144",
+    "lat": 5.691,
+    "lon": -76.641,
+    "tmax": 32.15925925925926,
+    "tavg": 27.47307692307691
+  },
+  {
+    "cityName": "San Andres, CO",
+    "stationId": "GHCND:CO000080001",
+    "lat": 12.583,
+    "lon": -81.717,
+    "tmax": 29.449248120300737,
+    "tavg": 28.3112052730697
+  },
+  {
+    "cityName": "Santa Marta, CO",
+    "stationId": "GHCND:COM00080009",
+    "lat": 11.12,
+    "lon": -74.231,
+    "tmax": 33.65722543352599,
+    "tavg": 29.89575242718453
+  },
+  {
+    "cityName": "Villavicencio, CO",
+    "stationId": "GHCND:COM00080234",
+    "lat": 4.168,
+    "lon": -73.614,
+    "tmax": 32.22580645161291,
+    "tavg": 28.10242718446602
+  },
+  {
+    "cityName": "Valledupar, CO",
+    "stationId": "GHCND:COM00080036",
+    "lat": 10.435,
+    "lon": -73.25,
+    "tmax": 36.829914529914525,
+    "tavg": 30.827553444180523
+  },
+  {
+    "cityName": "Puerto Limon, CS",
+    "stationId": "GHCND:CS000081003",
+    "lat": 9.967,
+    "lon": -83.017,
+    "tmax": 30.522094240837678,
+    "tavg": 27.904032258064547
+  },
+  {
+    "cityName": "Bangui, CT",
+    "stationId": "GHCND:CTM00064650",
+    "lat": 4.398,
+    "lon": 18.519,
+    "tmax": 34.69375000000004,
+    "tavg": 27.622135706340373
+  },
+  {
+    "cityName": "Berberati, CT",
+    "stationId": "GHCND:CT000004600",
+    "lat": 4.22,
+    "lon": 15.78,
+    "tmax": 32.96247422680416,
+    "tavg": 25.888977635782737
+  },
+  {
+    "cityName": "Camaguey, CU",
+    "stationId": "GHCND:CUM00078355",
+    "lat": 21.4,
+    "lon": -77.85,
+    "tmax": 32.75622710622707,
+    "tavg": 26.97050847457623
+  },
+  {
+    "cityName": "Havana, CU",
+    "stationId": "GHCND:CUM00078325",
+    "lat": 23.167,
+    "lon": -82.35,
+    "tmax": 32.38553370786514,
+    "tavg": 27.730911492734496
+  },
+  {
+    "cityName": "Praia, CV",
+    "stationId": "GHCND:CVM00008589",
+    "lat": 14.917,
+    "lon": -23.6,
+    "tmax": 30.797424892703884,
+    "tavg": 27.218627450980414
+  },
+  {
+    "cityName": "Santo Domingo, DR",
+    "stationId": "GHCND:DRM00078486",
+    "lat": 18.433,
+    "lon": -69.883,
+    "tmax": 32.48503401360544,
+    "tavg": 27.454719101123626
+  },
+  {
+    "cityName": "Alexandria, EG",
+    "stationId": "GHCND:EGM00062318",
+    "lat": 31.184,
+    "lon": 29.949,
+    "tmax": 30.772009029345437,
+    "tavg": 27.305490549054884
+  },
+  {
+    "cityName": "Aswan, EG",
+    "stationId": "GHCND:EG000062414",
+    "lat": 23.9667,
+    "lon": 32.7831,
+    "tmax": 41.48436482084691,
+    "tavg": 34.76344383057083
+  },
+  {
+    "cityName": "Cork, EI",
+    "stationId": "GHCND:EIM00003955",
+    "lat": 51.841,
+    "lon": -8.491,
+    "tmax": 18.67833163784335,
+    "tavg": 14.883512544802855
+  },
+  {
+    "cityName": "Marsa Matruh, EG",
+    "stationId": "GHCND:EG000062306",
+    "lat": 31.3331,
+    "lon": 27.2167,
+    "tmax": 30.193042575285574,
+    "tavg": 26.57923844061648
+  },
+  {
+    "cityName": "Dublin, EI",
+    "stationId": "GHCND:EI000003969",
+    "lat": 53.3639,
+    "lon": -6.3192,
+    "tmax": 20.06386093321134,
+    "tavg": 15.237634408602144
+  },
+  {
+    "cityName": "San Salvador, ES",
+    "stationId": "GHCND:ES003800510",
+    "lat": 13.7,
+    "lon": -89.117,
+    "tmax": 32.94671717171719,
+    "tavg": 26.362022194821257
+  },
+  {
+    "cityName": "Addis Ababa, ET",
+    "stationId": "GHCND:ET000063450",
+    "lat": 9.033,
+    "lon": 38.75,
+    "tmax": 25.077436823104705,
+    "tavg": 18.53628428927681
+  },
+  {
+    "cityName": "Gonder, ET",
+    "stationId": "GHCND:ET000063331",
+    "lat": 12.55,
+    "lon": 37.417,
+    "tmax": 29.549166666666675,
+    "tavg": 23.771893491124274
+  },
+  {
+    "cityName": "Dese, ET",
+    "stationId": "GHCND:ET000063333",
+    "lat": 11.117,
+    "lon": 39.733,
+    "tmax": 30.17543520309478,
+    "tavg": 24.067030965391627
+  },
+  {
+    "cityName": "Jima, ET",
+    "stationId": "GHCND:ET000063402",
+    "lat": 7.667,
+    "lon": 36.833,
+    "tmax": 29.300264550264565,
+    "tavg": 20.828177966101688
+  },
+  {
+    "cityName": "Brno, EZ",
+    "stationId": "GHCND:EZM00011723",
+    "lat": 49.151,
+    "lon": 16.694,
+    "tmax": 25.502754237288126,
+    "tavg": 19.74543778801844
+  },
+  {
+    "cityName": "Prague, EZ",
+    "stationId": "GHCND:EZM00011518",
+    "lat": 50.101,
+    "lon": 14.26,
+    "tmax": 23.91227701993703,
+    "tavg": 18.15394265232975
+  },
+  {
+    "cityName": "Ostrava, EZ",
+    "stationId": "GHCND:EZM00011782",
+    "lat": 49.696,
+    "lon": 18.111,
+    "tmax": 24.82571721311475,
+    "tavg": 18.864426523297467
+  },
+  {
+    "cityName": "Cayenne, FG",
+    "stationId": "GHCND:FG000081405",
+    "lat": 4.833,
+    "lon": -52.367,
+    "tmax": 32.25557830092116,
+    "tavg": 27.01224289911848
+  },
+  {
+    "cityName": "Usti Nad Labem, EZ",
+    "stationId": "GHCND:GMM00010582",
+    "lat": 50.733,
+    "lon": 13.75,
+    "tmax": 21.747058823529404,
+    "tavg": 16.8421052631579
+  },
+  {
+    "cityName": "Turku, FI",
+    "stationId": "GHCND:FIE00142511",
+    "lat": 60.5153,
+    "lon": 22.2775,
+    "tmax": 22.329240374609757,
+    "tavg": 17.37315978456016
+  },
+  {
+    "cityName": "Ajaccio, FR",
+    "stationId": "GHCND:FRM00007761",
+    "lat": 41.924,
+    "lon": 8.803,
+    "tmax": 28.940315315315306,
+    "tavg": 23.557885304659465
+  },
+  {
+    "cityName": "Suva, FJ",
+    "stationId": "GHCND:FJM00091683",
+    "lat": -18.043,
+    "lon": 178.559,
+    "tmax": 31.31164021164021,
+    "tavg": 26.627684729064
+  },
+  {
+    "cityName": "Brest, FR",
+    "stationId": "GHCND:FRM00007110",
+    "lat": 48.448,
+    "lon": -4.419,
+    "tmax": 20.887007454739084,
+    "tavg": 16.5991039426523
+  },
+  {
+    "cityName": "Caen, FR",
+    "stationId": "GHCND:FRM00007027",
+    "lat": 49.173,
+    "lon": -0.45,
+    "tmax": 23.039850427350434,
+    "tavg": 17.880286738351252
+  },
+  {
+    "cityName": "Clermont-Ferrand, FR",
+    "stationId": "GHCND:FRM00007460",
+    "lat": 45.787,
+    "lon": 3.169,
+    "tmax": 26.997894736842124,
+    "tavg": 20.411181244364293
+  },
+  {
+    "cityName": "Dijon, FR",
+    "stationId": "GHCND:FRE00104072",
+    "lat": 47.2678,
+    "lon": 5.0881,
+    "tmax": 26.031451612903236,
+    "tavg": 20.276254480286727
+  },
+  {
+    "cityName": "Limoges, FR",
+    "stationId": "GHCND:FRM00007434",
+    "lat": 45.863,
+    "lon": 1.179,
+    "tmax": 24.575565123789016,
+    "tavg": 19.187186379928324
+  },
+  {
+    "cityName": "Lille, FR",
+    "stationId": "GHCND:FRM00007015",
+    "lat": 50.562,
+    "lon": 3.089,
+    "tmax": 23.657109826589625,
+    "tavg": 18.362982929020667
+  },
+  {
+    "cityName": "Lyon, FR",
+    "stationId": "GHCND:FRM00007481",
+    "lat": 45.726,
+    "lon": 5.091,
+    "tmax": 27.754004576659042,
+    "tavg": 21.40299184043517
+  },
+  {
+    "cityName": "Marseille, FR",
+    "stationId": "GHCND:FRM00007661",
+    "lat": 43.083,
+    "lon": 5.933,
+    "tmax": 27.86905737704917,
+    "tavg": 23.562571976967387
+  },
+  {
+    "cityName": "Montpellier, FR",
+    "stationId": "GHCND:FRM00007643",
+    "lat": 43.576,
+    "lon": 3.963,
+    "tmax": 29.54525025536262,
+    "tavg": 24.174999999999994
+  },
+  {
+    "cityName": "Nancy, FR",
+    "stationId": "GHCND:FRM00007180",
+    "lat": 48.692,
+    "lon": 6.23,
+    "tmax": 25.633891213389152,
+    "tavg": 19.428417266187036
+  },
+  {
+    "cityName": "Nantes, FR",
+    "stationId": "GHCND:FRM00007222",
+    "lat": 47.15,
+    "lon": -1.6089,
+    "tmax": 24.78091397849461,
+    "tavg": 19.51370967741935
+  },
+  {
+    "cityName": "Paris, FR",
+    "stationId": "GHCND:FRM00007149",
+    "lat": 48.7167,
+    "lon": 2.3842,
+    "tmax": 25.152419354838752,
+    "tavg": 19.807823741007248
+  },
+  {
+    "cityName": "Reims, FR",
+    "stationId": "GHCND:FRM00007072",
+    "lat": 49.217,
+    "lon": 4.15,
+    "tmax": 25.550505050505045,
+    "tavg": 19.346774193548388
+  },
+  {
+    "cityName": "Durango, MX",
+    "stationId": "GHCND:MXM00076423",
+    "lat": 24.05,
+    "lon": -104.6,
+    "tmax": 33.103207810320775,
+    "tavg": 23.4023121387283
+  },
+  {
+    "cityName": "Guanajuato, MX",
+    "stationId": "GHCND:MX000076577",
+    "lat": 21,
+    "lon": -101.283,
+    "tmax": 31.278603104212863,
+    "tavg": 22.263717693836956
+  },
+  {
+    "cityName": "Guadalajara, MX",
+    "stationId": "GHCND:MX000014066",
+    "lat": 20.72,
+    "lon": -103.38,
+    "tmax": 33.19074446680081,
+    "tavg": 23.883440514469456
+  },
+  {
+    "cityName": "Hermosillo, MX",
+    "stationId": "GHCND:MXM00076160",
+    "lat": 29.096,
+    "lon": -111.048,
+    "tmax": 40.50102389078496,
+    "tavg": 33.2436046511628
+  },
+  {
+    "cityName": "Mazatlan, MX",
+    "stationId": "GHCND:MX000076458",
+    "lat": 23.2,
+    "lon": -106.417,
+    "tmax": 33.557508342602894,
+    "tavg": 29.263531870428427
+  },
+  {
+    "cityName": "Merida, MX",
+    "stationId": "GHCND:MXM00076593",
+    "lat": 21.3,
+    "lon": -89.65,
+    "tmax": 32.300326797385644,
+    "tavg": 28.07054698457225
+  },
+  {
+    "cityName": "Monterrey, MX",
+    "stationId": "GHCND:MX000076393",
+    "lat": 25.733,
+    "lon": -100.3,
+    "tmax": 35.655957767722526,
+    "tavg": 28.65731272294889
+  },
+  {
+    "cityName": "Oaxaca, MX",
+    "stationId": "GHCND:MXM00076775",
+    "lat": 17.05,
+    "lon": -96.717,
+    "tmax": 33.66225165562915,
+    "tavg": 23.19138755980862
+  },
+  {
+    "cityName": "Puebla, MX",
+    "stationId": "GHCND:MXM00076685",
+    "lat": 19.158,
+    "lon": -98.371,
+    "tmax": 27.45163934426229,
+    "tavg": 17.013317757009357
+  },
+  {
+    "cityName": "Pachuca, MX",
+    "stationId": "GHCND:MXM00076632",
+    "lat": 20.133,
+    "lon": -98.75,
+    "tmax": 24.458241758241765,
+    "tavg": 17.437086092715226
+  },
+  {
+    "cityName": "Queretaro, MX",
+    "stationId": "GHCND:MXM00076625",
+    "lat": 20.617,
+    "lon": -100.186,
+    "tmax": 31.44081632653062,
+    "tavg": 21.514571428571426
+  },
+  {
+    "cityName": "Tampico, MX",
+    "stationId": "GHCND:MXM00076548",
+    "lat": 22.2,
+    "lon": -97.85,
+    "tmax": 33.204361370716555,
+    "tavg": 28.916436637390188
+  },
+  {
+    "cityName": "San Luis Potosi, MX",
+    "stationId": "GHCND:MXM00076539",
+    "lat": 22.254,
+    "lon": -100.931,
+    "tmax": 31.016295025728986,
+    "tavg": 20.67913741223672
+  },
+  {
+    "cityName": "Tlaxcala, MX",
+    "stationId": "GHCND:MXM00076685",
+    "lat": 19.158,
+    "lon": -98.371,
+    "tmax": 27.45163934426229,
+    "tavg": 17.013317757009357
+  },
+  {
+    "cityName": "Tepic, MX",
+    "stationId": "GHCND:MXM00076556",
+    "lat": 21.419,
+    "lon": -104.843,
+    "tmax": 31.762365591397845,
+    "tavg": 25.253054298642528
+  },
+  {
+    "cityName": "Toluca, MX",
+    "stationId": "GHCND:MXM00076675",
+    "lat": 19.283,
+    "lon": -99.683,
+    "tmax": 24.24888438133873,
+    "tavg": 15.274639769452431
+  },
+  {
+    "cityName": "Veracruz, MX",
+    "stationId": "GHCND:MXM00076692",
+    "lat": 19.15,
+    "lon": -96.117,
+    "tmax": 32.062410329985646,
+    "tavg": 28.24376321353064
+  },
+  {
+    "cityName": "Villahermosa, MX",
+    "stationId": "GHCND:MXM00076743",
+    "lat": 17.983,
+    "lon": -92.933,
+    "tmax": 35.78579881656802,
+    "tavg": 29.646536412078145
+  },
+  {
+    "cityName": "Zacatecas, MX",
+    "stationId": "GHCND:MXM00076525",
+    "lat": 22.783,
+    "lon": -102.567,
+    "tmax": 22.670701754385963,
+    "tavg": 17.57322404371586
+  },
+  {
+    "cityName": "Kota Kinabalu, MY",
+    "stationId": "GHCND:MYM00096471",
+    "lat": 5.937,
+    "lon": 116.051,
+    "tmax": 32.79239864864865,
+    "tavg": 28.12736273627365
+  },
+  {
+    "cityName": "Kota Baharu, MY",
+    "stationId": "GHCND:MYM00048615",
+    "lat": 6.167,
+    "lon": 102.293,
+    "tmax": 32.92089337175793,
+    "tavg": 28.27860422405874
+  },
+  {
+    "cityName": "Kuantan New Port, MY",
+    "stationId": "GHCND:MY000048657",
+    "lat": 3.62,
+    "lon": 103.22,
+    "tmax": 33.35279187817256,
+    "tavg": 27.654311926605484
+  },
+  {
+    "cityName": "Kuala Lumpur, MY",
+    "stationId": "GHCND:MYM00048647",
+    "lat": 3.131,
+    "lon": 101.549,
+    "tmax": 33.5166429587482,
+    "tavg": 28.03764600179697
+  },
+  {
+    "cityName": "Melaka, MY",
+    "stationId": "GHCND:MYM00048665",
+    "lat": 2.263,
+    "lon": 102.252,
+    "tmax": 32.57100840336135,
+    "tavg": 27.85919487648677
+  },
+  {
+    "cityName": "Kuching, MY",
+    "stationId": "GHCND:MY000096413",
+    "lat": 1.483,
+    "lon": 110.333,
+    "tmax": 32.66799999999998,
+    "tavg": 27.050585058505806
+  },
+  {
+    "cityName": "Pinang, MY",
+    "stationId": "GHCND:MYM00048601",
+    "lat": 5.297,
+    "lon": 100.277,
+    "tmax": 31.905920000000037,
+    "tavg": 28.164061096136518
+  },
+  {
+    "cityName": "Beira, MZ",
+    "stationId": "GHCND:MZ000067297",
+    "lat": -19.8,
+    "lon": 34.9,
+    "tmax": 31.65955882352947,
+    "tavg": 28.249700598802374
+  },
+  {
+    "cityName": "Chimoio, MZ",
+    "stationId": "GHCND:MZ000067295",
+    "lat": -19.117,
+    "lon": 33.467,
+    "tmax": 29.492622950819694,
+    "tavg": 24.42748735244517
+  },
+  {
+    "cityName": "Lichinga, MZ",
+    "stationId": "GHCND:MZ000067217",
+    "lat": -13.3,
+    "lon": 35.233,
+    "tmax": 27.172317596566558,
+    "tavg": 22.529900332225925
+  },
+  {
+    "cityName": "Nampula, MZ",
+    "stationId": "GHCND:MZ000067237",
+    "lat": -15.1,
+    "lon": 39.283,
+    "tmax": 33.08547400611621,
+    "tavg": 27.455129650507317
+  },
+  {
+    "cityName": "Pemba, MZ",
+    "stationId": "GHCND:MZ000067215",
+    "lat": -12.983,
+    "lon": 40.533,
+    "tmax": 30.879245283018893,
+    "tavg": 27.847003994673727
+  },
+  {
+    "cityName": "Tete, MZ",
+    "stationId": "GHCND:MZ000067261",
+    "lat": -16.183,
+    "lon": 33.583,
+    "tmax": 36.697229219143594,
+    "tavg": 30.779999999999998
+  },
+  {
+    "cityName": "Xai-Xai, MZ",
+    "stationId": "GHCND:MZ000067335",
+    "lat": -25.05,
+    "lon": 33.633,
+    "tmax": 31.15424107142857,
+    "tavg": 27.022738386308056
+  },
+  {
+    "cityName": "Niamey, NG",
+    "stationId": "GHCND:NG000001052",
+    "lat": 13.5,
+    "lon": 2.13,
+    "tmax": 41.59575892857144,
+    "tavg": 34.51156015037597
+  },
+  {
+    "cityName": "Maradi, NG",
+    "stationId": "GHCND:NG000001080",
+    "lat": 13.47,
+    "lon": 7.08,
+    "tmax": 39.91320754716981,
+    "tavg": 33.298828125000014
+  },
+  {
+    "cityName": "Tahoua, NG",
+    "stationId": "GHCND:NG000061043",
+    "lat": 14.9,
+    "lon": 5.25,
+    "tmax": 40.90358342665166,
+    "tavg": 34.51090047393365
+  },
+  {
+    "cityName": "Zinder, NG",
+    "stationId": "GHCND:NG000001090",
+    "lat": 13.8,
+    "lon": 9,
+    "tmax": 40.59607415485272,
+    "tavg": 34.31981132075471
+  },
+  {
+    "cityName": "Jos, NI",
+    "stationId": "GHCND:NIM00065134",
+    "lat": 9.64,
+    "lon": 8.869,
+    "tmax": 32.121428571428574,
+    "tavg": 26.604255319148937
+  },
+  {
+    "cityName": "Ilorin, NI",
+    "stationId": "GHCND:NIM00065101",
+    "lat": 8.44,
+    "lon": 4.494,
+    "tmax": 36.58602150537632,
+    "tavg": 30.69148936170214
+  },
+  {
+    "cityName": "Lagos, NI",
+    "stationId": "GHCND:NIM00065201",
+    "lat": 6.577,
+    "lon": 3.321,
+    "tmax": 33.84699999999999,
+    "tavg": 29.153896103896102
+  },
+  {
+    "cityName": "Kano, NI",
+    "stationId": "GHCND:NIM00065046",
+    "lat": 12.048,
+    "lon": 8.525,
+    "tmax": 37.720588235294116,
+    "tavg": 31.972469635627537
+  },
+  {
+    "cityName": "Port Harcourt, NI",
+    "stationId": "GHCND:NIM00065250",
+    "lat": 5.015,
+    "lon": 6.95,
+    "tmax": 33.93333333333333,
+    "tavg": 29.169662921348305
+  },
+  {
+    "cityName": "Yola, NI",
+    "stationId": "GHCND:NIM00065167",
+    "lat": 9.258,
+    "lon": 12.43,
+    "tmax": 41.2375,
+    "tavg": 34.815384615384616
+  },
+  {
+    "cityName": "Groningen, NL",
+    "stationId": "GHCND:NLM00006280",
+    "lat": 53.1167,
+    "lon": 6.5831,
+    "tmax": 22.04064516129031,
+    "tavg": 17.051233396584447
+  },
+  {
+    "cityName": "Tromso, NO",
+    "stationId": "GHCND:NOE00134898",
+    "lat": 69.6767,
+    "lon": 18.9131,
+    "tmax": 15.455734767025096,
+    "tavg": 11.827508960573478
+  },
+  {
+    "cityName": "Willemstad, NT",
+    "stationId": "GHCND:NTM00078988",
+    "lat": 12.189,
+    "lon": -68.96,
+    "tmax": 33.043130990415335,
+    "tavg": 29.129526462395564
+  },
+  {
+    "cityName": "Kathmandu, NP",
+    "stationId": "GHCND:NP000444540",
+    "lat": 27.7,
+    "lon": 85.367,
+    "tmax": 29.089127837514937,
+    "tavg": 24.23447837150124
+  },
+  {
+    "cityName": "Juigalpa, NU",
+    "stationId": "GHCND:NU000069034",
+    "lat": 12.1,
+    "lon": -85.367,
+    "tmax": 34.75083333333335,
+    "tavg": 30.955687830687815
+  },
+  {
+    "cityName": "Managua, NU",
+    "stationId": "GHCND:NUM00078741",
+    "lat": 12.141,
+    "lon": -86.168,
+    "tmax": 35.52553191489364,
+    "tavg": 29.61228501228499
+  },
+  {
+    "cityName": "Masaya, NU",
+    "stationId": "GHCND:NUM00078741",
+    "lat": 12.141,
+    "lon": -86.168,
+    "tmax": 35.52553191489363,
+    "tavg": 29.61228501228499
+  },
+  {
+    "cityName": "Christchurch, NZ",
+    "stationId": "GHCND:NZM00093781",
+    "lat": -43.489,
+    "lon": 172.532,
+    "tmax": 23.526791277258575,
+    "tavg": 16.606924460431653
+  },
+  {
+    "cityName": "Asuncion, PA",
+    "stationId": "GHCND:PAM00086218",
+    "lat": -25.24,
+    "lon": -57.519,
+    "tmax": 34.95413043478259,
+    "tavg": 27.90188340807177
+  },
+  {
+    "cityName": "Encarnacion, PA",
+    "stationId": "GHCND:PA000086297",
+    "lat": -27.3,
+    "lon": -55.9,
+    "tmax": 33.76338582677169,
+    "tavg": 27.0758737316798
+  },
+  {
+    "cityName": "Arequipa, PE",
+    "stationId": "GHCND:PE000084752",
+    "lat": -16.332,
+    "lon": -71.567,
+    "tmax": 22.276495132127966,
+    "tavg": 15.18462255358806
+  },
+  {
+    "cityName": "Ayacucho, PE",
+    "stationId": "GHCND:PEM00084673",
+    "lat": -13.155,
+    "lon": -74.204,
+    "tmax": 25.560759493670883,
+    "tavg": 20.16044880785413
+  },
+  {
+    "cityName": "Callao, PE",
+    "stationId": "GHCND:PEM00084628",
+    "lat": -12.022,
+    "lon": -77.114,
+    "tmax": 27.89047619047621,
+    "tavg": 23.38748738647831
+  },
+  {
+    "cityName": "Cajamarca, PE",
+    "stationId": "GHCND:PEM00084472",
+    "lat": -7.139,
+    "lon": -78.489,
+    "tmax": 22.106666666666666,
+    "tavg": 15.965477888730376
+  },
+  {
+    "cityName": "Cuzco, PE",
+    "stationId": "GHCND:PEM00084686",
+    "lat": -13.536,
+    "lon": -71.939,
+    "tmax": 21.971175523349444,
+    "tavg": 13.491806331471148
+  },
+  {
+    "cityName": "Chiclayo, PE",
+    "stationId": "GHCND:PEM00084452",
+    "lat": -6.787,
+    "lon": -79.828,
+    "tmax": 31.785741811175313,
+    "tavg": 25.422698072805133
+  },
+  {
+    "cityName": "Huanuco, PE",
+    "stationId": "GHCND:PEM00084564",
+    "lat": -9.879,
+    "lon": -76.205,
+    "tmax": 28.2368,
+    "tavg": 22.345652173913063
+  },
+  {
+    "cityName": "Iquitos, PE",
+    "stationId": "GHCND:PE000084377",
+    "lat": -3.783,
+    "lon": -73.3,
+    "tmax": 33.611947626841285,
+    "tavg": 26.193721973094156
+  },
+  {
+    "cityName": "Lima, PE",
+    "stationId": "GHCND:PEM00084628",
+    "lat": -12.022,
+    "lon": -77.114,
+    "tmax": 27.890476190476214,
+    "tavg": 23.387487386478313
+  },
+  {
+    "cityName": "Pucallpa, PE",
+    "stationId": "GHCND:PEM00084515",
+    "lat": -8.378,
+    "lon": -74.574,
+    "tmax": 34.05779527559052,
+    "tavg": 26.53718778908421
+  },
+  {
+    "cityName": "Piura, PE",
+    "stationId": "GHCND:PEM00084401",
+    "lat": -5.206,
+    "lon": -80.616,
+    "tmax": 34.5951140065147,
+    "tavg": 27.488248587570602
+  },
+  {
+    "cityName": "Trujillo, PE",
+    "stationId": "GHCND:PEM00084501",
+    "lat": -8.081,
+    "lon": -79.109,
+    "tmax": 26.667026194144846,
+    "tavg": 22.815127919910974
+  },
+  {
+    "cityName": "Tumbes, PE",
+    "stationId": "GHCND:PEM00084370",
+    "lat": -3.553,
+    "lon": -80.381,
+    "tmax": 32.01169036334915,
+    "tavg": 27.30193756727663
+  },
+  {
+    "cityName": "Karachi, PK",
+    "stationId": "GHCND:PKM00041780",
+    "lat": 24.907,
+    "lon": 67.161,
+    "tmax": 35.39414285714284,
+    "tavg": 31.46598440545808
+  },
+  {
+    "cityName": "Islamabad, PK",
+    "stationId": "GHCND:PKM00041571",
+    "lat": 33.617,
+    "lon": 73.099,
+    "tmax": 38.826415094339644,
+    "tavg": 31.486947584789306
+  },
+  {
+    "cityName": "Hyderabad, PK",
+    "stationId": "GHCND:PKM00041764",
+    "lat": 25.383,
+    "lon": 68.417,
+    "tmax": 39.875605214152706,
+    "tavg": 33.1019667170953
+  },
+  {
+    "cityName": "Peshawar, PK",
+    "stationId": "GHCND:PKM00041530",
+    "lat": 33.994,
+    "lon": 71.515,
+    "tmax": 40.231907308377885,
+    "tavg": 32.97649769585252
+  },
+  {
+    "cityName": "Lahore, PK",
+    "stationId": "GHCND:PK000041640",
+    "lat": 31.55,
+    "lon": 74.333,
+    "tmax": 39.407857142857125,
+    "tavg": 33.73012958963281
+  },
+  {
+    "cityName": "Quetta, PK",
+    "stationId": "GHCND:PKM00041660",
+    "lat": 30.251,
+    "lon": 66.938,
+    "tmax": 36.67040133779265,
+    "tavg": 29.063507109004767
+  },
+  {
+    "cityName": "Rawalpindi, PK",
+    "stationId": "GHCND:PKM00041571",
+    "lat": 33.617,
+    "lon": 73.099,
+    "tmax": 38.82641509433964,
+    "tavg": 31.486947584789306
+  },
+  {
+    "cityName": "Bialystok, PL",
+    "stationId": "GHCND:PLM00012295",
+    "lat": 53.1,
+    "lon": 23.167,
+    "tmax": 23.74265668849394,
+    "tavg": 18.031989247311834
+  },
+  {
+    "cityName": "Elblag, PL",
+    "stationId": "GHCND:PLM00012160",
+    "lat": 54.167,
+    "lon": 19.433,
+    "tmax": 23.078184713375787,
+    "tavg": 18.012189859762678
+  },
+  {
+    "cityName": "Krakow, PL",
+    "stationId": "GHCND:PLM00012566",
+    "lat": 50.078,
+    "lon": 19.785,
+    "tmax": 24.46615678776292,
+    "tavg": 18.791722169362483
+  },
+  {
+    "cityName": "Poznan, PL",
+    "stationId": "GHCND:PLM00012330",
+    "lat": 52.421,
+    "lon": 16.826,
+    "tmax": 24.377219626168216,
+    "tavg": 19.031362007168482
+  },
+  {
+    "cityName": "Szczecin, PL",
+    "stationId": "GHCND:PLM00012205",
+    "lat": 53.4,
+    "lon": 14.617,
+    "tmax": 23.63398157625387,
+    "tavg": 18.47903225806449
+  },
+  {
+    "cityName": "Siedlce, PL",
+    "stationId": "GHCND:PL000012385",
+    "lat": 52.25,
+    "lon": 22.25,
+    "tmax": 24.342651036970253,
+    "tavg": 18.509318996415754
+  },
+  {
+    "cityName": "Wroclaw, PL",
+    "stationId": "GHCND:PLM00012424",
+    "lat": 51.103,
+    "lon": 16.886,
+    "tmax": 24.44717607973422,
+    "tavg": 19.179121863799285
+  },
+  {
+    "cityName": "Warsaw, PL",
+    "stationId": "GHCND:PLM00012375",
+    "lat": 52.166,
+    "lon": 20.967,
+    "tmax": 24.5278260869565,
+    "tavg": 19.150179211469528
+  },
+  {
+    "cityName": "Coimbra, PO",
+    "stationId": "GHCND:PO000008549",
+    "lat": 40.2,
+    "lon": -8.4167,
+    "tmax": 28.88008130081303,
+    "tavg": 21.13279022403257
+  },
+  {
+    "cityName": "Funchal, PO",
+    "stationId": "GHCND:PO000008522",
+    "lat": 32.63,
+    "lon": -16.8997,
+    "tmax": 27.038856015779093,
+    "tavg": 23.339341421143853
+  },
+  {
+    "cityName": "Lisbon, PO",
+    "stationId": "GHCND:PO000008535",
+    "lat": 38.7167,
+    "lon": -9.15,
+    "tmax": 28.259074074074128,
+    "tavg": 22.985125858123595
+  },
+  {
+    "cityName": "Port Moresby, PP",
+    "stationId": "GHCND:PP000092035",
+    "lat": -9.383,
+    "lon": 147.217,
+    "tmax": 32.50126404494386,
+    "tavg": 27.89534050179214
+  },
+  {
+    "cityName": "Belgrade, RB",
+    "stationId": "GHCND:RIE00100818",
+    "lat": 44.8,
+    "lon": 20.4667,
+    "tmax": 28.782718271827168,
+    "tavg": 23.350307377049166
+  },
+  {
+    "cityName": "Bissau, PU",
+    "stationId": "GHCND:PUM00061766",
+    "lat": 11.895,
+    "lon": -15.654,
+    "tmax": 34.720588235294116,
+    "tavg": 29.39381720430108
+  },
+  {
+    "cityName": "Saint-Denis, RE",
+    "stationId": "GHCND:REM00061980",
+    "lat": -20.887,
+    "lon": 55.51,
+    "tmax": 30.09737442922371,
+    "tavg": 26.66079207920793
+  },
+  {
+    "cityName": "Bistrita, RO",
+    "stationId": "GHCND:ROM00015085",
+    "lat": 47.15,
+    "lon": 24.5,
+    "tmax": 25.816646706586866,
+    "tavg": 19.25175675675677
+  },
+  {
+    "cityName": "Braila, RO",
+    "stationId": "GHCND:ROE00108895",
+    "lat": 45.5,
+    "lon": 28.02,
+    "tmax": 29.43987455197134,
+    "tavg": 23.22374551971326
+  },
+  {
+    "cityName": "Botosani, RO",
+    "stationId": "GHCND:ROM00015023",
+    "lat": 47.688,
+    "lon": 26.354,
+    "tmax": 24.92533333333333,
+    "tavg": 19.794159836065564
+  },
+  {
+    "cityName": "Bucharest, RO",
+    "stationId": "GHCND:ROE00108889",
+    "lat": 44.5167,
+    "lon": 26.0831,
+    "tmax": 29.988620071684615,
+    "tavg": 23.182885304659532
+  },
+  {
+    "cityName": "Buzau, RO",
+    "stationId": "GHCND:ROE00100900",
+    "lat": 45.1331,
+    "lon": 26.85,
+    "tmax": 29.556451612903224,
+    "tavg": 23.241756272401403
+  },
+  {
+    "cityName": "Cluj-Napoca, RO",
+    "stationId": "GHCND:ROE00100902",
+    "lat": 46.7831,
+    "lon": 23.5667,
+    "tmax": 26.132347670250923,
+    "tavg": 19.8326164874552
+  },
+  {
+    "cityName": "Craiova, RO",
+    "stationId": "GHCND:ROE00108893",
+    "lat": 44.23,
+    "lon": 23.87,
+    "tmax": 29.859677419354878,
+    "tavg": 23.144055299539172
+  },
+  {
+    "cityName": "Constanta, RO",
+    "stationId": "GHCND:ROE00108892",
+    "lat": 44.22,
+    "lon": 28.63,
+    "tmax": 27.259677419354826,
+    "tavg": 23.25142857142857
+  },
+  {
+    "cityName": "Galati, RO",
+    "stationId": "GHCND:ROE00108895",
+    "lat": 45.5,
+    "lon": 28.02,
+    "tmax": 29.439874551971347,
+    "tavg": 23.22374551971326
+  },
+  {
+    "cityName": "Iasi, RO",
+    "stationId": "GHCND:ROE00108896",
+    "lat": 47.1667,
+    "lon": 27.6331,
+    "tmax": 28.355824372759887,
+    "tavg": 21.84312668463611
+  },
+  {
+    "cityName": "Sibiu, RO",
+    "stationId": "GHCND:ROE00108901",
+    "lat": 45.8,
+    "lon": 24.15,
+    "tmax": 26.512634408602164,
+    "tavg": 19.842318059299192
+  },
+  {
+    "cityName": "Suceava, RO",
+    "stationId": "GHCND:ROM00015023",
+    "lat": 47.688,
+    "lon": 26.354,
+    "tmax": 24.92533333333333,
+    "tavg": 19.794159836065575
+  },
+  {
+    "cityName": "Timisoara, RO",
+    "stationId": "GHCND:ROM00015247",
+    "lat": 45.81,
+    "lon": 21.338,
+    "tmax": 28.146978557504905,
+    "tavg": 22.018402154398533
+  },
+  {
+    "cityName": "Manila, RP",
+    "stationId": "GHCND:RP000098430",
+    "lat": 14.633,
+    "lon": 121.017,
+    "tmax": 34.6540262172285,
+    "tavg": 29.51147227533463
+  },
+  {
+    "cityName": "Tulcea, RO",
+    "stationId": "GHCND:UPM00033889",
+    "lat": 45.3667,
+    "lon": 28.85,
+    "tmax": 29.097249724972517,
+    "tavg": 22.74742798353907
+  },
+  {
+    "cityName": "Abakan, RS",
+    "stationId": "GHCND:RSM00029866",
+    "lat": 53.7167,
+    "lon": 91.7,
+    "tmax": 27.042242152466375,
+    "tavg": 19.948878923766827
+  },
+  {
+    "cityName": "Arkangel'sk, RS",
+    "stationId": "GHCND:RSM00022550",
+    "lat": 64.5,
+    "lon": 40.7331,
+    "tmax": 21.845351043643213,
+    "tavg": 16.171326164874532
+  },
+  {
+    "cityName": "Blagoveshchensk, RS",
+    "stationId": "GHCND:RSM00031510",
+    "lat": 50.25,
+    "lon": 127.5,
+    "tmax": 27.379390018484322,
+    "tavg": 21.89335863377609
+  },
+  {
+    "cityName": "Chita, RS",
+    "stationId": "GHCND:RSM00030758",
+    "lat": 52.0831,
+    "lon": 113.4831,
+    "tmax": 25.949186256781232,
+    "tavg": 18.85501792114695
+  },
+  {
+    "cityName": "Elista, RS",
+    "stationId": "GHCND:RSM00034861",
+    "lat": 46.32,
+    "lon": 44.3,
+    "tmax": 31.696110056926013,
+    "tavg": 25.141666666666666
+  },
+  {
+    "cityName": "Kaliningrad, RS",
+    "stationId": "GHCND:RSM00026702",
+    "lat": 54.7167,
+    "lon": 20.55,
+    "tmax": 22.934935304990738,
+    "tavg": 18.117383512544798
+  },
+  {
+    "cityName": "Kazan', RS",
+    "stationId": "GHCND:RSM00027595",
+    "lat": 55.7331,
+    "lon": 49.2,
+    "tmax": 25.541895734597148,
+    "tavg": 20.19310035842299
+  },
+  {
+    "cityName": "Kemerovo, RS",
+    "stationId": "GHCND:RSM00029642",
+    "lat": 55.27,
+    "lon": 86.107,
+    "tmax": 23.827319587628867,
+    "tavg": 18.78194192377495
+  },
+  {
+    "cityName": "Khanty-Mansiysk, RS",
+    "stationId": "GHCND:RSM00023933",
+    "lat": 61.0167,
+    "lon": 69.1167,
+    "tmax": 22.956591337099816,
+    "tavg": 18.134318996415786
+  },
+  {
+    "cityName": "Khabarovsk, RS",
+    "stationId": "GHCND:RSM00031735",
+    "lat": 48.5167,
+    "lon": 135.1167,
+    "tmax": 26.70957249070633,
+    "tavg": 21.390770609318995
+  },
+  {
+    "cityName": "Kostroma, RS",
+    "stationId": "GHCND:RSM00027333",
+    "lat": 57.7331,
+    "lon": 40.85,
+    "tmax": 24.09336492890996,
+    "tavg": 18.69843173431736
+  },
+  {
+    "cityName": "Kotlas, RS",
+    "stationId": "GHCND:RSM00022887",
+    "lat": 61.2331,
+    "lon": 46.7167,
+    "tmax": 23.441414141414143,
+    "tavg": 17.483318385650225
+  },
+  {
+    "cityName": "Krasnodar, RS",
+    "stationId": "GHCND:RSM00034927",
+    "lat": 45.03,
+    "lon": 39.15,
+    "tmax": 30.381593927893746,
+    "tavg": 24.2946494464945
+  },
+  {
+    "cityName": "Kyzyl, RS",
+    "stationId": "GHCND:RSM00036096",
+    "lat": 51.72,
+    "lon": 94.5,
+    "tmax": 27.621043165467647,
+    "tavg": 20.514260089686104
+  },
+  {
+    "cityName": "Kurgan, RS",
+    "stationId": "GHCND:RSM00028661",
+    "lat": 55.4667,
+    "lon": 65.4,
+    "tmax": 25.926470588235354,
+    "tavg": 19.70073800738008
+  },
+  {
+    "cityName": "Machackala, RS",
+    "stationId": "GHCND:RSM00037472",
+    "lat": 42.9667,
+    "lon": 47.55,
+    "tmax": 28.951789077212826,
+    "tavg": 24.734986225895298
+  },
+  {
+    "cityName": "Majkop, RS",
+    "stationId": "GHCND:RSM00037021",
+    "lat": 44.617,
+    "lon": 40.083,
+    "tmax": 28.34156626506024,
+    "tavg": 22.588823529411776
+  },
+  {
+    "cityName": "Magadan, RS",
+    "stationId": "GHCND:RSM00025913",
+    "lat": 59.55,
+    "lon": 150.7831,
+    "tmax": 15.02177191328937,
+    "tavg": 12.134677419354839
+  },
+  {
+    "cityName": "Moscow, RS",
+    "stationId": "GHCND:RSM00027612",
+    "lat": 55.8331,
+    "lon": 37.6167,
+    "tmax": 24.351897533206873,
+    "tavg": 19.36301115241634
+  },
+  {
+    "cityName": "Nazran, RS",
+    "stationId": "GHCND:RSM00037228",
+    "lat": 43.05,
+    "lon": 44.65,
+    "tmax": 26.21230916030535,
+    "tavg": 20.933870967741957
+  },
+  {
+    "cityName": "Novosibirsk, RS",
+    "stationId": "GHCND:RSM00029634",
+    "lat": 55.083,
+    "lon": 82.9,
+    "tmax": 24.264818355640532,
+    "tavg": 19.191981566820267
+  },
+  {
+    "cityName": "Omsk, RS",
+    "stationId": "GHCND:RSM00028698",
+    "lat": 55.0167,
+    "lon": 73.3831,
+    "tmax": 25.22922932330826,
+    "tavg": 19.504480286738335
+  },
+  {
+    "cityName": "Orenburg, RS",
+    "stationId": "GHCND:RSM00035121",
+    "lat": 51.6831,
+    "lon": 55.1,
+    "tmax": 29.209057301293825,
+    "tavg": 22.316577060931916
+  },
+  {
+    "cityName": "Orel, RS",
+    "stationId": "GHCND:RSM00027906",
+    "lat": 52.933,
+    "lon": 36,
+    "tmax": 25.196924603174626,
+    "tavg": 19.433273542600894
+  },
+  {
+    "cityName": "Penza, RS",
+    "stationId": "GHCND:RSM00027962",
+    "lat": 53.13,
+    "lon": 45.02,
+    "tmax": 26.679127134724823,
+    "tavg": 20.429767441860456
+  },
+  {
+    "cityName": "Perm', RS",
+    "stationId": "GHCND:RSM00028225",
+    "lat": 57.915,
+    "lon": 56.021,
+    "tmax": 23.2422090729783,
+    "tavg": 18.68790697674416
+  },
+  {
+    "cityName": "Petrozavodsk, RS",
+    "stationId": "GHCND:RSM00022820",
+    "lat": 61.8167,
+    "lon": 34.2667,
+    "tmax": 21.438024231127695,
+    "tavg": 16.942473118279594
+  },
+  {
+    "cityName": "Petropavloski-Kamchatskiy, RS",
+    "stationId": "GHCND:RSM00032583",
+    "lat": 52.9831,
+    "lon": 158.65,
+    "tmax": 17.18901515151519,
+    "tavg": 13.807521367521357
+  },
+  {
+    "cityName": "Pskov, RS",
+    "stationId": "GHCND:RSM00026258",
+    "lat": 57.8167,
+    "lon": 28.3331,
+    "tmax": 23.63880455407971,
+    "tavg": 18.345650048875846
+  },
+  {
+    "cityName": "Saratov, RS",
+    "stationId": "GHCND:RSM00034163",
+    "lat": 51.63,
+    "lon": 45.45,
+    "tmax": 27.307763401109035,
+    "tavg": 20.941139240506327
+  },
+  {
+    "cityName": "Stavropol, RS",
+    "stationId": "GHCND:RSM00034949",
+    "lat": 45.05,
+    "lon": 42.02,
+    "tmax": 28.314516129032256,
+    "tavg": 22.418817204301135
+  },
+  {
+    "cityName": "Smolensk, RS",
+    "stationId": "GHCND:RSM00026781",
+    "lat": 54.75,
+    "lon": 32.0667,
+    "tmax": 23.15056925996204,
+    "tavg": 17.949723247232487
+  },
+  {
+    "cityName": "Sverdlovsk, RS",
+    "stationId": "GHCND:RSM00028440",
+    "lat": 56.8331,
+    "lon": 60.6331,
+    "tmax": 24.483965844402277,
+    "tavg": 18.78844086021506
+  },
+  {
+    "cityName": "Syktyvkar, RS",
+    "stationId": "GHCND:RSM00023804",
+    "lat": 61.6667,
+    "lon": 50.8667,
+    "tmax": 23.102990654205595,
+    "tavg": 17.361111111111104
+  },
+  {
+    "cityName": "Tula, RS",
+    "stationId": "GHCND:RSM00027719",
+    "lat": 54.233,
+    "lon": 37.617,
+    "tmax": 25.439296636085658,
+    "tavg": 19.6010752688172
+  },
+  {
+    "cityName": "Tver, RS",
+    "stationId": "GHCND:RSM00027402",
+    "lat": 56.883,
+    "lon": 35.867,
+    "tmax": 24.27669256381799,
+    "tavg": 18.771509971509968
+  },
+  {
+    "cityName": "Ufa, RS",
+    "stationId": "GHCND:RSM00028722",
+    "lat": 54.7167,
+    "lon": 55.8331,
+    "tmax": 25.99507892293406,
+    "tavg": 19.65887096774194
+  },
+  {
+    "cityName": "Tyumen, RS",
+    "stationId": "GHCND:RSM00028367",
+    "lat": 57.15,
+    "lon": 65.5,
+    "tmax": 24.387200736648264,
+    "tavg": 18.638206278026924
+  },
+  {
+    "cityName": "Vladikavkaz, RS",
+    "stationId": "GHCND:RSM00037228",
+    "lat": 43.05,
+    "lon": 44.65,
+    "tmax": 26.212309160305345,
+    "tavg": 20.933870967741953
+  },
+  {
+    "cityName": "Vladimir, RS",
+    "stationId": "GHCND:RSM00027532",
+    "lat": 56.117,
+    "lon": 40.35,
+    "tmax": 23.986289445048996,
+    "tavg": 18.868698060941846
+  },
+  {
+    "cityName": "Volgograd, RS",
+    "stationId": "GHCND:RS000034561",
+    "lat": 48.67,
+    "lon": 44.45,
+    "tmax": 30.166183136899328,
+    "tavg": 23.764516129032263
+  },
+  {
+    "cityName": "Vologda, RS",
+    "stationId": "GHCND:RSM00027037",
+    "lat": 59.3167,
+    "lon": 39.9167,
+    "tmax": 23.403030303030306,
+    "tavg": 17.549327354260083
+  },
+  {
+    "cityName": "Vorkuta, RS",
+    "stationId": "GHCND:RSM00023226",
+    "lat": 67.483,
+    "lon": 64.016,
+    "tmax": 17.840099502487554,
+    "tavg": 12.85962962962965
+  },
+  {
+    "cityName": "Vyatka, RS",
+    "stationId": "GHCND:RSM00027199",
+    "lat": 58.6,
+    "lon": 49.6331,
+    "tmax": 24.114102564102495,
+    "tavg": 18.723587443946176
+  },
+  {
+    "cityName": "Yuzhno-Sakhalinsk, RS",
+    "stationId": "GHCND:RSM00032150",
+    "lat": 46.95,
+    "lon": 142.72,
+    "tmax": 22.395083487940603,
+    "tavg": 17.297670250896054
+  },
+  {
+    "cityName": "Yakutsk, RS",
+    "stationId": "GHCND:RSM00024959",
+    "lat": 62.0167,
+    "lon": 129.7167,
+    "tmax": 25.72151215121507,
+    "tavg": 19.689308176100628
+  },
+  {
+    "cityName": "Kigali, RW",
+    "stationId": "GHCND:RWM00064387",
+    "lat": -1.969,
+    "lon": 30.139,
+    "tmax": 28.44632768361586,
+    "tavg": 22.460841423948207
+  },
+  {
+    "cityName": "Jeddah, SA",
+    "stationId": "GHCND:SA000041024",
+    "lat": 21.7,
+    "lon": 39.183,
+    "tmax": 38.74329580348007,
+    "tavg": 32.81723800195883
+  },
+  {
+    "cityName": "Riyadh, SA",
+    "stationId": "GHCND:SA000040438",
+    "lat": 24.7,
+    "lon": 46.733,
+    "tmax": 43.554994511525784,
+    "tavg": 36.824654832347115
+  },
+  {
+    "cityName": "Medina, SA",
+    "stationId": "GHCND:SA000040430",
+    "lat": 24.55,
+    "lon": 39.7,
+    "tmax": 43.54865938430985,
+    "tavg": 37.0479353680431
+  },
+  {
+    "cityName": "Tabuk, SA",
+    "stationId": "GHCND:SAM00040375",
+    "lat": 28.365,
+    "lon": 36.619,
+    "tmax": 39.20887512899897,
+    "tavg": 31.413554757630177
+  },
+  {
+    "cityName": "Sakakah, SA",
+    "stationId": "GHCND:SA000040361",
+    "lat": 29.783,
+    "lon": 40.1,
+    "tmax": 40.33129689174708,
+    "tavg": 33.602336028751154
+  },
+  {
+    "cityName": "Bloemfontein, SF",
+    "stationId": "GHCND:SF002613650",
+    "lat": -29.1,
+    "lon": 26.3,
+    "tmax": 31.913899999999984,
+    "tavg": 23.14640933572712
+  },
+  {
+    "cityName": "Kimberley, SF",
+    "stationId": "GHCND:SF000068438",
+    "lat": -28.8,
+    "lon": 24.767,
+    "tmax": 33.31924119241197,
+    "tavg": 25.346271338724186
+  },
+  {
+    "cityName": "MMabatho (Mafikeng), SF",
+    "stationId": "GHCND:SFM00068242",
+    "lat": -25.798,
+    "lon": 25.548,
+    "tmax": 31.454605263157926,
+    "tavg": 23.69093851132686
+  },
+  {
+    "cityName": "Dakar, SG",
+    "stationId": "GHCND:SG000061641",
+    "lat": 14.733,
+    "lon": -17.5,
+    "tmax": 31.11418092909533,
+    "tavg": 27.675899280575507
+  },
+  {
+    "cityName": "Kolda, SG",
+    "stationId": "GHCND:SGM00061698",
+    "lat": 12.883,
+    "lon": -14.967,
+    "tmax": 40.31243589743592,
+    "tavg": 32.54712643678157
+  },
+  {
+    "cityName": "Ziguinchor, SG",
+    "stationId": "GHCND:SGM00061695",
+    "lat": 12.556,
+    "lon": -16.282,
+    "tmax": 34.97705442902885,
+    "tavg": 28.676849183477454
+  },
+  {
+    "cityName": "Freetown, SL",
+    "stationId": "GHCND:SL000061856",
+    "lat": 8.617,
+    "lon": -13.2,
+    "tmax": 31.412264150943408,
+    "tavg": 28.31504065040647
+  },
+  {
+    "cityName": "Barcelona, SP",
+    "stationId": "GHCND:SP000008181",
+    "lat": 41.2928,
+    "lon": 2.0697,
+    "tmax": 28.569775784753364,
+    "tavg": 24.432168458781348
+  },
+  {
+    "cityName": "Logrono, SP",
+    "stationId": "GHCND:SPE00120188",
+    "lat": 42.4519,
+    "lon": -2.3308,
+    "tmax": 30.037275985663083,
+    "tavg": 22.743693693693682
+  },
+  {
+    "cityName": "Murcia, SP",
+    "stationId": "GHCND:SPE00120323",
+    "lat": 38.0028,
+    "lon": -1.1692,
+    "tmax": 34.28368932038831,
+    "tavg": 27.518333333333306
+  },
+  {
+    "cityName": "Melilla, SP",
+    "stationId": "GHCND:SP000060338",
+    "lat": 35.2778,
+    "lon": -2.9553,
+    "tmax": 29.482616487455253,
+    "tavg": 26.935457809694785
+  },
+  {
+    "cityName": "Oviedo, SP",
+    "stationId": "GHCND:SPE00119819",
+    "lat": 43.5606,
+    "lon": -5.6983,
+    "tmax": 23.245924225028684,
+    "tavg": 20.475407407407385
+  },
+  {
+    "cityName": "Palma De Mallorca, SP",
+    "stationId": "GHCND:SPE00119882",
+    "lat": 39.5556,
+    "lon": 2.6264,
+    "tmax": 29.774103942652324,
+    "tavg": 25.272401433691712
+  },
+  {
+    "cityName": "Santa Cruz de Tenerife, SP",
+    "stationId": "GHCND:SPE00120467",
+    "lat": 28.4775,
+    "lon": -16.3292,
+    "tmax": 25.83192825112103,
+    "tavg": 21.179192825112118
+  },
+  {
+    "cityName": "Santander, SP",
+    "stationId": "GHCND:SPE00119981",
+    "lat": 43.4917,
+    "lon": -3.7994,
+    "tmax": 23.303686635944732,
+    "tavg": 20.12821203953278
+  },
+  {
+    "cityName": "Santiago De Compostela, SP",
+    "stationId": "GHCND:SPE00119729",
+    "lat": 42.8878,
+    "lon": -8.4106,
+    "tmax": 24.691734052111432,
+    "tavg": 18.309318996415744
+  },
+  {
+    "cityName": "Toledo, SP",
+    "stationId": "GHCND:SPE00120566",
+    "lat": 39.8844,
+    "lon": -4.0492,
+    "tmax": 34.66341689879296,
+    "tavg": 28.33941093969144
+  },
+  {
+    "cityName": "Valencia, SP",
+    "stationId": "GHCND:SPM00008284",
+    "lat": 39.489,
+    "lon": -0.482,
+    "tmax": 30.854680365296804,
+    "tavg": 25.919982078853035
+  },
+  {
+    "cityName": "Valladolid, SP",
+    "stationId": "GHCND:SPE00120602",
+    "lat": 41.7,
+    "lon": -4.85,
+    "tmax": 29.037992831541242,
+    "tavg": 22.60109689213893
+  },
+  {
+    "cityName": "Khartoum, SU",
+    "stationId": "GHCND:SU000062721",
+    "lat": 15.6,
+    "lon": 32.549,
+    "tmax": 42.12384615384615,
+    "tavg": 35.36928374655644
+  }
+]
+
+
+
+
+
+
