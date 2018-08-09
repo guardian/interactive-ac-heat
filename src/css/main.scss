@@ -26,7 +26,8 @@
 
 .cells path {
   fill: none;
-  stroke: rgb(0, 253, 114);
+  // stroke: rgb(0, 253, 114);
+  stroke: none;
   pointer-events: all;
 
   &:hover{
@@ -81,4 +82,16 @@
 .period {
   font-size: 18px;
   font-weight: 600;
+}
+
+.need-1 {
+  fill: #f5be2c;
+}
+
+.need-2 {
+  fill: #ff4e36;
+}
+
+.noneed {
+  fill: #11a725;
 }

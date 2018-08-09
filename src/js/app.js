@@ -1,8 +1,11 @@
-import * as d3 from 'd3';
+import * as d3base from 'd3';
+import * as d3gp from 'd3-geo-projection';
 import * as topojson from 'topojson'
+import world from 'world-atlas/world/110m.json'
 import * as d3Beeswarm from 'd3-beeswarm'
+import cities from '../assets/cleanCitySubset.json'
 // import us from '../assets/us-map.json'
-import us from '../assets/us-geo.json'
+// import us from '../assets/us-geo.json'
 import temps from '../assets/us-climate.json'
 import mustache from 'mustache'
 import cities from '../data/cleanCitySubset.json'
@@ -43,6 +46,85 @@ searchEl.addEventListener("keyup", function() {
 
 
 
+
+
+
+const d3 = Object.assign({}, d3base, d3gp);
+
+/* Map */
+const mapWidth = 1200;
+const mapHeight = 600;
+
+let period = '1981-2010';
+
+const svg = d3.select('.us-map').append('svg')
+  .attr('width', mapWidth)
+  .attr('height', mapHeight)
+
+const fc = topojson.feature(world, world.objects.countries)
+
+const proj = d3.geoNaturalEarth2()
+  .fitSize([mapWidth, mapHeight], fc)
+
+const path = d3.geoPath()
+  .projection(proj)
+
+
+  svg.append("path")
+    .attr("stroke", "#b3b3b4")
+    .attr("stroke-width", 0.5)
+    .attr('fill', 'none')
+    // .attr("d", path(topojson.mesh(us, us.objects.counties, function (a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); })));
+    
+  svg.selectAll('countries')
+    .data(fc.features)
+    .enter()
+    .append('path')
+    .attr('d', path)
+    .style('fill', '#dcdcdc')
+    .style('opacity', 0.4)
+    .style('stroke', '#b3b3b4')
+    .attr("stroke-width", 0.5)
+
+const cityCircles = svg
+  .selectAll('circle')
+  .data(cities)
+  .enter()
+  .append('circle')
+  .attr('cx', d => proj([d.lon, d.lat])[0])
+  .attr('cy', d => proj([d.lon, d.lat])[1])
+  .attr('r', '2px')
+  .attr('class', d => {
+    const needAC = d.tavg > 26.5;
+    const noNeedAC = d.tavg <= 26.5 && d.tmax <= 28;
+    // const needHeat = d.tavg coldest < 13 // || d.tmin < 7;
+    // const noNeedHeat = d.tavg coldest >= 13 // && d.tmin >= 7;
+    if (needAC) {
+      return 'need-2'
+    } else {
+      return 'noneed'
+    }
+  })
+// tavg in hottest > 26.5 => NEED AC
+
+// tavg in hott < 26.5 && tmax hott < 28 => NO NEED AC
+
+// tavg in coldest < 13 || tmin in coldest < 7 => NEED HEAT
+
+// tavg in coldest > 13 && tmin in coldest > 7  => NO NEED HEAT
+
+
+/* Beeswarm */
+const plotWidth = 600;
+const plotHeight = 400;
+const mobile = window.matchMedia('(max-width: 739px)').matches
+const padding = mobile ?
+  {
+    top: 0,
+    right: 0,
+    bottom: 0,
+    left: 0
+  }
 
 // /* Map */
 // const mapWidth = 1200;

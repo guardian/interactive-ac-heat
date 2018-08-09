@@ -51,6 +51,7 @@
         "csv-parse": "^2.5.0",
         "d3": "^5.5.0",
         "d3-beeswarm": "0.0.5",
+        "d3-geo-projection": "^2.4.0",
         "gulp-rename": "^1.2.2",
         "gulp-replace": "^0.6.1",
         "mustache": "^2.3.0",
@@ -59,6 +60,7 @@
         "request-promise": "^4.2.2",
         "require-uncached": "^1.0.3",
         "topojson": "^3.0.2",
-        "unfetch": "^3.0.0"
+        "unfetch": "^3.0.0",
+        "world-atlas": "^1.1.4"
     }
 }
