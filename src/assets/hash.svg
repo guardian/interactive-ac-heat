@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" height='32px' width='4px'>
+
+    <defs>
+    <pattern id="bri-underline" patternUnits="userSpaceOnUse" width="4" height="4">
+		<rect width="4" height="4" fill='#f6f6f6'></rect>
+		<path d="M-1,1 l2,-2 M0,4 l4,-4 M3,5 l2,-2" stroke='#f5be2c' stroke-width='2'></path>
+	</pattern>
+
+    </defs>
+
+    <rect width='4' height='12' x='0' y='12' fill='url("#bri-underline")' fill-opacity='0.4'></rect>
+
+</svg>
