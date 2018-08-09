@@ -156,3 +156,80 @@ line-height: 26px;;
               background-image: url("<%= path %>/assets/mail-white.svg");
       }
   }
+
+
+  .container-badge {
+
+    display: block;
+    @include fs-textSans(1);
+
+   
+  
+  
+   width: 100%;
+
+  
+    position: relative;
+
+ 
+
+    @include mq( tablet) {
+     
+        max-width: 180px;
+        
+     }
+
+     @include mq( desktop) {
+        left: -160px;
+        top: 25px;
+        width: calc((100vw - 620px) / 2);
+        max-width: 160px;
+        position: absolute;
+     }
+ 
+
+    @include mq(wide) {
+        
+        left: -210px;
+        max-width: 200px;
+    }
+
+
+
+
+    a {
+      color: #ccc
+    }
+  
+    .badge {
+        border-top: 1px solid $neutral-86;
+        padding-top: 2px;
+        @include mq(desktop) {
+            border-bottom: none;
+        }
+        @include mq($until: desktop) {
+            border-top: none;
+
+            margin-bottom: 6px;
+        }
+    }
+  
+    .badge {
+      text-align: left;
+      overflow: hidden;
+    }
+  
+    .badge__link {
+      display: block;
+      padding-right: 10px;
+      padding-bottom: 6px;
+      padding-top: 6px;
+  
+      img {
+        max-width: 100%;
+      }
+    }
+    .badge__logo {
+      margin-left: 0;
+    }
+  }
