@@ -150,19 +150,10 @@ const cityCircles = svg
 
 //searchbox
 
-const resetCircles = () => {
-  cityCircles.transition()
-    .duration(1000)
-    .style('opacity', 1)
-    .attr('r', standardRadius)
-}
-
-
-
 const parent = d3.select(".gv-city-search");
 
 const searchBox = parent.insert("div", ":first-child").classed("search-container", true);
-const input = searchBox.append("input").classed("colour", true);
+const input = searchBox.append("input").classed("city-result", true);
 
 input.attr("placeholder", "Find a city …");
 
@@ -247,46 +238,46 @@ function selectedCity(city) {
 
 
   const c = cities.find(d => d.cityName === city)
-console.log(c)
   
   // const firstLine =  `${c.needAc ? 'will be happier with air conditioning.' : 'have no real need for air conditioning.'}.
-  const firstLine = c.needAC ? 'residents will be happier with air conditioning. ' : 'residents have no real need of air conditioning. ';
+  const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'residents have no real need of air conditioning. ';
   const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though.'}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
   const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10} °C, and average highs are ${Math.round(c.tMax * 10) / 10} °C. `;
   const fourthLine = c.needHeat ? `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10} °C but can get as cold as ${Math.round(c.tMin * 10) / 10} °C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10} °C.`
   console.log(firstLine + secondLine + thirdLine + fourthLine)
-
+  
+  d3.select('.explanation').remove()
   searchBox.append("div").classed("explanation", true).html(firstLine + secondLine + thirdLine + fourthLine);
 
-  // d3.select(".explanation");
+  // input.attr('class', 'need-ac')
+  
 
 
-
-  // let day = (totalWeekDays - 1) - Math.floor(Math.abs(paygap) / 100 * totalWeekDays);
-
-  // d3.select(".search-box-result").style("display", "inline-block").html(`${company}`);
-
-  // d3.select(".search-box-gap").style("display", "inline-block").html(`${Math.abs(paygap)}%`);
+  let color;
 
 
-  // if (paygap > 0) {
-    // d3.select("#search-box-parent").attr("class", "positive");
-    // d3.select(".search-stop-language").html(`effectively stops paying women on`);
-    // d3.select(".search-paygap-language").html(`a pay gap of`);
-    // d3.select(".search-box-date").style("display", "inline-block").html(`${dayArray[day].getDate()} ${monthNames[dayArray[day].getMonth()]}`);
-  // } else if (paygap < 0) {
-    // d3.select("#search-box-parent").attr("class", "negative");
-    // input.html(`pays women for the full 12 months`);
-    // d3.select(".search-paygap-language").html(`women outearn men by `);
-    // d3.select(".search-box-date").style("display", "none").html(``);
-  // } else {
-  //   d3.select("#search-box-parent").attr("class", "neutral");
-  //   d3.select(".search-stop-language").html(`pays women for the full 12 months`);
-  //   d3.select(".search-paygap-language").html(`there is no pay gap between men and women`);
-  //   d3.select(".search-box-gap").style("display", "none").html(``);
-  //   d3.select(".search-box-date").style("display", "none").html(``);
-  // }
+  if (c.noNeedHeat && c.noNeedAC) {
+      color = 'need-none'
+  } else if (c.needAC && c.needHeat) {
+      color = 'need-both'
+  } else if (c.needAC && c.noNeedHeat) {
+      color = 'need-ac'
+  } else if (c.needHeat && c.noNeedAC) {
+      color = 'need-heat'
+  } 
+  input.classed(color, true)
 
+}
+
+const resetCircles = () => {
+  cityCircles.transition()
+    .duration(1000)
+    .style('opacity', 1)
+    .attr('r', standardRadius)
+
+  d3.select('.explanation').remove()
+  input.attr('class', 'city-result')
+  // searchBox.remove("div").classed("explanation", true
 }
 
 document.addEventListener("awesomplete-selectcomplete", function (e) {

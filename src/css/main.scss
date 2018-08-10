@@ -86,18 +86,22 @@
 
 .need-ac {
   fill: #f5be2c;
+  color: #f5be2c !important;
 }
 
 .need-heat {
   fill: #0084c6;
+  color: #0084c6 !important;
 }
 
 .need-both {
   fill: #951d7a;
+  color: #951d7a !important;
 }
 
 .need-none {
   fill: #11a725;
+  color: #11a725 !important;
 }
 
 
@@ -199,7 +203,7 @@
     outline: 0;
     margin: 0;
     padding: 6px 0px 2px;
-    height: 44px;
+    // height: 44px;
     // font-size: 14px;
     // line-height: 18px;
     // font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -208,7 +212,6 @@
     max-width: 620px;
     margin-top: 12px;
     margin-bottom: 12px;
-    color: #ff7e00;
 }
 
 .awesomplete>ul {
@@ -372,21 +375,7 @@
         display: inline-block;
     }
     @include fs-headline(3);
-    &.positive {
-        .colour {
-            color: #ff7e00;
-        }
-    }
-    &.negative {
-        .colour {
-            color: #2aadbc;
-        }
-    }
-    &.neutral {
-        .colour {
-            color: #767676;
-        }
-    }
+
 }
 
 .search-box-date,
@@ -396,7 +385,6 @@
     padding: 2px 0px 2px;
     box-sizing: border-box;
     height: 30px;
-    color: #ff7e00;
     padding: 0 5px;
 }
 
@@ -407,4 +395,9 @@
 .search-box-date {
     min-width: 100px;
     margin-left: 5px;
+}
+
+.city-result {
+    font-weight: 600;
+    color: #333;
 }
