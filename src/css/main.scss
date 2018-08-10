@@ -145,13 +145,14 @@
     flex-shrink: 0;
     flex-wrap: wrap;
     justify-content: left;
-    padding-left: 40px;
+    padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
 
   @include mq(tablet) {
     flex-direction: row;
+    padding-left: 40px;
     text-align: center !important;
   }
 
@@ -165,9 +166,13 @@
 }
 
 .map-title {
-  margin-top: 60px;
-  text-align: left;
-  padding-left: 40px;
+  @include mq(mobile) {
+    padding-left: 20px;
+  }
+
+  @include mq(tablet) {
+    padding-left: 40px;
+  }
 }
 
 

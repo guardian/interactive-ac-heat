@@ -55,9 +55,9 @@ const d3 = Object.assign({}, d3base, d3gp);
 
 /* Map */
 const mapWidth = mapSvgEl.getBoundingClientRect().width
-const mapHeight = 0.5 * mapWidth
+// const mapHeight = 0.43 * mapWidth
+const mapHeight = isMobile ? 0.6 * mapWidth : 0.43 * mapWidth;
 
-let period = '1981-2010';
 
 const svg = d3.select(mapSvgEl).append('svg')
   .attr('width', mapWidth)
