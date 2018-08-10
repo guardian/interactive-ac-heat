@@ -100,6 +100,8 @@
   height: 300px;
 }
 
+.key-container {}
+
 .map-key-needAC {
   height: 10px;
   width: 10px;
@@ -130,19 +132,21 @@
 }
 
 .map-key {
+
+    @include fs-textSans(2);
   
   @include mq(mobile) {
     display: flex;
     flex-shrink: 0;
     flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+    justify-content: left;
+    // margin-top: 20px;
     margin-bottom: 10px;
   }
 
   @include mq(tablet) {
     flex-direction: row;
-    text-align: center !important;
+    text-align: left !important;
   }
 
 }
@@ -155,7 +159,8 @@
 }
 
 .map-title {
-  text-align: center;
+  text-align: left;
+  @include fs-bodyCopy(3)
 }
 
 
