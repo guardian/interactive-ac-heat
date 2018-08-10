@@ -3,7 +3,7 @@
     position: relative;
     padding-top: 10px;
 
-
+    border-left: 1px solid #e7dbdb;
     margin-bottom: 10px;
 
     margin-left: 230px;
@@ -98,8 +98,9 @@ line-height: 26px;;
 // }
 
 .gv-main {
-    // border-left: 1px solid #dcdcdc;
-    // padding-left: 10px;
+    margin-top: 40px;
+    border-left: 1px solid #dcdcdc;
+    padding-left: 10px;
 
     margin-left: 240px;
 
@@ -112,6 +113,10 @@ line-height: 26px;;
     }
 
     max-width: 720px;
+
+    p {
+        max-width: 620px;
+    }
 
 }
 
@@ -179,12 +184,14 @@ line-height: 26px;;
         
      }
 
-     @include mq( desktop) {
+     @include mq( wide) {
         left: -160px;
-        top: 61px;
+        top: -33px;
         width: calc((100vw - 620px) / 2);
         max-width: 160px;
         position: absolute;
+        border-bottom: 1px solid #e7dbdb;
+
      }
  
 
