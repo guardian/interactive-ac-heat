@@ -2,69 +2,72 @@ import * as d3base from 'd3';
 import * as d3gp from 'd3-geo-projection';
 import * as topojson from 'topojson'
 import world from 'world-atlas/world/110m.json'
+import Awesomplete from './awesomplete.js'
 import * as d3Beeswarm from 'd3-beeswarm'
-import cities from '../assets/cleanCitySubset.json'
+// import cities from '../assets/cleanCitySubset.json'
 // import us from '../assets/us-map.json'
 // import us from '../assets/us-geo.json'
-import temps from '../assets/us-climate.json'
 import mustache from 'mustache'
-import cities from '../data/cleanCitySubset.json'
+import cities from '../data/joined.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
+import namelookup from '../data/country_codes.json'
 
+cities.map(c => {
+  c.displayname = c.cityName.split(",")[0];
+  var code = c.cityName.split(",")[1].replace(/ /g,"");
+  var matchingrecord = namelookup.find(n => code == n.GEC);
+  if (matchingrecord)
+{  c.country = matchingrecord.name;}
+})
 
+console.log(cities)
 
 // const needAC = d.tAvgHot > 26.5;
 // const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
 // const needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
 // const noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
 
-cities.map(c => {
-  c.displayname = c.cityName.split(",")[0]
-  c.needAC = c.tAvgHot > 26.5;
-  c.noNeedAC = c.tAvgHot <= 26.5 && d.tMax <= 28;
-  c.needHeat = c.tAvgCold <= 13 && d.tMin <= 7;
-  c.noNeedHeat = c.tAvgCold > 13 && d.tMin > 7;
-  })
+cities.map(d => {
+  // c.displayname = c.cityName.split(",")[0]
+  d.needAC = d.tAvgHot > 26.5 || d.tMax > 28;
+  d.noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
+  d.needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
+  d.noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+})
 
-console.log(cities);
+
+// const needAC = d.tAvgHot > 26.5 || d.tMax > 28;
+// const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
+// const needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
+// const noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+
+
+
+const isMobile = window.innerWidth < 600;
+const standardRadius = isMobile ? 1 : 2;
+const largeRadius = 6;
 
 var searchEl = document.getElementById("gv-search-field");
 var tablediv = document.querySelector(".gv-table");
-
-searchEl.addEventListener("focus", function() {
-  searchEl.value = "";
-})
-
-searchEl.addEventListener("keyup", function() {
-  var criterion = searchEl.value;
-  if (criterion.length > 2 && criterion != "Find your city"){
-    var tablehtml = mustache.render(tabletemplate,cities.filter(c => c.cityName.toLowerCase().indexOf(criterion.toLowerCase()) > -1));  
-    tablediv.innerHTML = tablehtml;
-  }
-
-})
-
-
-
-
-
+const mapSvgEl = document.querySelector(".world-map")
 
 const d3 = Object.assign({}, d3base, d3gp);
 
 /* Map */
-const mapWidth = 1200;
-const mapHeight = 600;
+const mapWidth = mapSvgEl.getBoundingClientRect().width
+const mapHeight = 0.5 * mapWidth
 
 let period = '1981-2010';
 
-const svg = d3.select('.us-map').append('svg')
+const svg = d3.select(mapSvgEl).append('svg')
   .attr('width', mapWidth)
   .attr('height', mapHeight)
 
 const fc = topojson.feature(world, world.objects.countries)
 
-const proj = d3.geoNaturalEarth2()
+const proj = d3.geoRobinson()
   .fitSize([mapWidth, mapHeight], fc)
+  .rotate([-18, 0, 0])
 
 const path = d3.geoPath()
   .projection(proj)
@@ -91,20 +94,49 @@ const cityCircles = svg
   .data(cities)
   .enter()
   .append('circle')
+  .attr('id', d => d.cityName.replace(/[ ,]+/g, ""))
   .attr('cx', d => proj([d.lon, d.lat])[0])
   .attr('cy', d => proj([d.lon, d.lat])[1])
-  .attr('r', '2px')
+  .attr('r', standardRadius)
   .attr('class', d => {
-    const needAC = d.tavg > 26.5;
-    const noNeedAC = d.tavg <= 26.5 && d.tmax <= 28;
-    // const needHeat = d.tavg coldest < 13 // || d.tmin < 7;
-    // const noNeedHeat = d.tavg coldest >= 13 // && d.tmin >= 7;
-    if (needAC) {
-      return 'need-2'
-    } else {
-      return 'noneed'
+    if (d.noNeedHeat && d.noNeedAC) {
+      return 'need-none'
+    } else
+
+    if (d.needAC && d.needHeat) {
+      return 'need-both'
+    } else
+
+    if (d.needAC && d.noNeedHeat) {
+      return 'need-ac'
+    } else
+
+    if (d.needHeat && d.noNeedAC) {
+      return 'need-heat'
+    } else { 
+      console.log(d)
     }
   })
+
+
+
+
+// searchEl.addEventListener("focus", function () {
+//   searchEl.value = "";
+// })
+
+// searchEl && searchEl.addEventListener("keyup", function () {
+//   var criterion = searchEl.value;
+//   if (criterion.length > 2) {
+//     var tablehtml = mustache.render(tabletemplate, cities.filter(c => c.cityName.toLowerCase().indexOf(criterion.toLowerCase()) > -1));
+//     console.log(tablehtml)
+//     tablediv.innerHTML = tablehtml;
+//   }
+
+// })
+
+
+
 // tavg in hottest > 26.5 => NEED AC
 
 // tavg in hott < 26.5 && tmax hott < 28 => NO NEED AC
@@ -114,273 +146,142 @@ const cityCircles = svg
 // tavg in coldest > 13 && tmin in coldest > 7  => NO NEED HEAT
 
 
-/* Beeswarm */
-const plotWidth = 600;
-const plotHeight = 400;
-const mobile = window.matchMedia('(max-width: 739px)').matches
-const padding = mobile ?
-  {
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0
+
+
+//searchbox
+
+const parent = d3.select(".gv-city-search");
+
+const searchBox = parent.insert("div", ":first-child").classed("search-container", true);
+const input = searchBox.append("input").classed("city-result", true);
+
+input.attr("placeholder", "Find a city …");
+
+// const buttonsWrapper = searchBox.append("div").classed("buttons", true);
+
+// const companiesToButton = ["Schoolsworks Academy Trust", "Sussex Learning Trust", 'Asos.com Limited', 'Credit Suisse (UK) Limited'];
+
+const awesome = new Awesomplete(input.node(), {
+  list: cities.map(d => d.cityName)
+});
+
+const close = d3.select('.awesomplete').append("div").style("display", "none").classed("search", true);
+
+close.html(`<svg class="icon-cancel" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 30 30">
+        <path d="m 8.2646211,7.64 -0.985372,0.992 6.8996289,7.5523 7.720992,6.739 0.821373,-0.8267 -6.899628,-7.5524 -7.5569939,-6.9042" fill="#000"></path>
+        <path d="m 7.2792491,21.64 0.985372,0.9854 7.5569939,-6.8977 6.899628,-7.5523 -0.985381,-0.992 -7.556984,6.9042 -6.8996289,7.5524" fill="#000"></path>
+        </svg>`);
+
+close.on("click", function (e) {
+  close.style("display", "none");
+  input.node().value = "";
+  d3.select(".label-g").remove();
+
+  d3.select(".search-box-date").html(``);
+
+  d3.select(".search-box-gap").html(``);
+
+  resetCircles()
+});
+
+input.on("keyup", function (e) {
+
+  if (input.node().value.length > 0) {
+    close.style("display", "inline-block");
+  } else {
+    close.style("display", "none");
   }
 
-// /* Map */
-// const mapWidth = 1200;
-// const mapHeight = 600;
+  if (input.node().value.length === 0) {
+    resetCircles()
+  }
 
-// let period = '1981-2010';
+});
 
-// const svg = d3.select('.us-map').append('svg')
-//   .attr('width', mapWidth)
-//   .attr('height', mapHeight)
+// let dayArray = new Array(totalWeekDays).fill(null);
+// var counter = 0;
+// for (var day = 1; day < 365 + 1; day++) {
+//     var curday = new Date(2018, 0, day);
 
-// const proj = d3.geoAlbers()
-//   .fitSize([mapWidth, mapHeight], us)
-
-// const path = d3.geoPath()
-//   .projection(proj)
-
-//   // svg.append("path")
-//   //   .attr("stroke", "#aaa")
-//   //   .attr("stroke-width", 0.5)
-//   //   .attr('fill', 'none')
-//   //   .attr("d", path(topojson.mesh(us, us.objects.counties, function (a, b) { return a !== b && (a.id / 1000 | 0) === (b.id / 1000 | 0); })));
-
-//   // svg.append("path")
-//   //   .attr("stroke-width", 0.5)
-//   //   .attr('stroke', 'black')
-//   //   // .attr("d", path(topojson.mesh(us, us.objects.states, (a, b) => a !== b)))
-//   //   .attr("d", path(topojson.mesh(us, us.objects.states, (a, b) => a !== b)))
-//   //   .style('fill', 'yellow')
-
-//   svg.selectAll('state')
-//     // .data(topojson.feature(us, us.objects.states).features)
-//     .data(us.features)
-//     .enter()
-//     .append('path')
-//     .attr('d', path)
-//     // .style('fill', d => d.id === '06' ? 'yellow' : 'lightgrey')
-//     .style('fill', d => {
-//       const state = temps.find(s => d.properties.name === s['State'])
-//       const historical = Number(state[period])
-//       if (historical > 70) {
-//         return '#ff0000'
-//       } else if (historical > 50) {
-//         return '#ff6d00'
-//       } else if (historical > 30) {
-//         return '#ffa200'
-//       } else if (historical > 10) {
-//         return '#fed033'
-//       }
-//       else {
-//         return '#fafa6e'
-//       }
-//     })
-//     .style('stroke', 'black')
-//     .attr("stroke-width", 0.5)
-
-//   // svg.append("path")
-//   //   .attr("d", path(topojson.feature(us, us.objects.nation)))
-//   //   .attr('fill', 'none')
-//   //   .attr('stroke', 'black')
-
-// /* Beeswarm */
-// const plotWidth = 600;
-// const plotHeight = 400;
-// const mobile = window.matchMedia('(max-width: 739px)').matches
-// const padding = mobile ?
-//   {
-//     top: 0,
-//     right: 0,
-//     bottom: 0,
-//     left: 0
-//   }
-
-//   : {
-//     top: 100,
-//     right: 20,
-//     bottom: 40,
-//     left: 20
-//   }
-
-// const totalCities = 50;
-
-// //needs to be the highest value for the selected time period
-// const totalDays = 150;
-
-// const buildSwarm = yearRange =>
-//   d3Beeswarm.beeswarm()
-//     .data(temps)
-//     .distributeOn(d => xScale(Math.round(Number(d[yearRange]))))
-//     .radius(5)
-//     .orientation('horizontal')
-//     .side('negative')
-//     .arrange()
-
-
-// const xAxisPadding = 200;
-
-// const bSvg = d3.select('.beeswarm').append('svg')
-//   .attr('width', plotWidth)
-//   .attr('height', plotHeight)
-
-// const containerG = bSvg.append('g').attr('class', 'containerG')
-//   .attr('transform', `translate(${padding.left}, ${xAxisPadding})`)
-
-// const xScale = d3.scaleLinear()
-//   .domain([0, totalDays])
-//   .range([padding.left, plotWidth - padding.right -padding.left])
-
-// const yScale = d3.scaleLinear()
-//   .domain([0, totalCities])
-//   .range([padding.top, plotHeight - padding.bottom])
-
-// const swarm = buildSwarm(period)
-
-
-// const axisLayer = containerG.append('g')
-//   .attr('transform', `translate(${0}, ${5})`)
-//   .attr('class', 'xAxis')
-
-// axisLayer.append('rect')
-//   .attr('x', xScale(20))
-//   .attr('y', yScale(- totalDays))
-//   .attr('width', xScale(40) - xScale(20))
-//   .attr('height', - yScale(- totalDays))
-//   .attr('class', 'temp-area')
-
-// axisLayer.append('rect')
-//   .attr('x', xScale(40))
-//   .attr('y', yScale(- totalDays))
-//   .attr('width', xScale(totalDays) - xScale(40))
-//   .attr('height', - yScale(- totalDays))
-//   .attr('class', 'temp-area-hot')
-
-// axisLayer.append('rect')
-//   .attr('x', xScale(0))
-//   .attr('y', yScale(- totalDays))
-//   .attr('width', xScale(20) - xScale(0))
-//   .attr('height', - yScale(- totalDays))
-//   .attr('class', 'temp-area-cold')
-
-// axisLayer.append('text')
-//   .text('Days per year above 25°C ')
-//   .attr('x', plotWidth - padding.right -100)
-//   .attr('dy', 40)
-
-// axisLayer.append('text')
-//   .text(period)
-//   .attr('class', 'period')
-//   .attr('x', plotWidth / 2)
-//   .attr('dy', 60)
-
-// axisLayer.append('text')
-//   .text('Warmer cities →')
-//   .attr('x', plotWidth - padding.right - 100)
-//   // .attr('dy', -totalDays+ 20)
-//   .attr('dy', -xAxisPadding + 20)
-
-// axisLayer.call(d3.axisBottom(xScale))
-
-// // xstops
-// axisLayer.append('line')
-//   .attr('x1', xScale(20))
-//   .attr('x2', xScale(20))
-//   .attr('y1', yScale(- totalDays))
-//   .attr('class', 'xStop')
-
-// axisLayer.append('line')
-//   .attr('x1', xScale(40))
-//   .attr('x2', xScale(40))
-//   .attr('y1', yScale(- totalDays))
-//   .attr('class', 'xStop')
-
-// const voronoi = d3.voronoi()
-//   // .extent([[-padding.left, -padding.top], [plotWidth + padding.right, plotHeight + padding.top]])
-//   .extent([[-padding.left, -padding.top - xAxisPadding], [plotWidth + padding.right, plotHeight + padding.top]])
-//   .x(function (d) { return d.x; })
-//   .y(function (d) { return d.y; })
-//   .polygons(swarm)
-
-// const cells = containerG.append("g")
-//   .attr("class", "cells")
-//   .selectAll("g")
-//   .data(voronoi)
-
-// const circles = cells.enter()
-//   // .append('g')
-//   .append('circle')
-//   .attr('id', d => `circle-${d.data.datum['State']}`)
-//   .attr('class', 'circle')
-//   .attr('cx', b => b.data.x)
-//   .attr('cy', b => b.data.y)
-//   .attr('r', d => Math.floor(d.data.datum['State'].length/3))
-
-// const paths = cells.enter().append("path")
-//   .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
-//   .attr("id", d => d.data.datum['State'])
-//   .attr("class", 'voronoi')
-//   .on('mouseover', d => {
-
-//     const circle = d3.select(`#circle-${d.data.datum['State']}`)
-
-//     circle.classed('highlight', true)
-//     containerG.append('text')
-//       .text(() => d.data.datum['State'])
-//         .attr('class', 'circle-label')
-//         .attr('x', () => circle.attr('cx'))
-//         .attr('y', () => circle.attr('cy'))
-//         .attr('dy', -10)
-//   })
-//   .on('mouseout', d => {
-//     d3.select(`#circle-${d.data.datum['State']}`)
-//       .classed('highlight', false)
-//     containerG.select('.circle-label').remove()
-//   })
-
-
-// // transitions
-
-// const transitionSwarm = (period) => {
-//   const newSwarm = buildSwarm(period)
-
-//   const newSwarmData = d3.voronoi()
-//     .extent([[-padding.left, -padding.top - xAxisPadding], [plotWidth + padding.right, plotHeight + padding.top]])
-//     .x(function (d) { return d.x; })
-//     .y(function (d) { return d.y; })
-//     .polygons(newSwarm);
-
-//   circles.data(newSwarmData)
-//   paths.data(newSwarmData)
-
-//   circles
-//     .transition()
-//     .ease(d3.easeCubicOut)
-//     .duration(2000)
-//     .attr('cx', b => b.data.x)
-//     .attr('cy', b => b.data.y)
-//     // .attr('r', 2.5)
-
-//   paths
-//     .transition()
-//     .duration(2000)
-//     .attr("d", function (d) { return "M" + d.join("L") + "Z"; })
+//     if (curday.getDay() !== 6 && curday.getDay() !== 0) {
+//         dayArray[counter] = curday;
+//         counter++;
+//     }
 // }
 
-// document.getElementById("future-one").addEventListener("click", () => { 
-//   transitionSwarm('2020-2039')
-//   d3.select('.period').text('2020-2039')
-// });
-// document.getElementById("future-two").addEventListener("click", () => {
-//   transitionSwarm('2040-2059')
-//   d3.select('.period').text('2040-2059')
-// });
-// document.getElementById("historical").addEventListener("click", () => {
-//   transitionSwarm('1981-2010')
-//   d3.select('.period').text('1981-2010')
-// });
+// const monthNames = ["January", "February", "March", "April", "May", "June",
+//     "July", "August", "September", "October", "November", "December"
+// ];
+
+function selectedCity(city) {
+  const textBox = d3.select(".search-box-result");
+
+  const cityId = city.replace(/[ ,]+/g, "")
+
+  // const cityObj = cities.filter(d => )
+
+  console.log(cityId)
+  
+  const cityCircle =  svg.select(`#${cityId}`);
+
+  cityCircles.transition()
+    .ease(d3.easeCubicOut)
+    .duration(2000)
+    .style('opacity', 0)
+
+  cityCircle.transition()
+    .ease(d3.easeCubicOut)
+    .duration(1000)
+    .attr('r', largeRadius)
 
 
 
+
+  const c = cities.find(d => d.cityName === city)
+  
+  // const firstLine =  `${c.needAc ? 'will be happier with air conditioning.' : 'have no real need for air conditioning.'}.
+  const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'residents have no real need of air conditioning. ';
+  const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though.'}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
+  const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10} °C, and average highs are ${Math.round(c.tMax * 10) / 10} °C. `;
+  const fourthLine = c.needHeat ? `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10} °C but can get as cold as ${Math.round(c.tMin * 10) / 10} °C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10} °C.`
+  console.log(firstLine + secondLine + thirdLine + fourthLine)
+  
+  d3.select('.explanation').remove()
+  searchBox.append("div").classed("explanation", true).html(firstLine + secondLine + thirdLine + fourthLine);
+
+  // input.attr('class', 'need-ac')
+  
+
+
+  let color;
+
+
+  if (c.noNeedHeat && c.noNeedAC) {
+      color = 'need-none'
+  } else if (c.needAC && c.needHeat) {
+      color = 'need-both'
+  } else if (c.needAC && c.noNeedHeat) {
+      color = 'need-ac'
+  } else if (c.needHeat && c.noNeedAC) {
+      color = 'need-heat'
+  } 
+  input.classed(color, true)
+
+}
+
+const resetCircles = () => {
+  cityCircles.transition()
+    .duration(1000)
+    .style('opacity', 1)
+    .attr('r', standardRadius)
+
+  d3.select('.explanation').remove()
+  input.attr('class', 'city-result')
+  // searchBox.remove("div").classed("explanation", true
+}
+
+document.addEventListener("awesomplete-selectcomplete", function (e) {
+  const city = e.text.label;
+
+  selectedCity(city);
+});
