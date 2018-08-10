@@ -8,7 +8,7 @@ import * as d3Beeswarm from 'd3-beeswarm'
 // import us from '../assets/us-map.json'
 // import us from '../assets/us-geo.json'
 import mustache from 'mustache'
-import cities from '../data/cleanCitySubset.json'
+import cities from '../data/joined.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
 import namelookup from '../data/country_codes.json'
 
@@ -27,13 +27,21 @@ console.log(cities)
 // const needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
 // const noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
 
-// cities.map(c => {
-//   c.displayname = c.cityName.split(",")[0]
-//   c.needAC = c.tAvgHot > 26.5;
-//   c.noNeedAC = c.tAvgHot <= 26.5 && d.tMax <= 28;
-//   c.needHeat = c.tAvgCold <= 13 && d.tMin <= 7;
-//   c.noNeedHeat = c.tAvgCold > 13 && d.tMin > 7;
-//   })
+cities.map(d => {
+  // c.displayname = c.cityName.split(",")[0]
+  d.needAC = d.tAvgHot > 26.5 || d.tMax > 28;
+  d.noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
+  d.needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
+  d.noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+})
+
+
+// const needAC = d.tAvgHot > 26.5 || d.tMax > 28;
+// const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
+// const needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
+// const noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+
+
 
 const isMobile = window.innerWidth < 600;
 const standardRadius = isMobile ? 1 : 2;
@@ -91,17 +99,22 @@ const cityCircles = svg
   .attr('cy', d => proj([d.lon, d.lat])[1])
   .attr('r', standardRadius)
   .attr('class', d => {
-    const needAC = d.tAvgHot > 26.5;
-    // const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
-    // const needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
-    // const noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+    if (d.noNeedHeat && d.noNeedAC) {
+      return 'need-none'
+    } else
 
-    // const needHeat = d.tavg coldest < 13 // || d.tmin < 7;
-    // const noNeedHeat = d.tavg coldest >= 13 // && d.tmin >= 7;
-    if (needAC) {
-      return 'need-2'
-    } else {
-      return 'noneed'
+    if (d.needAC && d.needHeat) {
+      return 'need-both'
+    } else
+
+    if (d.needAC && d.noNeedHeat) {
+      return 'need-ac'
+    } else
+
+    if (d.needHeat && d.noNeedAC) {
+      return 'need-heat'
+    } else { 
+      console.log(d)
     }
   })
 
@@ -137,19 +150,10 @@ const cityCircles = svg
 
 //searchbox
 
-const resetCircles = () => {
-  cityCircles.transition()
-    .duration(1000)
-    .style('opacity', 1)
-    .attr('r', standardRadius)
-}
-
-
-
 const parent = d3.select(".gv-city-search");
 
 const searchBox = parent.insert("div", ":first-child").classed("search-container", true);
-const input = searchBox.append("input").classed("colour", true);
+const input = searchBox.append("input").classed("city-result", true);
 
 input.attr("placeholder", "Find a city …");
 
@@ -219,7 +223,6 @@ function selectedCity(city) {
   console.log(cityId)
   
   const cityCircle =  svg.select(`#${cityId}`);
-console.log(cityCircle.node())
 
   cityCircles.transition()
     .ease(d3.easeCubicOut)
@@ -234,34 +237,47 @@ console.log(cityCircle.node())
 
 
 
-  // const paygap = Number(csvWithHighlights.filter(d => d.EmployerName === company)[0].DiffMedianHourlyPercent);
+  const c = cities.find(d => d.cityName === city)
+  
+  // const firstLine =  `${c.needAc ? 'will be happier with air conditioning.' : 'have no real need for air conditioning.'}.
+  const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'residents have no real need of air conditioning. ';
+  const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though.'}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
+  const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10} °C, and average highs are ${Math.round(c.tMax * 10) / 10} °C. `;
+  const fourthLine = c.needHeat ? `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10} °C but can get as cold as ${Math.round(c.tMin * 10) / 10} °C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10} °C.`
+  console.log(firstLine + secondLine + thirdLine + fourthLine)
+  
+  d3.select('.explanation').remove()
+  searchBox.append("div").classed("explanation", true).html(firstLine + secondLine + thirdLine + fourthLine);
 
-  // let day = (totalWeekDays - 1) - Math.floor(Math.abs(paygap) / 100 * totalWeekDays);
-
-  // d3.select(".search-box-result").style("display", "inline-block").html(`${company}`);
-
-  // d3.select(".search-box-gap").style("display", "inline-block").html(`${Math.abs(paygap)}%`);
+  // input.attr('class', 'need-ac')
   
 
 
-  // if (paygap > 0) {
-  //   d3.select("#search-box-parent").attr("class", "positive");
-  //   d3.select(".search-stop-language").html(`effectively stops paying women on`);
-  //   d3.select(".search-paygap-language").html(`a pay gap of`);
-  //   d3.select(".search-box-date").style("display", "inline-block").html(`${dayArray[day].getDate()} ${monthNames[dayArray[day].getMonth()]}`);
-  // } else if (paygap < 0) {
-  //   d3.select("#search-box-parent").attr("class", "negative");
-  //   d3.select(".search-stop-language").html(`pays women for the full 12 months`);
-  //   d3.select(".search-paygap-language").html(`women outearn men by `);
-  //   d3.select(".search-box-date").style("display", "none").html(``);
-  // } else {
-  //   d3.select("#search-box-parent").attr("class", "neutral");
-  //   d3.select(".search-stop-language").html(`pays women for the full 12 months`);
-  //   d3.select(".search-paygap-language").html(`there is no pay gap between men and women`);
-  //   d3.select(".search-box-gap").style("display", "none").html(``);
-  //   d3.select(".search-box-date").style("display", "none").html(``);
-  // }
+  let color;
 
+
+  if (c.noNeedHeat && c.noNeedAC) {
+      color = 'need-none'
+  } else if (c.needAC && c.needHeat) {
+      color = 'need-both'
+  } else if (c.needAC && c.noNeedHeat) {
+      color = 'need-ac'
+  } else if (c.needHeat && c.noNeedAC) {
+      color = 'need-heat'
+  } 
+  input.classed(color, true)
+
+}
+
+const resetCircles = () => {
+  cityCircles.transition()
+    .duration(1000)
+    .style('opacity', 1)
+    .attr('r', standardRadius)
+
+  d3.select('.explanation').remove()
+  input.attr('class', 'city-result')
+  // searchBox.remove("div").classed("explanation", true
 }
 
 document.addEventListener("awesomplete-selectcomplete", function (e) {
