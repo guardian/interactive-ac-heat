@@ -99,6 +99,7 @@ const cityCircles = svg
   .attr('cy', d => proj([d.lon, d.lat])[1])
   .attr('r', standardRadius)
   .attr('class', d => {
+    console.log('sausage');
     if (d.noNeedHeat && d.noNeedAC) {
       return 'need-none'
     } else
