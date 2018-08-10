@@ -10,7 +10,17 @@ import * as d3Beeswarm from 'd3-beeswarm'
 import mustache from 'mustache'
 import cities from '../data/cleanCitySubset.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
+import namelookup from '../data/country_codes.json'
 
+cities.map(c => {
+  c.displayname = c.cityName.split(",")[0];
+  var code = c.cityName.split(",")[1].replace(/ /g,"");
+  var matchingrecord = namelookup.find(n => code == n.GEC);
+  if (matchingrecord)
+{  c.country = matchingrecord.name;}
+})
+
+console.log(cities)
 
 // const needAC = d.tAvgHot > 26.5;
 // const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
