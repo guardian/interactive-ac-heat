@@ -108,7 +108,12 @@
 }
 
 .key-container {
-    padding-left: 20px;
+    @include mq(mobile) {
+        padding-left: 20px;
+    }
+    @include mq(tablet) {
+        padding-left: 80px;
+    }
 }
 
 .map-key-needAC {
@@ -424,6 +429,7 @@
     
     @include mq(mobile) {
         height: 290px;
+        margin: 0 auto;
     }
 
     @include mq(mobileLarge) {
@@ -471,7 +477,11 @@
         margin-bottom: 20px;
     }
     @include mq(tablet) {
-        // padding-left: 40px;
+        padding-left: 80px;
+    }
+
+    @include mq(tablet) {
+        // margin-left: 15%;
     }
 }
 
@@ -484,7 +494,7 @@
 
     @include mq(tablet) {
         // @include fs-headline(3);
-        // padding-left: 40px;
+        padding-left: 80px;
     }
 }
 
@@ -542,4 +552,8 @@
         max-width: 600px;
         // margin: -80px auto 0 auto;
     }
+}
+
+.title-winter {
+    margin-top: 40px;
 }
