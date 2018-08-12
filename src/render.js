@@ -1,5 +1,6 @@
 import templateHTML from "./src/templates/main.html!text"
 import headerHTML from "./src/templates/header.html!text"
+import climateImpactHTML from "./src/templates/climateImpactSummer.html!text"
 import keyHTML from "./src/templates/key.html!text"
 import fs from 'fs'
 import csvParse from 'csv-parse/lib/sync';
@@ -25,5 +26,5 @@ export async function render() {
     // console.log(tablehtml);
     var header = mustache.render(headerHTML,copytext);
     var main = mustache.render(templateHTML,copytext)
-    return (header + keyHTML + '<div class="world-map"></div>' + main);
+    return (header + keyHTML + '<div class="world-map"></div>' + main + climateImpactHTML);
 }

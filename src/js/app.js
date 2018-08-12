@@ -20,8 +20,6 @@ cities.map(c => {
 {  c.country = matchingrecord.name;}
 })
 
-console.log(cities)
-
 // const needAC = d.tAvgHot > 26.5;
 // const noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
 // const needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
@@ -284,4 +282,42 @@ document.addEventListener("awesomplete-selectcomplete", function (e) {
   const city = e.text.label;
 
   selectedCity(city);
+});
+
+let rotating = false;
+
+const rotatePics = () => {
+    let i = 1;
+    let len = 3;
+  setInterval(function () {
+    if (i === 1) {
+      const allPics = document.querySelectorAll(`.impact`);
+      allPics.forEach(el => el.style.zIndex = i)
+    } else {
+      const picsToShow = document.querySelectorAll(`.impact-${i}`);
+      picsToShow.forEach(el => el.style.zIndex = i)
+    }
+    i = (i === len) ? 1 : ++i;
+  }, 1500);
+};
+
+const impactContainer = document.querySelector('.impact-container');
+
+function isElementInView(el) {
+  var rect = el.getBoundingClientRect();
+
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+window.addEventListener('scroll', function (e) {
+  if (!rotating) {
+    window.requestAnimationFrame(function () {
+      isElementInView(impactContainer) && rotatePics();
+    });
+  }
 });
