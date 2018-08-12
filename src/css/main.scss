@@ -86,14 +86,17 @@
 
 .need-ac {
   fill: #f5be2c;
+  color: #f5be2c !important;
 }
 
 .need-both {
-  fill: #ff4e36;
+  fill: #951d7a;
+  color: #951d7a !important;
 }
 
 .need-heat {
     fill: #0084c6;
+    color: #0084c6 !important;
   }
 
 .need-none {
@@ -126,7 +129,7 @@
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: #ff4e36;
+  background: #951d7a;
   margin-right: 5px;
 }
 .map-key-noneedBoth {
@@ -171,7 +174,6 @@
   }
 
   @include mq(tablet) {
-     @include fs-bodyCopy(3);
     // padding-left: 40px;
   }
 }
@@ -203,13 +205,13 @@
     overflow: hidden;
     box-sizing: border-box;
     border: 0;
-    border-bottom: 2px solid #000;
+    // border-bottom: 2px solid #000;
     background: transparent;
     width: 100%;
     outline: 0;
     margin: 0;
     padding: 6px 0px 2px;
-    height: 44px;
+    // height: 44px;
     // font-size: 14px;
     // line-height: 18px;
     // font-family: "Guardian Text Sans Web", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
@@ -218,7 +220,7 @@
     max-width: 620px;
     margin-top: 12px;
     margin-bottom: 12px;
-    color: #ff7e00;
+    // color: #ff7e00;
 }
 
 .awesomplete>ul {
@@ -367,7 +369,7 @@
     @include fs-headline(3);
     &.positive {
         .colour {
-            color: #ff7e00;
+            // color: #ff7e00;
         }
     }
     &.negative {
@@ -389,7 +391,7 @@
     padding: 2px 0px 2px;
     box-sizing: border-box;
     height: 30px;
-    color: #ff7e00;
+    // color: #ff7e00;
     padding: 0 5px;
 }
 
@@ -456,11 +458,12 @@
 .impact-key-labels {
     display: flex;
     padding-left: 32px;
+    margin-bottom: 5px;
 }
 
 .impact-key-label {
     width: 40px;
-    height: 20px;;
+    height: 20px;
 }
 
 .impact-key-container {
@@ -476,7 +479,7 @@
     @include mq(mobile) {
         margin-top: 20px;
         margin-bottom: 20px;
-        @include fs-headline(3);
+        @include fs-bodyCopy(3);
     }
 
     @include mq(tablet) {
@@ -523,4 +526,20 @@
 
 .key-10 {
     background: #b02128;
+}
+
+.explanation {
+  min-width: 260px;
+  max-width: 600px;
+
+    @include mq(mobile) {
+        max-width: 100%;
+        // margin-top: -35px;
+        // margin: -30px 8px 0 8px;
+    }
+    @include mq(tablet) {
+        min-width: 420px;
+        max-width: 600px;
+        // margin: -80px auto 0 auto;
+    }
 }
