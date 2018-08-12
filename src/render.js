@@ -26,5 +26,5 @@ export async function render() {
     // console.log(tablehtml);
     var header = mustache.render(headerHTML,copytext);
     var main = mustache.render(templateHTML,copytext)
-    return (header + keyHTML + '<div class="world-map"></div>' + main + climateImpactHTML);
+    return (header + keyHTML + main + climateImpactHTML);
 }

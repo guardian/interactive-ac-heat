@@ -97,6 +97,7 @@ const cityCircles = svg
   .attr('cy', d => proj([d.lon, d.lat])[1])
   .attr('r', standardRadius)
   .attr('class', d => {
+    console.log('sausage');
     if (d.noNeedHeat && d.noNeedAC) {
       return 'need-none'
     } else
@@ -238,10 +239,10 @@ function selectedCity(city) {
   const c = cities.find(d => d.cityName === city)
   
   // const firstLine =  `${c.needAc ? 'will be happier with air conditioning.' : 'have no real need for air conditioning.'}.
-  const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'residents have no real need of air conditioning. ';
+  const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
   const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though.'}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
-  const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10} °C, and average highs are ${Math.round(c.tMax * 10) / 10} °C. `;
-  const fourthLine = c.needHeat ? `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10} °C but can get as cold as ${Math.round(c.tMin * 10) / 10} °C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10} °C.`
+  const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C, and average highs are ${Math.round(c.tMax * 10) / 10}C. `;
+  const fourthLine = c.needHeat ? `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10}C but can get as cold as ${Math.round(c.tMin * 10) / 10}C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10}C.`
   console.log(firstLine + secondLine + thirdLine + fourthLine)
   
   d3.select('.explanation').remove()
