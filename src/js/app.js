@@ -8,7 +8,7 @@ import * as d3Beeswarm from 'd3-beeswarm'
 // import us from '../assets/us-map.json'
 // import us from '../assets/us-geo.json'
 import mustache from 'mustache'
-import cities from '../data/joined.json'
+import cities from '../data/joinedNew.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
 import namelookup from '../data/country_codes.json'
 
