@@ -423,19 +423,19 @@
     position: relative;
     
     @include mq(mobile) {
-        height: 270px;
+        height: 290px;
     }
 
     @include mq(mobileLarge) {
-        height: 350px;
+        height: 370px;
     }
 
     @include mq(tablet) {
-        height: 420px;
+        height: 440px;
         width: 740px;
     }
     @include mq(desktop) {
-        height: 520px;
+        height: 540px;
         width: 980px;
     }
     @include mq(leftCol) {
@@ -477,6 +477,7 @@
 .impact-title {
     @include mq(mobile) {
         margin-top: 20px;
+        margin-bottom: 20px;
         @include fs-headline(3);
     }
 
