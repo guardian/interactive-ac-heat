@@ -65,7 +65,7 @@ const fc = topojson.feature(world, world.objects.countries)
 
 const proj = d3.geoRobinson()
   .fitSize([mapWidth, mapHeight], fc)
-  .rotate([-18, 0, 0])
+  // .rotate([-18, 0, 0])
 
 const path = d3.geoPath()
   .projection(proj)
@@ -285,23 +285,30 @@ document.addEventListener("awesomplete-selectcomplete", function (e) {
 });
 
 let rotating = false;
+const impactContainer = document.querySelector('.impact-container');
+const titleSummer = document.querySelector('.title-summer');
+const titleWinter = document.querySelector('.title-winter');
 
 const rotatePics = () => {
     let i = 1;
     let len = 3;
+    console.log(i)
   setInterval(function () {
     if (i === 1) {
       const allPics = document.querySelectorAll(`.impact`);
       allPics.forEach(el => el.style.zIndex = i)
+      titleSummer.innerHTML = `Northern Hemisphere summer averages 1986 - 2005 `
+      titleWinter.innerHTML = `Southern Hemisphere summer averages 1986 - 2005 `
     } else {
       const picsToShow = document.querySelectorAll(`.impact-${i}`);
       picsToShow.forEach(el => el.style.zIndex = i)
+      titleWinter.innerHTML = i === 2 ? `Southern Hemisphere summer averages 2020 - 2039` : `Southern Hemisphere summer averages 2040 - 2059`;
+      titleSummer.innerHTML = i === 2 ? `Northern Hemisphere summer averages 2020 - 2039` : `Northern Hemisphere summer averages 2040 - 2059`;
     }
     i = (i === len) ? 1 : ++i;
   }, 1500);
 };
 
-const impactContainer = document.querySelector('.impact-container');
 
 function isElementInView(el) {
   var rect = el.getBoundingClientRect();
@@ -317,7 +324,10 @@ function isElementInView(el) {
 window.addEventListener('scroll', function (e) {
   if (!rotating) {
     window.requestAnimationFrame(function () {
-      isElementInView(impactContainer) && rotatePics();
+      if (isElementInView(impactContainer)) {
+        rotatePics();
+        rotating = true;;
+      }
     });
   }
 });

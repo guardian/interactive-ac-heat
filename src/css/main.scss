@@ -145,14 +145,14 @@
     flex-shrink: 0;
     flex-wrap: wrap;
     justify-content: left;
-    padding-left: 20px;
+    // padding-left: 20px;
     margin-top: 20px;
     margin-bottom: 10px;
   }
 
   @include mq(tablet) {
     flex-direction: row;
-    padding-left: 40px;
+    // padding-left: 40px;
     text-align: center !important;
   }
 
@@ -167,11 +167,13 @@
 
 .map-title {
   @include mq(mobile) {
-    padding-left: 20px;
+    @include fs-headline(3);
+    // padding-left: 20px;
   }
 
   @include mq(tablet) {
-    padding-left: 40px;
+    @include fs-headline(3);
+    // padding-left: 40px;
   }
 }
 
@@ -411,15 +413,115 @@
     position: absolute;
 }
 
-// .summer-1 {
-//     opacity: 1;
-// }
-
 .impactSource {
-    max-width: 100%;
+    @include mq(mobile) {
+        width: 100%;
+    }
 }
 
 .impact-container {
     position: relative;
-    min-height: 400px;
+    
+    @include mq(mobile) {
+        height: 270px;
+    }
+
+    @include mq(mobileLarge) {
+        height: 350px;
+    }
+
+    @include mq(tablet) {
+        height: 420px;
+        width: 740px;
+    }
+    @include mq(desktop) {
+        height: 520px;
+        width: 980px;
+    }
+    @include mq(leftCol) {
+        width: 1140;
+    }
+    @include mq(wide) {
+        width: 1300;
+    }
+}
+
+.impact-key {
+    display: flex;
+}
+
+.impact-key-item {
+    height: 10px;
+    width: 40px;
+}
+
+.impact-key-labels {
+    display: flex;
+    padding-left: 32px;
+}
+
+.impact-key-label {
+    width: 40px;
+    height: 20px;;
+}
+
+.impact-key-container {
+    @include mq(mobile) {
+        margin-bottom: 20px;
+    }
+    @include mq(tablet) {
+        // padding-left: 40px;
+    }
+}
+
+.impact-title {
+    @include mq(mobile) {
+        margin-top: 20px;
+        @include fs-headline(3);
+    }
+
+    @include mq(tablet) {
+        // @include fs-headline(3);
+        // padding-left: 40px;
+    }
+}
+
+.key-1 {
+    background: #ffffb7;
+}
+
+.key-2 {
+    background: #fdea93;
+}
+
+.key-3 {
+    background: #fad46f;
+}
+
+.key-4 {
+    background: #f6ba5c;
+}
+
+.key-5 {
+    background: #f39f4d;
+}
+
+.key-6 {
+    background: #e6823f;
+}
+
+.key-7 {
+    background: #e66032;
+}
+
+.key-8 {
+    background: #dc4427;
+}
+
+.key-9 {
+    background: #c63027;
+}
+
+.key-10 {
+    background: #b02128;
 }
