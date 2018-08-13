@@ -13,11 +13,18 @@ import tabletemplate from '!raw-loader!./../templates/table.html'
 import namelookup from '../data/country_codes.json'
 
 cities.map(c => {
-  c.displayname = c.cityName.split(",")[0];
+  c.purename = c.cityName.split(",")[0];
   var code = c.cityName.split(",")[1].replace(/ /g,"");
-  var matchingrecord = namelookup.find(n => code == n.GEC);
-  if (matchingrecord)
-{  c.country = matchingrecord.name;}
+  // Catch for US city names which include state codes
+  if (code.length > 2) {
+    c.displayname = c.cityName
+  } else {
+    var matchingrecord = namelookup.find(n => code == n.GEC);
+    if (matchingrecord)
+  {  c.country = matchingrecord.name;}
+    c.displayname = `${c.purename}, ${c.country}`
+  
+  }
 })
 
 // const needAC = d.tAvgHot > 26.5;
@@ -97,7 +104,6 @@ const cityCircles = svg
   .attr('cy', d => proj([d.lon, d.lat])[1])
   .attr('r', standardRadius)
   .attr('class', d => {
-    console.log('sausage');
     if (d.noNeedHeat && d.noNeedAC) {
       return 'need-none'
     } else
@@ -161,7 +167,11 @@ input.attr("placeholder", "Find a city …");
 // const companiesToButton = ["Schoolsworks Academy Trust", "Sussex Learning Trust", 'Asos.com Limited', 'Credit Suisse (UK) Limited'];
 
 const awesome = new Awesomplete(input.node(), {
-  list: cities.map(d => d.cityName)
+  list: cities.map(d => [d.displayname,d.cityName]),
+//list: cities.map(d => d.cityName)
+  replace: function(text) {
+    this.input.value = text.label;
+  }
 });
 
 const close = d3.select('.awesomplete').append("div").style("display", "none").classed("search", true);
@@ -216,11 +226,6 @@ function selectedCity(city) {
   const textBox = d3.select(".search-box-result");
 
   const cityId = city.replace(/[ ,]+/g, "")
-
-  // const cityObj = cities.filter(d => )
-
-  console.log(cityId)
-  
   const cityCircle =  svg.select(`#${cityId}`);
 
   cityCircles.transition()
@@ -240,13 +245,14 @@ function selectedCity(city) {
   
   // const firstLine =  `${c.needAc ? 'will be happier with air conditioning.' : 'have no real need for air conditioning.'}.
   const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
-  const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though.'}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
+  const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
   const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C, and average highs are ${Math.round(c.tMax * 10) / 10}C. `;
-  const fourthLine = c.needHeat ? `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10}C but can get as cold as ${Math.round(c.tMin * 10) / 10}C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10}C.`
-  console.log(firstLine + secondLine + thirdLine + fourthLine)
+  const fourthLine = `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10}C `;
+  const fifthLine = c.needHeat ?  `but can get as cold as ${Math.round(c.tMin * 10) / 10}C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10}C.`
+  console.log(firstLine + secondLine + thirdLine + fourthLine + fifthLine)
   
   d3.select('.explanation').remove()
-  searchBox.append("div").classed("explanation", true).html(firstLine + secondLine + thirdLine + fourthLine);
+  searchBox.append("div").classed("explanation", true).html(firstLine + secondLine + thirdLine + fourthLine + fifthLine);
 
   // input.attr('class', 'need-ac')
   
@@ -280,8 +286,7 @@ const resetCircles = () => {
 }
 
 document.addEventListener("awesomplete-selectcomplete", function (e) {
-  const city = e.text.label;
-
+  const city = e.text.value;
   selectedCity(city);
 });
 
