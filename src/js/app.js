@@ -4,12 +4,9 @@ import * as topojson from 'topojson'
 import world from 'world-atlas/world/110m.json'
 import Awesomplete from './awesomplete.js'
 import * as d3Beeswarm from 'd3-beeswarm'
-// import cities from '../assets/cleanCitySubset.json'
-// import us from '../assets/us-map.json'
-// import us from '../assets/us-geo.json'
+
 import mustache from 'mustache'
-// import cities from '../data/joinedNew.json'
-// import cities from '../data/joinedPatched.json'
+
 import cities from '../data/fixedLooseJson.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
 import namelookup from '../data/country_codes.json'
@@ -39,7 +36,7 @@ cities.map(d => {
   d.needAC = d.tAvgHot > 26.5 || d.tMax > 28;
   d.noNeedAC = d.tAvgHot <= 26.5 || d.tMax <= 28;
   d.needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
-  d.noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
+  d.noNeedHeat = !d.needHeat
 })
 
 

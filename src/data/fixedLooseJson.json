@@ -15136,5 +15136,45 @@
         "tAvgCold": -2.2714285714285722,
         "tMax": 29.426211849192104,
         "tAvgHot": 22.813765182186255
-    }
-]
+    },
+                                {
+                                    "cityName": "Wellington, NZ",
+                                    "stationId": "",
+                                    "lat": -41.28888,
+                                    "lon": 174.7772,
+                                    "tMax": 20.3,
+                                    "tAvgHot": 16.8,
+                                    "tAvgCold": 8.5,
+                                    "tMin": 5.9
+                                },
+                                {
+                                    "cityName": "Auckland, NZ",
+                                    "stationId": "",
+                                    "lat": -36.8485,
+                                    "lon": 174.7633,
+                                    "tMax": 23.7,
+                                    "tAvgHot": 19.7,
+                                    "tAvgCold": 10.9,
+                                    "tMin": 7.1
+                                },
+                                {
+                                    "cityName": "Cairo, EG",
+                                    "stationId": "",
+                                    "lat": 30.0442,
+                                    "lon": 31.340002,
+                                    "tMax": 34.7,
+                                    "tAvgHot": 28.4,
+                                    "tAvgCold": 14.0,
+                                    "tMin": 9.0
+                                },
+                                {
+                                    "cityName": "Reykjavik, IC",
+                                    "stationId": "GHCND:ICM00004130",
+                                    "lat": 64.133,
+                                    "lon": -21.9,
+                                    "tMax": 14.2,
+                                    "tAvgHot": 11.2,
+                                    "tAvgCold": 0.0,
+                                    "tMin": -2.4
+                                }
+                            ]

@@ -85,8 +85,8 @@
 }
 
 .need-ac {
-  fill: $feature-orange;
-  color: $feature-orange !important;
+  fill: $inverted-orange;
+  color: $inverted-orange !important;
 }
 
 .need-both {
@@ -121,7 +121,7 @@
   height: 10px;
   width: 10px;
   border-radius: 50%;
-  background: #f5be2c;
+  background: $inverted-orange;
   margin-right: 5px;
 }
 .map-key-needHeat {
