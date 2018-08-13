@@ -10,7 +10,7 @@ import * as d3Beeswarm from 'd3-beeswarm'
 import mustache from 'mustache'
 // import cities from '../data/joinedNew.json'
 // import cities from '../data/joinedPatched.json'
-import cities from '../data/finalLooseJson.json'
+import cities from '../data/fixedLooseJson.json'
 import tabletemplate from '!raw-loader!./../templates/table.html'
 import namelookup from '../data/country_codes.json'
 
@@ -259,9 +259,9 @@ function selectedCity(city) {
     const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
     const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
     const thirdLine = c.tMax ? `The hottest days reach ${Math.round(c.tMax * 10) / 10}C or so.` : ``;
-    const fourthline = c.tAvgHot ? `In the warmest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C. ` : '';
-    const fifthline = c.tAvgCold ? `Days in the coldest month are around ${Math.round(c.tAvgCold * 10) / 10}C. ` : '';
-    const sixthline = c.tMin ? `A bad winter day would see temperatures of ${Math.round(c.tAvgCold * 10) / 10}C.` : '';
+    const fourthLine = c.tAvgHot ? `In the warmest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C. ` : '';
+    const fifthLine = c.tAvgCold ? `Days in the coldest month are around ${Math.round(c.tAvgCold * 10) / 10}C. ` : '';
+    const sixthLine = c.tMin ? `A bad winter day would see temperatures of ${Math.round(c.tAvgCold * 10) / 10}C.` : '';
     message = firstLine + secondLine + thirdLine + fourthLine + fifthLine + sixthLine;
   }
   
