@@ -244,7 +244,16 @@ function selectedCity(city) {
 
 
   const c = cities.find(d => d.cityName === city)
-  let message = ''
+  let message = '';
+
+  for (var prop in c) {
+    console.log(prop)
+    if (c[prop] == NaN) {
+      delete c[prop]
+    }
+  }
+
+  console.log(c)
 
   if (c.tAvgHot && c.tAvgCold && c.tMax && c.tMin) {
     const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
@@ -258,10 +267,10 @@ function selectedCity(city) {
       // message if any of the values are missing
     const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
     const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
-    const thirdLine = c.tMax ? `The hottest days reach ${Math.round(c.tMax * 10) / 10}C or so.` : ``;
-    const fourthline = c.tAvgHot ? `In the warmest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C. ` : '';
-    const fifthline = c.tAvgCold ? `Days in the coldest month are around ${Math.round(c.tAvgCold * 10) / 10}C. ` : '';
-    const sixthline = c.tMin ? `A bad winter day would see temperatures of ${Math.round(c.tAvgCold * 10) / 10}C.` : '';
+    const thirdLine = c.tMax ? `The hottest days reach ${Math.round(c.tMax * 10) / 10}C or so. ` : ``;
+    const fourthLine = c.tAvgHot ? `In the warmest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C. ` : '';
+    const fifthLine = c.tAvgCold ? `Days in the coldest month are around ${Math.round(c.tAvgCold * 10) / 10}C. ` : '';
+    const sixthLine = c.tMin ? `A bad winter day would see temperatures of ${Math.round(c.tMin * 10) / 10}C.` : '';
     message = firstLine + secondLine + thirdLine + fourthLine + fifthLine + sixthLine;
   }
   
