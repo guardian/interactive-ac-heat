@@ -253,7 +253,7 @@ function selectedCity(city) {
     }
   }
 
-  console.log(c)
+
 
   if (c.tAvgHot && c.tAvgCold && c.tMax && c.tMin) {
     const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
