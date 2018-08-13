@@ -360,13 +360,20 @@
 
     @include mq(mobile) {
       max-width: 100%;
-      margin-top: -35px;
-      margin: -30px 8px 0 8px;
+    //   margin-top: -35px;
+      margin-top: -30px;
     }
     @include mq(tablet) {
         min-width: 420px;
         max-width: 600px;
-        margin: -80px auto 0 auto;
+        margin-top: -80px;
+    }
+        @include mq(desktop) {
+            margin-left: 190px;
+    }
+
+    @include mq(leftCol) {
+        margin-left: 240px;
     }
 }
 
@@ -615,3 +622,6 @@
 .l-footer {
     display: block !important;
 }
+
+.interactive-atom a { color: #c70000; }
+.ios .interactive-atom, .android .interactive-atom { background-color:#fff !important;}

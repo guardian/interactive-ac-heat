@@ -37,7 +37,7 @@ cities.map(c => {
 cities.map(d => {
   // c.displayname = c.cityName.split(",")[0]
   d.needAC = d.tAvgHot > 26.5 || d.tMax > 28;
-  d.noNeedAC = d.tAvgHot <= 26.5 && d.tMax <= 28;
+  d.noNeedAC = d.tAvgHot <= 26.5 || d.tMax <= 28;
   d.needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
   d.noNeedHeat = d.tAvgCold > 13 && d.tMin > 7;
 })
