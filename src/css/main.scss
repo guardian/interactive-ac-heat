@@ -564,3 +564,37 @@
 .title-winter {
     margin-top: 40px;
 }
+
+.gv-outer-container {
+
+    max-width: 1300px;
+    margin: auto;
+    //margin-left: 220px;
+
+    //width: 100%;
+
+    @include mq($until: wide) {
+        margin: 0 10px;
+    }
+
+    padding-bottom: 20px;
+
+    position: relative;
+
+    &:before {
+        @include mq( desktop) {
+            // content: '';
+            // position: absolute;
+            // top: 0;
+            // bottom: 0;
+            // left: 170px;
+            // width: 1px;
+            // background-color: #dcdcdc;
+        }
+
+        @include mq( wide) {
+            left: 230px;
+        }
+    }
+
+}

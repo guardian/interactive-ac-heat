@@ -26,5 +26,5 @@ export async function render() {
     // console.log(tablehtml);
     var header = mustache.render(headerHTML,copytext);
     var main = mustache.render(templateHTML,copytext)
-    return (header + keyHTML + main);
+    return ('<div class="gv-outer-container">' + header + keyHTML + main + '</div>');
 }
