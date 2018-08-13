@@ -242,17 +242,30 @@ function selectedCity(city) {
 
 
   const c = cities.find(d => d.cityName === city)
-  
-  // const firstLine =  `${c.needAc ? 'will be happier with air conditioning.' : 'have no real need for air conditioning.'}.
-  const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
-  const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
-  const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C, and average highs are ${Math.round(c.tMax * 10) / 10}C. `;
-  const fourthLine = `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10}C `;
-  const fifthLine = c.needHeat ?  `but can get as cold as ${Math.round(c.tMin * 10) / 10}C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10}C.`
-  console.log(firstLine + secondLine + thirdLine + fourthLine + fifthLine)
+  const message = ''
+
+  if (c.tAvgHot && c.tAvgCold && c.tMax && c.tMin) {
+    const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
+    const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
+    const thirdLine = `In the hottest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C, and average highs are ${Math.round(c.tMax * 10) / 10}C. `;
+    const fourthLine = `Days in the coldest month usually settle around ${Math.round(c.tAvgCold * 10) / 10}C `;
+    const fifthLine = c.needHeat ?  `but can get as cold as ${Math.round(c.tMin * 10) / 10}C.` : `and seldom get colder than ${Math.round(c.tMin * 10) / 10}C.`
+    console.log(firstLine + secondLine + thirdLine + fourthLine + fifthLine)
+    message = firstLine + secondLine + thirdLine + fourthLine + fifthLine
+  } else 
+  // message if any of the values are missing
+  {
+    const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
+    const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
+    const thirdLine = c.tMax ? `The hottest days reach ${Math.round(c.tMax * 10) / 10}C or so.` : ``;
+    const fourthline = c.tAvgHot ? `In the warmest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C. ` : '';
+    const fifthline = c.tAvgCold ? `Days in the coldest month are around ${Math.round(c.tAvgCold * 10) / 10}C. ` : '';
+    const sixthline = c.tMin ? `A bad winter day would see temperatures of ${Math.round(c.tAvgCold * 10) / 10}C.` : '';
+    message = firstLine + secondLine + thirdLine + fourthLine + fifthLine + sixthLine;
+  }
   
   d3.select('.explanation').remove()
-  searchBox.append("div").classed("explanation", true).html(firstLine + secondLine + thirdLine + fourthLine + fifthLine);
+  searchBox.append("div").classed("explanation", true).html(message);
 
   // input.attr('class', 'need-ac')
   
