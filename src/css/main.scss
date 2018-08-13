@@ -85,8 +85,8 @@
 }
 
 .need-ac {
-  fill: #f5be2c;
-  color: #f5be2c !important;
+  fill: $feature-orange;
+  color: $feature-orange !important;
 }
 
 .need-both {
@@ -110,10 +110,10 @@
 
 .key-container {
     @include mq(mobile) {
-        padding-left: 20px;
+        padding-left: 0px;
     }
-    @include mq(tablet) {
-        padding-left: 80px;
+    @include mq(wide) {
+        padding-left: 30px;
     }
 }
 
@@ -175,7 +175,8 @@
 
 .map-title {
   @include mq(mobile) {
-     @include fs-bodyCopy(3);
+     @include fs-headline(3);
+     font-weight: 600;
     // padding-left: 20px;
   }
 
@@ -339,6 +340,10 @@
     }
 }
 
+.world-map {
+    max-width: 1300px;
+}
+
 .search-container {
     min-width: 260px;
     box-shadow: 4px 4px 0 0 #333;
@@ -478,7 +483,7 @@
         margin-bottom: 20px;
     }
     @include mq(tablet) {
-        padding-left: 80px;
+        padding-left: 30px;
     }
 
     @include mq(tablet) {
@@ -490,12 +495,13 @@
     @include mq(mobile) {
         margin-top: 20px;
         margin-bottom: 20px;
-        @include fs-bodyCopy(3);
-    }
+        @include fs-headline(3);
+        font-weight: 600;
+       }
 
     @include mq(tablet) {
         // @include fs-headline(3);
-        padding-left: 80px;
+        padding-left: 30px;
     }
 }
 
