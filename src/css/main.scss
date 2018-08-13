@@ -430,14 +430,14 @@
     
     @include mq(mobile) {
         height: 290px;
-        margin: 0 auto;
     }
-
+    
     @include mq(mobileLarge) {
         height: 370px;
     }
-
+    
     @include mq(tablet) {
+        margin-left: 40px;
         height: 440px;
         width: 740px;
     }
