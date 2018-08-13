@@ -332,13 +332,13 @@ const rotatePics = () => {
     if (i === 1) {
       const allPics = document.querySelectorAll(`.impact`);
       allPics.forEach(el => el.style.zIndex = i)
-      titleSummer.innerHTML = `Northern Hemisphere summer averages 1986 - 2005 `
-      titleWinter.innerHTML = `Southern Hemisphere summer averages 1986 - 2005 `
+      titleSummer.innerHTML = `Northern Hemisphere summer averages 1986-2005 `
+      titleWinter.innerHTML = `Southern Hemisphere summer averages 1986-2005 `
     } else {
       const picsToShow = document.querySelectorAll(`.impact-${i}`);
       picsToShow.forEach(el => el.style.zIndex = i)
-      titleWinter.innerHTML = i === 2 ? `Southern Hemisphere summer averages 2020 - 2039` : `Southern Hemisphere summer averages 2040 - 2059`;
-      titleSummer.innerHTML = i === 2 ? `Northern Hemisphere summer averages 2020 - 2039` : `Northern Hemisphere summer averages 2040 - 2059`;
+      titleWinter.innerHTML = i === 2 ? `Southern Hemisphere summer averages 2020-2039` : `Southern Hemisphere summer averages 2040-2059`;
+      titleSummer.innerHTML = i === 2 ? `Northern Hemisphere summer averages 2020-2039` : `Northern Hemisphere summer averages 2040-2059`;
     }
     i = (i === len) ? 1 : ++i;
   }, 1500);

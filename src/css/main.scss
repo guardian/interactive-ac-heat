@@ -474,6 +474,7 @@
 }
 
 .impact-key-label {
+    @include fs-textSans(3);
     width: 40px;
     height: 20px;
 }
