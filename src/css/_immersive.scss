@@ -100,9 +100,16 @@ line-height: 26px;;
 
 .gv-main {
     padding-top: 20px;
-    padding-left: 10px;
+    @include mq(mobile) {
+        padding-left: 10px;
+        margin-left: 240px;
+        max-width: 720px;
+    }
 
-    margin-left: 240px;
+    @include mq(desktop) {
+        padding-left: 20px;
+    }
+
     
 
 

@@ -495,7 +495,7 @@
 
 .impact-title {
     @include mq(mobile) {
-        margin-top: 20px;
+        // margin-top: 20px;
         margin-bottom: 20px;
         @include fs-headline(3);
         font-weight: 600;
@@ -503,7 +503,7 @@
 
     @include mq(tablet) {
         // @include fs-headline(3);
-        padding-left: 30px;
+        // padding-left: 30px;
     }
 }
 
@@ -567,6 +567,12 @@
     margin-top: 40px;
 }
 
+.title-summer {
+    border-top: 1px solid #e7dbdb;
+    margin-top: -8px;
+    padding-top: 10px;
+}
+
 .gv-outer-container {
 
     max-width: 1300px;
@@ -599,4 +605,8 @@
         }
     }
 
+}
+
+.container-winter {
+    border-bottom: 1px solid #e7dbdb;
 }
