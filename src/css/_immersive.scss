@@ -75,7 +75,6 @@ line-height: 26px;;
 .gv-header__byline {
     @include fs-bodyCopy(2);
     margin-bottom: 3px;
-    font-style: italic;
 
     @include mq(desktop) {
         @include fs-bodyCopy(3);
