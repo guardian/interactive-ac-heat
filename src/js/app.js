@@ -33,11 +33,30 @@ cities.map(c => {
 
 cities.map(d => {
   // c.displayname = c.cityName.split(",")[0]
-  d.needAC = d.tAvgHot > 26.5 || d.tMax > 28;
-  d.noNeedAC = d.tAvgHot <= 26.5 || d.tMax <= 28;
-  d.needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
-  d.noNeedHeat = !d.needHeat
+  // d.needAC = d.tAvgHot > 26.5 || d.tMax > 28; d.tAvgHot && d.tMax ? d.tAvgHot > 26.5 || d.tMax > 28 : d.
+  // d.noNeedAC = d.tAvgHot <= 26.5 || d.tMax <= 28;
+  // d.needHeat = d.tAvgCold <= 13 || d.tMin <= 7;
+  // d.noNeedHeat = d.tMin > 7 || d.tAvgCold > 13;
+  
+  
+  if (d.tAvgHot && d.tMax) {
+    d.needAC = d.tAvgHot > 26.5 || d.tMax > 28
+  } else if (!d.tAvgHot && d.tMax) {
+    d.needAC = d.tMax > 28
+  } else if (!d.tMax && d.tAvgHot) {
+    d.needAC = d.tAvgHot > 26.5
+  } else { console.log('missing both avghot and max')}
+  
+  if (d.tAvgCold && d.tMin) {
+    d.needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
+  } else if (!d.tAvgCold && d.tMin) {
+    d.needHeat = d.tMin < 7;
+  } else if (!d.tMin && d.tAvgCold) {
+    d.needHeat = d.tAvgCold > 13
+  } else { console.log('missing both avgcold and min')}
+
 })
+
 
 
 // const needAC = d.tAvgHot > 26.5 || d.tMax > 28;
@@ -103,7 +122,7 @@ const cityCircles = svg
   .attr('cy', d => proj([d.lon, d.lat])[1])
   .attr('r', standardRadius)
   .attr('class', d => {
-    if (d.noNeedHeat && d.noNeedAC) {
+    if (!d.needHeat && !d.needAC) {
       return 'need-none'
     } else
 
@@ -111,11 +130,11 @@ const cityCircles = svg
       return 'need-both'
     } else
 
-    if (d.needAC && d.noNeedHeat) {
+    if (d.needAC && !d.needHeat) {
       return 'need-ac'
     } else
 
-    if (d.needHeat && d.noNeedAC) {
+    if (d.needHeat && !d.needAC) {
       return 'need-heat'
     } else { 
       console.log(d)
@@ -287,15 +306,23 @@ function selectedCity(city) {
   let color;
 
 
-  if (c.noNeedHeat && c.noNeedAC) {
-      color = 'need-none'
-  } else if (c.needAC && c.needHeat) {
+  if (!c.needHeat && !c.needAC) {
+    color = 'need-none'
+  } else
+
+    if (c.needAC && c.needHeat) {
       color = 'need-both'
-  } else if (c.needAC && c.noNeedHeat) {
-      color = 'need-ac'
-  } else if (c.needHeat && c.noNeedAC) {
-      color = 'need-heat'
-  } 
+    } else
+
+      if (c.needAC && !c.needHeat) {
+        color = 'need-ac'
+      } else
+
+        if (c.needHeat && !c.needAC) {
+          color = 'need-heat'
+        } else {
+          console.log(c)
+        }
   input.classed(color, true)
 
 }
