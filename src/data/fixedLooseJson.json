@@ -6846,10 +6846,10 @@
         "stationId": "GHCND:SP000008215",
         "lat": 40.7806,
         "lon": -4.0103,
-        "tMin": -3.1912591050988537,
-        "tAvgCold": -0.389266155531215,
-        "tMax": 22.64458333333336,
-        "tAvgHot": 18.23382857142857
+        "tMin": 2.7,
+        "tAvgCold": 6.3,
+        "tMax": 32.1,
+        "tAvgHot": 25.6
     },
     {
         "cityName": "Magadan, RS",
