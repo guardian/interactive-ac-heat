@@ -44,10 +44,10 @@
         "stationId": "GHCND:ASN00023034",
         "lat": -34.9524,
         "lon": 138.5204,
-        "tMin": 7.218437499999996,
-        "tAvgCold": null,
-        "tMax": 15.036004162330912,
-        "tAvgHot": null
+        "tMin": 2.5,
+        "tAvgCold": 7.5,
+        "tMax": 41.2,
+        "tAvgHot": 29.4
     },
     {
         "cityName": "Ajaccio, FR",
@@ -445,8 +445,8 @@
         "lat": -16.8736,
         "lon": 145.7458,
         "tMin": 17.205202913631645,
-        "tAvgCold": null,
-        "tMax": 26.038501560874067,
+        "tAvgCold": 17.205202913631645,
+        "tMax": 31.4,
         "tAvgHot": null
     },
     {
@@ -2365,9 +2365,9 @@
         "lat": -33.8607,
         "lon": 151.205,
         "tMin": 8.851249999999995,
-        "tAvgCold": null,
-        "tMax": 17.605723204994778,
-        "tAvgHot": null
+        "tAvgCold": 13.0,
+        "tMax": 26.5,
+        "tAvgHot": 23.0
     },
     {
         "cityName": "Taiyuan, CH",
