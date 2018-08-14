@@ -283,7 +283,7 @@ function selectedCity(city) {
       // message if any of the values are missing
     const firstLine = c.needAC ? 'Residents will be happier with air conditioning. ' : 'Residents have no real need of air conditioning. ';
     const secondLine = c.needHeat ? `In winter they'll need heat ${c.needAC ? 'too. ' : 'though. '}` : `In winter they won't need heat ${c.needAC ? 'though. ' : 'either. '}`;
-    const thirdLine = c.tMax ? `The hottest days reach ${Math.round(c.tMax * 10) / 10}C or so. ` : ``;
+    const thirdLine = c.tMax ? `The hottest hours of an average summer day reach ${Math.round(c.tMax * 10) / 10}C or so. ` : ``;
     const fourthLine = c.tAvgHot ? `In the warmest month the daily average is ${Math.round(c.tAvgHot * 10) / 10}C. ` : '';
     const fifthLine = c.tAvgCold ? `Days in the coldest month are around ${Math.round(c.tAvgCold * 10) / 10}C. ` : '';
     const sixthLine = c.tMin ? `A bad winter day would see temperatures of ${Math.round(c.tMin * 10) / 10}C.` : '';
