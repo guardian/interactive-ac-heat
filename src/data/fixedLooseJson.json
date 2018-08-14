@@ -10912,10 +10912,10 @@
         "stationId": "GHCND:USS0019K07S",
         "lat": 39.32,
         "lon": -119.89,
-        "tMin": -7.574426605504577,
-        "tAvgCold": -3.5483944954128464,
-        "tMax": 20.599253731343296,
-        "tAvgHot": 13.974413646055439
+        "tMin": -5.7,
+        "tAvgCold": 0.8,
+        "tMax": 32,
+        "tAvgHot": 21.6
     },
     {
         "cityName": "Charlotte, NC US",
@@ -12922,9 +12922,9 @@
         "stationId": "GHCND:USW00013958",
         "lat": 30.3208,
         "lon": -97.7604,
-        "tMin": 5.994588969823108,
-        "tAvgCold": 11.593548387096767,
-        "tMax": null,
+        "tMin": -2.9,
+        "tAvgCold": null,
+        "tMax": 36.1,
         "tAvgHot": null
     },
     {
@@ -15256,5 +15256,15 @@
                                             "tAvgHot": null,
                                             "tAvgCold": null,
                                             "tMin": 4.0
-                                        }
+                                        },
+                                            {
+                                                "cityName": "Dallas, TX US",
+                                                "stationId": "GHCND:USC00412228",
+                                                "lat": 32.81667,
+                                                "lon": -96.71667,
+                                                "tAvgHot": null,
+                                                "tAvgCold": null,
+                                                "tMin": 2.9,
+                                                "tMax": 35.5
+                                            }
                             ]

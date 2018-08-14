@@ -45,15 +45,19 @@ cities.map(d => {
     d.needAC = d.tMax > 28
   } else if (!d.tMax && d.tAvgHot) {
     d.needAC = d.tAvgHot > 26.5
-  } else { console.log('missing both avghot and max')}
+  } else if (!d.tAvgHot && !d.tMax) {
+    d.needAC = null
+  }
   
-  if (d.tAvgCold && d.tMin) {
-    d.needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
-  } else if (!d.tAvgCold && d.tMin) {
-    d.needHeat = d.tMin < 7;
-  } else if (!d.tMin && d.tAvgCold) {
-    d.needHeat = d.tAvgCold > 13
-  } else { console.log('missing both avgcold and min')}
+  if (d) {
+    if (d.tAvgCold && d.tMin) {
+      d.needHeat = d.tAvgCold <= 13 && d.tMin <= 7;
+    } else if (!d.tAvgCold && d.tMin) {
+      d.needHeat = d.tMin < 7;
+    } else if (!d.tMin && d.tAvgCold) {
+      d.needHeat = d.tAvgCold > 13
+    } else if (!d.tAvgCold && !d.tMin) { d.needHeat = null }
+}
 
 })
 
