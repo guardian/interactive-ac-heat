@@ -15236,5 +15236,25 @@
                                         "tAvgHot": 17.4,
                                         "tAvgCold": 8.6,
                                         "tMin": 4.9
-                                    }
+                                    },
+                                        {
+                                            "cityName": "Canberra, AS",
+                                            "stationId": "GHCND:ASN00070338",
+                                            "lat": -35.3083,
+                                            "lon": 149.1936,
+                                            "tMax": 28.7,
+                                            "tAvgHot": 21.2,
+                                            "tAvgCold": 6.0,
+                                            "tMin": 0.2
+                                        },
+                                        {
+                                            "cityName": "Alice Springs, AS",
+                                            "stationId": null,
+                                            "lat": -23.6980,
+                                            "lon": 133.8807,
+                                            "tMax": 36.3,
+                                            "tAvgHot": null,
+                                            "tAvgCold": null,
+                                            "tMin": 4.0
+                                        }
                             ]
