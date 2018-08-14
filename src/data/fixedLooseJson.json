@@ -15206,5 +15206,35 @@
                                     "tAvgHot": 22.2,
                                     "tAvgCold": 3.6,
                                     "tMin": 0.8
-                                }
+                                },
+                                {
+                                    "cityName": "Melbourne, AS",
+                                    "stationId": "GHCND:ASN00086384",
+                                    "lat": -37.675,
+                                    "lon": 144.8419,
+                                    "tMax": 26.6,
+                                    "tAvgHot": 21.3,
+                                    "tAvgCold": 10.7,
+                                    "tMin": 7.1
+                                },
+                                    {
+                                        "cityName": "Brisbane, AS",
+                                        "stationId": "GHCND:ASN00040454",
+                                        "lat": -27.8333,
+                                        "lon": 153,
+                                                    "tMax": 30.3,
+                                                    "tAvgHot": null,
+                                                    "tAvgCold": null,
+                                                    "tMin": 10.2
+                                    },
+                                    {
+                                        "cityName": "Hobart, AS",
+                                        "stationId": null,
+                                        "lat": -42.8821,
+                                        "lon": 147.3272,
+                                        "tMax": 22.2,
+                                        "tAvgHot": 17.4,
+                                        "tAvgCold": 8.6,
+                                        "tMin": 4.9
+                                    }
                             ]
