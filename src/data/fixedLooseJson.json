@@ -15176,5 +15176,35 @@
                                     "tAvgHot": 11.2,
                                     "tAvgCold": 0.0,
                                     "tMin": -2.4
+                                },
+                                {
+                                    "cityName": "Sao Paulo, BR",
+                                    "stationId": "GHCND:BR00E3-0070",
+                                    "lat": -23.5,
+                                    "lon": -46.617,
+                                    "tMax": 28.0,
+                                    "tAvgHot": 22.4,
+                                    "tAvgCold": 15.8,
+                                    "tMin": 11.7
+                                },
+                                {
+                                    "cityName": "Barcelona, SP",
+                                    "stationId": "GHCND:SPE00156612",
+                                    "lat": 41.3817,
+                                    "lon": 1.9356,
+                                    "tMax": 29.0,
+                                    "tAvgHot": 26.1,
+                                    "tAvgCold": 11.8,
+                                    "tMin": 8.8
+                                },
+                                {
+                                    "cityName": "Vancouver, CA",
+                                    "stationId": "GHCND:CA001100245",
+                                    "lat": 49.0833,
+                                    "lon": -122.5167,
+                                    "tMax": 18.0,
+                                    "tAvgHot": 22.2,
+                                    "tAvgCold": 3.6,
+                                    "tMin": 0.8
                                 }
                             ]
