@@ -46,8 +46,8 @@
         "lon": 138.5204,
         "tMin": 2.5,
         "tAvgCold": 7.5,
-        "tMax": 41.2,
-        "tAvgHot": 29.4
+        "tMax": 29.4,
+        "tAvgHot": null
     },
     {
         "cityName": "Ajaccio, FR",
